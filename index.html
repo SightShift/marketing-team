@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SightShift Marketing Dashboard</title>
+<style>
+  :root {
+    --dark-blue: #1B3233;
+    --gold: #CEA42C;
+    --white: #FFFFFF;
+    --gray: #F0F0F0;
+    --gold-tint: #ECDAAB;
+    --seafoam: #D4E9E2;
+    --green: #4CA06F;
+    --teal: #005E66;
+    --medium-blue: #589EA8;
+    --yellow: #EED350;
+    --orange: #D54C2C;
+    --dark-red: #84233C;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--gray); color: var(--dark-blue); }
+
+  /* NAV */
+  nav { background: var(--dark-blue); padding: 0 24px; display: flex; align-items: center; height: 48px; gap: 24px; }
+  nav .brand { color: var(--gold); font-weight: 700; font-size: 15px; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+  nav .tabs { display: flex; gap: 2px; }
+  nav .tab { color: var(--medium-blue); padding: 6px 14px; border-radius: 6px 6px 0 0; cursor: pointer; font-size: 13px; font-weight: 500; transition: all 0.2s; border: none; background: none; }
+  nav .tab:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+  nav .tab.active { color: var(--gold); background: var(--teal); }
+  nav .nav-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+  nav .sync-indicator { font-size: 10px; color: var(--medium-blue); display: flex; align-items: center; gap: 4px; }
+  nav .sync-indicator .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+  nav .sync-indicator .dot.offline { background: var(--orange); }
+  nav .settings-btn { background: none; border: none; color: var(--medium-blue); cursor: pointer; font-size: 16px; padding: 4px; border-radius: 4px; transition: all 0.15s; }
+  nav .settings-btn:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+  nav .updated { color: var(--medium-blue); font-size: 11px; white-space: nowrap; }
+
+  /* MAIN */
+  main { max-width: 1400px; margin: 0 auto; padding: 12px 20px; }
+  .view { display: none; }
+  .view.active { display: block; }
+
+  /* CAMPAIGN HEADER */
+  .campaign-header { display: flex; gap: 14px; margin-bottom: 10px; }
+  .campaign-header-left { flex: 1; background: var(--white); border-radius: 8px; padding: 10px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--gold); display: flex; gap: 20px; }
+  .ch-main { flex: 1; }
+  .ch-main h2 { font-size: 22px; color: var(--dark-blue); margin-bottom: 3px; }
+  .ch-main .ch-desc { font-size: 12px; color: #5a7273; line-height: 1.4; }
+  .ch-ctas { flex-shrink: 0; text-align: right; padding-left: 16px; border-left: 1px solid var(--gray); }
+  .ch-ctas .cta-block { margin-bottom: 6px; }
+  .ch-ctas .cta-block:last-child { margin-bottom: 0; }
+  .ch-ctas .cta-label { font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; }
+  .ch-ctas .cta-value { font-size: 12px; font-weight: 600; color: var(--dark-blue); }
+  .campaign-header-right { background: var(--white); border-radius: 8px; padding: 10px 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--teal); min-width: 340px; max-width: 400px; }
+  .campaign-header-right .chr-label { font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; margin-bottom: 3px; }
+  .campaign-header-right ul { font-size: 11px; color: #4a5e5f; margin-left: 14px; line-height: 1.5; }
+
+  /* CALENDAR */
+  .month-block { margin-bottom: 20px; }
+  .month-title { font-size: 15px; font-weight: 700; color: var(--dark-blue); margin-bottom: 4px; padding: 5px 10px; background: var(--white); border-radius: 6px; border-left: 3px solid var(--gold); box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: #c8d3d4; border-radius: 8px; }
+  .cal-day-header { background: var(--dark-blue); color: var(--gold); padding: 5px; text-align: center; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; }
+  .cal-day-header:first-child { border-radius: 8px 0 0 0; }
+  .cal-day-header:nth-child(7) { border-radius: 0 8px 0 0; }
+  .cal-cell { background: var(--white); height: 90px; padding: 3px 4px; font-size: 11px; overflow: hidden; position: relative; cursor: default; }
+  .cal-cell.popover-open { z-index: 10; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
+  .cal-cell.empty { background: #f6f8f8; }
+  .cal-cell.today { outline: 2px solid var(--gold); outline-offset: -2px; z-index: 1; position: relative; }
+  .cal-cell .cal-date { font-weight: 600; margin-bottom: 1px; color: var(--dark-blue); font-size: 12px; }
+  .cal-entry { padding: 2px 3px; margin-bottom: 1px; border-radius: 3px; font-size: 10px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: default; font-weight: 500; }
+  .cal-cell .cal-popover { display: none; position: absolute; top: 100%; left: 0; min-width: 240px; background: var(--white); border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.18); padding: 8px 10px; z-index: 100; border: 1px solid #d0d8d8; }
+  .cal-cell:nth-child(7n) .cal-popover, .cal-cell:nth-child(7n-1) .cal-popover { left: auto; right: 0; }
+  .cal-cell.popover-open .cal-popover { display: block; }
+  .cal-popover .pop-date { font-size: 12px; font-weight: 700; color: var(--dark-blue); margin-bottom: 5px; }
+  .cal-popover .pop-entry { padding: 4px 6px; margin-bottom: 3px; border-radius: 4px; font-size: 12px; line-height: 1.4; white-space: normal; }
+  .cal-popover .pop-entry .pop-ch { font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 0.3px; }
+  .cal-entry.youtube { background: #fce4ec; color: #c62828; }
+  .cal-entry.linkedin { background: #e0eef6; color: #0a5c8a; }
+  .cal-entry.instagram { background: #fce4ec; color: #ad1457; }
+  .cal-entry.river { background: #f3e5f5; color: #6a1b9a; }
+  .cal-entry.cultural { background: var(--seafoam); color: var(--green); }
+  .cal-entry.production { background: #fff8e1; color: #b8960a; }
+
+  /* Popover for last rows — show above instead of below */
+  .cal-cell.pop-above .cal-popover { top: auto; bottom: 100%; }
+
+  /* TASKS */
+  .task-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .task-header h2 { font-size: 20px; font-weight: 600; }
+  .task-count { color: var(--medium-blue); font-size: 13px; }
+  .person-section { margin-bottom: 24px; }
+  .person-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--teal); margin-bottom: 8px; padding-bottom: 5px; border-bottom: 2px solid var(--gold); }
+  .task-card { background: var(--white); border-radius: 8px; padding: 12px 16px; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.15s; }
+  .task-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .task-card.done { opacity: 0.4; }
+  .task-card.done .task-name { text-decoration: line-through; }
+  .task-check { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #c5d0d1; cursor: pointer; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+  .task-check:hover { border-color: var(--medium-blue); background: rgba(88,158,168,0.1); }
+  .task-card.done .task-check { background: var(--medium-blue); border-color: var(--medium-blue); }
+  .task-card.done .task-check::after { content: '\2713'; color: var(--white); font-size: 11px; }
+  .task-body { flex: 1; }
+  .task-name { font-size: 14px; font-weight: 500; margin-bottom: 3px; color: var(--dark-blue); }
+  .task-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .badge { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; }
+  .badge.high { background: #fde8e0; color: var(--orange); }
+  .badge.medium { background: #fff8e1; color: #b8960a; }
+  .badge.low { background: var(--seafoam); color: var(--green); }
+  .due { font-size: 11px; color: var(--medium-blue); }
+  .due.overdue { color: var(--dark-red); font-weight: 600; }
+  .task-notes { font-size: 12px; color: #5a7273; margin-top: 5px; padding: 5px 8px; background: var(--gray); border-radius: 5px; border-left: 3px solid var(--gold-tint); }
+  .section-label { font-size: 12px; font-weight: 600; color: var(--medium-blue); text-transform: uppercase; letter-spacing: 0.5px; margin: 20px 0 6px; cursor: pointer; }
+  .empty-state { text-align: center; padding: 40px 20px; color: var(--medium-blue); }
+  .empty-state h3 { font-size: 16px; margin-bottom: 6px; color: var(--dark-blue); }
+
+  /* TASK INTERACTIVE */
+  .task-actions { display: flex; gap: 4px; margin-top: 6px; }
+  .task-actions button { font-size: 10px; padding: 3px 8px; border-radius: 4px; border: 1px solid #d0d8d8; background: var(--white); color: var(--medium-blue); cursor: pointer; font-weight: 500; transition: all 0.15s; }
+  .task-actions button:hover { background: var(--gray); color: var(--dark-blue); }
+  .task-actions button.archive-btn { color: var(--orange); border-color: #f0c8bc; }
+  .task-actions button.archive-btn:hover { background: #fde8e0; }
+  .add-task-btn { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; padding: 6px 14px; border-radius: 6px; border: 1px dashed var(--medium-blue); background: none; color: var(--medium-blue); cursor: pointer; font-weight: 500; margin-bottom: 16px; transition: all 0.15s; }
+  .add-task-btn:hover { border-color: var(--teal); color: var(--teal); background: rgba(0,94,102,0.04); }
+  .task-card.archived { opacity: 0.25; }
+  .archived-label { font-size: 9px; font-weight: 600; text-transform: uppercase; color: var(--medium-blue); background: var(--gray); padding: 2px 6px; border-radius: 3px; }
+  .badge.recurring { background: #e0eef6; color: var(--teal); }
+  .recurrence-row { display: flex; gap: 8px; align-items: center; margin-top: 4px; }
+  .recurrence-row select { flex: 1; }
+  .recurrence-hint { font-size: 10px; color: var(--medium-blue); margin-top: 2px; }
+
+  /* MODAL */
+  .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(27,50,51,0.5); z-index: 100; display: flex; align-items: center; justify-content: center; }
+  .modal { background: var(--white); border-radius: 12px; padding: 24px; width: 440px; max-width: 90vw; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+  .modal.wide { width: 700px; max-height: 85vh; overflow-y: auto; }
+  .modal h3 { font-size: 16px; margin-bottom: 16px; color: var(--dark-blue); }
+  .modal label { display: block; font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; margin-bottom: 4px; margin-top: 12px; }
+  .modal label:first-of-type { margin-top: 0; }
+  .modal input, .modal select, .modal textarea { width: 100%; padding: 8px 10px; border: 1px solid #d0d8d8; border-radius: 6px; font-size: 13px; font-family: inherit; color: var(--dark-blue); }
+  .modal input:focus, .modal select:focus, .modal textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 2px rgba(0,94,102,0.1); }
+  .modal textarea { resize: vertical; min-height: 60px; }
+  .modal-buttons { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20px; }
+  .modal-buttons button { padding: 8px 18px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; transition: all 0.15s; }
+  .modal-buttons .btn-cancel { background: var(--gray); color: var(--dark-blue); }
+  .modal-buttons .btn-cancel:hover { background: #e0e0e0; }
+  .modal-buttons .btn-save { background: var(--teal); color: var(--white); }
+  .modal-buttons .btn-save:hover { background: #004a52; }
+  .modal-buttons .btn-delete { background: var(--white); color: var(--dark-red); border: 1px solid #e0b0b8; }
+  .modal-buttons .btn-delete:hover { background: #fef0f0; }
+
+  /* AGENDA INTERACTIVE */
+  .agenda-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .agenda-header h2 { font-size: 20px; font-weight: 600; }
+  .agenda-header-actions { display: flex; gap: 8px; }
+  .agenda-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+  .agenda-column { min-height: 100px; }
+  .agenda-col-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 2px solid var(--gold); }
+  .agenda-col-header .person-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--teal); }
+  .agenda-col-header .item-count { font-size: 11px; color: var(--medium-blue); }
+
+  .disc-item { background: var(--white); border-radius: 8px; padding: 10px 14px; margin-bottom: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: all 0.15s; }
+  .disc-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .disc-item .disc-top { display: flex; gap: 8px; align-items: flex-start; }
+  .disc-item .disc-tag { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; flex-shrink: 0; margin-top: 2px; }
+  .disc-tag.discussion { background: #e0eef6; color: var(--teal); }
+  .disc-tag.question { background: #fff8e1; color: #b8960a; }
+  .disc-tag.update { background: var(--seafoam); color: var(--green); }
+  .disc-tag.fyi { background: #f3e5f5; color: #6a1b9a; }
+  .disc-tag.blocker { background: #fde8e0; color: var(--orange); }
+  .disc-item .disc-text { font-size: 13px; flex: 1; color: var(--dark-blue); }
+  .disc-item .disc-meta { font-size: 10px; color: var(--medium-blue); margin-top: 4px; display: flex; justify-content: space-between; align-items: center; }
+  .disc-item .disc-actions { display: flex; gap: 4px; }
+  .disc-item .disc-actions button { font-size: 10px; padding: 2px 6px; border-radius: 3px; border: 1px solid #d0d8d8; background: var(--white); color: var(--medium-blue); cursor: pointer; }
+  .disc-item .disc-actions button:hover { background: var(--gray); color: var(--dark-blue); }
+  .disc-item .disc-actions button.del-btn { color: var(--orange); border-color: #f0c8bc; }
+  .disc-item .disc-actions button.del-btn:hover { background: #fde8e0; }
+  .disc-item.resolved { opacity: 0.35; }
+  .disc-item.resolved .disc-text { text-decoration: line-through; }
+
+  .add-item-inline { display: flex; gap: 6px; margin-top: 8px; }
+  .add-item-inline input { flex: 1; padding: 7px 10px; border: 1px dashed var(--medium-blue); border-radius: 6px; font-size: 12px; font-family: inherit; background: var(--white); color: var(--dark-blue); }
+  .add-item-inline input:focus { outline: none; border-color: var(--teal); border-style: solid; box-shadow: 0 0 0 2px rgba(0,94,102,0.1); }
+  .add-item-inline select { padding: 7px 6px; border: 1px solid #d0d8d8; border-radius: 6px; font-size: 11px; color: var(--dark-blue); background: var(--white); }
+  .add-item-inline button { padding: 7px 12px; border-radius: 6px; border: none; background: var(--teal); color: var(--white); font-size: 12px; font-weight: 500; cursor: pointer; white-space: nowrap; }
+  .add-item-inline button:hover { background: #004a52; }
+
+  /* TRANSCRIPT */
+  .transcript-area { margin-bottom: 24px; }
+  .transcript-area textarea { width: 100%; min-height: 200px; padding: 12px; border: 1px solid #d0d8d8; border-radius: 8px; font-size: 13px; font-family: inherit; color: var(--dark-blue); resize: vertical; }
+  .transcript-area textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 2px rgba(0,94,102,0.1); }
+  .transcript-actions { display: flex; gap: 8px; margin-top: 8px; }
+  .parsed-results { margin-top: 12px; }
+  .parsed-group { margin-bottom: 12px; }
+  .parsed-group h4 { font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--medium-blue); margin-bottom: 6px; }
+  .parsed-item { display: flex; gap: 8px; align-items: center; padding: 6px 10px; background: var(--white); border-radius: 6px; margin-bottom: 4px; font-size: 12px; border-left: 3px solid var(--gold); min-height: 32px; }
+  .parsed-item input[type="checkbox"] { flex-shrink: 0; width: 16px; height: 16px; }
+  .parsed-item .parsed-text { flex: 1; min-width: 0; word-break: break-word; }
+  .parsed-item select { flex-shrink: 0; padding: 3px 6px; font-size: 11px; border: 1px solid #d0d8d8; border-radius: 4px; width: 90px; }
+
+  /* PAST MEETINGS */
+  .agenda-section { margin-bottom: 24px; }
+  .agenda-section h3 { font-size: 15px; font-weight: 600; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--gold-tint); color: var(--dark-blue); }
+  .past-meeting { background: var(--white); border-radius: 8px; padding: 14px 16px; margin-bottom: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .past-meeting h4 { font-size: 14px; font-weight: 600; cursor: pointer; color: var(--dark-blue); display: flex; align-items: center; gap: 8px; }
+  .past-meeting h4::before { content: '\25B8'; color: var(--medium-blue); }
+  .past-meeting.expanded h4::before { content: '\25BE'; }
+  .past-meeting .pm-body { display: none; margin-top: 8px; }
+  .past-meeting.expanded .pm-body { display: block; }
+  .pm-body ul { margin: 4px 0 8px 18px; font-size: 12px; color: #4a5e5f; }
+  .pm-body li { margin-bottom: 3px; }
+  .pm-label { font-size: 11px; font-weight: 600; color: var(--medium-blue); text-transform: uppercase; margin-top: 6px; }
+  .pm-transcript { font-size: 11px; color: #6a7e7f; margin-top: 8px; padding: 8px; background: var(--gray); border-radius: 6px; max-height: 200px; overflow-y: auto; white-space: pre-wrap; }
+
+  /* SETTINGS PANEL */
+  .settings-section { margin-bottom: 20px; }
+  .settings-section h4 { font-size: 13px; font-weight: 600; color: var(--dark-blue); margin-bottom: 10px; }
+  .setting-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .setting-row label { font-size: 12px; color: var(--dark-blue); min-width: 100px; }
+  .setting-row input { flex: 1; padding: 6px 8px; border: 1px solid #d0d8d8; border-radius: 4px; font-size: 12px; font-family: inherit; }
+  .setting-row input:focus { outline: none; border-color: var(--teal); }
+  .setting-hint { font-size: 10px; color: var(--medium-blue); margin-top: -4px; margin-bottom: 8px; margin-left: 110px; }
+
+  /* TOAST */
+  .toast { position: fixed; bottom: 20px; right: 20px; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--white); z-index: 200; transform: translateY(80px); opacity: 0; transition: all 0.3s; }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast.success { background: var(--green); }
+  .toast.error { background: var(--dark-red); }
+  .toast.info { background: var(--teal); }
+
+  /* RESOLVED SECTION */
+  .resolved-section { margin-top: 16px; }
+  .resolved-toggle { font-size: 12px; font-weight: 600; color: var(--medium-blue); text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">SightShift Marketing</div>
+  <div class="tabs">
+    <button class="tab active" data-view="calendar">Campaign Calendar</button>
+    <button class="tab" data-view="tasks">Tasks</button>
+    <button class="tab" data-view="agenda">Meeting Agenda</button>
+  </div>
+  <div class="nav-right">
+    <div class="sync-indicator" id="sync-indicator" style="display:none">
+      <div class="dot" id="sync-dot"></div>
+      <span id="sync-text">Synced</span>
+    </div>
+    <button class="settings-btn" onclick="openSettingsModal()" title="Settings">&#9881;</button>
+    <div class="updated" id="last-updated"></div>
+  </div>
+</nav>
+
+<main>
+  <!-- CALENDAR VIEW -->
+  <div class="view active" id="calendar-view">
+    <div class="campaign-header">
+      <div class="campaign-header-left">
+        <div class="ch-main">
+          <h2 id="campaign-name"></h2>
+          <div class="ch-desc" id="campaign-desc"></div>
+        </div>
+        <div class="ch-ctas">
+          <div class="cta-block"><div class="cta-label">Primary CTA</div><div class="cta-value" id="campaign-cta1"></div></div>
+          <div class="cta-block"><div class="cta-label">Secondary CTA</div><div class="cta-value" id="campaign-cta2"></div></div>
+        </div>
+      </div>
+      <div class="campaign-header-right">
+        <div class="chr-label">Key Components</div>
+        <ul id="synopsis-components"></ul>
+      </div>
+    </div>
+    <div id="calendar-content"></div>
+  </div>
+
+  <!-- TASKS VIEW -->
+  <div class="view" id="tasks-view">
+    <div class="task-header">
+      <h2>Tasks</h2>
+      <span class="task-count" id="task-count"></span>
+    </div>
+    <button class="add-task-btn" onclick="openNewTaskModal()">+ Add Task</button>
+    <div class="person-section">
+      <div class="person-label">Eduardo</div>
+      <div id="eduardo-tasks"></div>
+    </div>
+    <div class="person-section">
+      <div class="person-label">Bret</div>
+      <div id="bret-tasks"></div>
+    </div>
+    <div id="done-section" style="display:none">
+      <div class="section-label" id="done-toggle">Completed &#9656;</div>
+      <div id="done-tasks" style="display:none"></div>
+    </div>
+    <div id="archived-section" style="display:none">
+      <div class="section-label" id="archived-toggle">Archived &#9656;</div>
+      <div id="archived-tasks" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- AGENDA VIEW -->
+  <div class="view" id="agenda-view">
+    <!-- Header with actions -->
+    <div class="agenda-header">
+      <h2>Meeting Agenda</h2>
+      <div class="agenda-header-actions">
+        <button class="add-task-btn" onclick="openTranscriptModal()">&#128196; Process Meeting Notes</button>
+      </div>
+    </div>
+
+    <!-- Two-column discussion items -->
+    <div class="agenda-columns">
+      <div class="agenda-column" id="bret-agenda-col">
+        <div class="agenda-col-header">
+          <span class="person-name">Bret's Items</span>
+          <span class="item-count" id="bret-item-count">0 items</span>
+        </div>
+        <div id="bret-disc-items"></div>
+        <div class="add-item-inline">
+          <input type="text" id="bret-new-item" placeholder="Add a discussion item..." onkeydown="if(event.key==='Enter')addDiscItem('Bret')">
+          <select id="bret-new-tag">
+            <option value="discussion">Discussion</option>
+            <option value="question">Question</option>
+            <option value="update">Update</option>
+            <option value="fyi">FYI</option>
+            <option value="blocker">Blocker</option>
+          </select>
+          <button onclick="addDiscItem('Bret')">Add</button>
+        </div>
+      </div>
+      <div class="agenda-column" id="eduardo-agenda-col">
+        <div class="agenda-col-header">
+          <span class="person-name">Eduardo's Items</span>
+          <span class="item-count" id="eduardo-item-count">0 items</span>
+        </div>
+        <div id="eduardo-disc-items"></div>
+        <div class="add-item-inline">
+          <input type="text" id="eduardo-new-item" placeholder="Add a discussion item..." onkeydown="if(event.key==='Enter')addDiscItem('Eduardo')">
+          <select id="eduardo-new-tag">
+            <option value="discussion">Discussion</option>
+            <option value="question">Question</option>
+            <option value="update">Update</option>
+            <option value="fyi">FYI</option>
+            <option value="blocker">Blocker</option>
+          </select>
+          <button onclick="addDiscItem('Eduardo')">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resolved items (collapsed) -->
+    <div class="resolved-section" id="resolved-section" style="display:none">
+      <div class="resolved-toggle" id="resolved-toggle" onclick="toggleResolved()">Resolved Items &#9656;</div>
+      <div id="resolved-items" style="display:none"></div>
+    </div>
+
+    <!-- Past meetings -->
+    <div class="agenda-section">
+      <h3>Past Meetings</h3>
+      <div id="past-meetings"></div>
+    </div>
+  </div>
+</main>
+
+<div id="modal-root"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== UTILITIES =====
+function esc(str) { var d = document.createElement('div'); d.textContent = str || ''; return d.innerHTML; }
+var today = new Date();
+function todayStr() { return today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0'); }
+document.getElementById('last-updated').textContent = 'Updated: ' + today.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'});
+
+function showToast(msg, type) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast ' + (type || 'success');
+  setTimeout(function() { t.classList.add('show'); }, 10);
+  setTimeout(function() { t.classList.remove('show'); }, 2500);
+}
+
+// ===== STORAGE LAYER =====
+// Detects whether we're running locally (serve.py) or on GitHub Pages
+var storage = {
+  mode: 'local', // 'local' or 'github'
+  ghToken: localStorage.getItem('gh_token') || '',
+  ghOwner: localStorage.getItem('gh_owner') || '',
+  ghRepo: localStorage.getItem('gh_repo') || '',
+  ghBranch: localStorage.getItem('gh_branch') || 'main',
+  ghShas: {},
+
+  init: function() {
+    // If we can reach /api/tasks, we're running locally
+    if (this.ghToken && this.ghOwner && this.ghRepo) {
+      this.mode = 'github';
+      document.getElementById('sync-indicator').style.display = 'flex';
+      this.updateSyncStatus('synced');
+    }
+  },
+
+  updateSyncStatus: function(status) {
+    var dot = document.getElementById('sync-dot');
+    var text = document.getElementById('sync-text');
+    if (status === 'synced') { dot.className = 'dot'; text.textContent = 'Synced'; }
+    else if (status === 'syncing') { dot.className = 'dot'; dot.style.background = 'var(--yellow)'; text.textContent = 'Syncing...'; }
+    else { dot.className = 'dot offline'; text.textContent = 'Offline'; }
+  },
+
+  readFile: async function(path) {
+    if (this.mode === 'github') {
+      try {
+        this.updateSyncStatus('syncing');
+        var url = 'https://api.github.com/repos/' + this.ghOwner + '/' + this.ghRepo + '/contents/' + path + '?ref=' + this.ghBranch;
+        var res = await fetch(url, { headers: { 'Authorization': 'Bearer ' + this.ghToken, 'Accept': 'application/vnd.github.v3+json' }});
+        if (!res.ok) throw new Error('GitHub API error: ' + res.status);
+        var data = await res.json();
+        this.ghShas[path] = data.sha;
+        var content = atob(data.content.replace(/\n/g, ''));
+        // Handle UTF-8 properly
+        var bytes = new Uint8Array(content.length);
+        for (var i = 0; i < content.length; i++) bytes[i] = content.charCodeAt(i);
+        var decoded = new TextDecoder('utf-8').decode(bytes);
+        this.updateSyncStatus('synced');
+        return JSON.parse(decoded);
+      } catch(e) {
+        this.updateSyncStatus('error');
+        console.error('GitHub read error:', e);
+        // Fallback to local fetch
+        var res2 = await fetch(path);
+        return await res2.json();
+      }
+    } else {
+      var res = await fetch(path);
+      return await res.json();
+    }
+  },
+
+  writeFile: async function(path, data) {
+    if (this.mode === 'github') {
+      try {
+        this.updateSyncStatus('syncing');
+        var content = new TextEncoder().encode(JSON.stringify(data, null, 2));
+        var binary = '';
+        content.forEach(function(b) { binary += String.fromCharCode(b); });
+        var base64 = btoa(binary);
+
+        // Get latest SHA first to avoid conflicts
+        var url = 'https://api.github.com/repos/' + this.ghOwner + '/' + this.ghRepo + '/contents/' + path + '?ref=' + this.ghBranch;
+        try {
+          var shaRes = await fetch(url, { headers: { 'Authorization': 'Bearer ' + this.ghToken, 'Accept': 'application/vnd.github.v3+json' }});
+          if (shaRes.ok) {
+            var shaData = await shaRes.json();
+            this.ghShas[path] = shaData.sha;
+          }
+        } catch(e) { /* use cached SHA */ }
+
+        var body = {
+          message: 'Dashboard update: ' + path,
+          content: base64,
+          branch: this.ghBranch
+        };
+        if (this.ghShas[path]) body.sha = this.ghShas[path];
+
+        var putRes = await fetch(url, {
+          method: 'PUT',
+          headers: { 'Authorization': 'Bearer ' + this.ghToken, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        if (!putRes.ok) throw new Error('GitHub write error: ' + putRes.status);
+        var result = await putRes.json();
+        this.ghShas[path] = result.content.sha;
+        this.updateSyncStatus('synced');
+        return true;
+      } catch(e) {
+        this.updateSyncStatus('error');
+        console.error('GitHub write error:', e);
+        // Fallback to local
+        await this.writeLocal(path, data);
+      }
+    } else {
+      await this.writeLocal(path, data);
+    }
+  },
+
+  writeLocal: async function(path, data) {
+    var apiPath = '/api/' + path.replace('.json', '');
+    try {
+      await fetch(apiPath, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      });
+    } catch(e) {
+      console.error('Local save error:', e);
+    }
+  }
+};
+
+// ===== TAB NAVIGATION =====
+document.querySelectorAll('.tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); });
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.view + '-view').classList.add('active');
+  });
+});
+
+// ===== TASKS =====
+var allTasks = [];
+var ARCHIVE_DAYS = 14;
+
+async function loadTasks() {
+  try {
+    var data = await storage.readFile('tasks.json');
+    allTasks = data.tasks || [];
+    renderTasks();
+  } catch(e) {
+    document.getElementById('eduardo-tasks').innerHTML = '<div class="empty-state"><h3>No tasks loaded</h3><p>Add a task to get started.</p></div>';
+  }
+}
+
+async function saveTasks() {
+  await storage.writeFile('tasks.json', {tasks: allTasks});
+}
+
+function recurrenceLabel(rec) {
+  if (!rec) return '';
+  var dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  if (rec.type === 'daily') return '\u21BB Daily';
+  if (rec.type === 'weekly') return '\u21BB Weekly \u2014 ' + dayNames[rec.day];
+  if (rec.type === 'biweekly') return '\u21BB Biweekly \u2014 ' + dayNames[rec.day];
+  if (rec.type === 'monthly') return '\u21BB Monthly \u2014 ' + rec.date + getOrdinal(rec.date);
+  return '';
+}
+function getOrdinal(n) {
+  if (n > 3 && n < 21) return 'th';
+  switch (n % 10) { case 1: return 'st'; case 2: return 'nd'; case 3: return 'rd'; default: return 'th'; }
+}
+
+function getNextTaskId() {
+  var max = 0;
+  allTasks.forEach(function(t) { if (t.id > max) max = t.id; });
+  return max + 1;
+}
+
+function renderTasks() {
+  var oneWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+  var cutoff = new Date(today.getTime() - ARCHIVE_DAYS * 24 * 60 * 60 * 1000);
+
+  allTasks.forEach(function(t) {
+    if (t.status === 'open' && t.due_date) {
+      var due = new Date(t.due_date + 'T23:59:59');
+      if (due <= oneWeek && (t.priority || '').toLowerCase() !== 'high') {
+        t.priority = 'High'; t._escalated = true;
+      }
+    }
+  });
+
+  var eduardo = allTasks.filter(function(t) { return t.status === 'open' && (t.owner || 'Eduardo').toLowerCase() === 'eduardo'; });
+  var bret = allTasks.filter(function(t) { return t.status === 'open' && (t.owner || '').toLowerCase() === 'bret'; });
+  var done = allTasks.filter(function(t) { return t.status === 'done' && !t.archived; });
+  var archived = allTasks.filter(function(t) {
+    if (!t.archived) return false;
+    return new Date(t.archived) >= cutoff;
+  });
+
+  function sortTasks(arr) {
+    var po = {high: 0, medium: 1, low: 2};
+    arr.sort(function(a, b) {
+      var pa = po[(a.priority || 'medium').toLowerCase()] || 1;
+      var pb = po[(b.priority || 'medium').toLowerCase()] || 1;
+      if (pa !== pb) return pa - pb;
+      return new Date(a.due_date || '9999-12-31') - new Date(b.due_date || '9999-12-31');
+    });
+  }
+  sortTasks(eduardo); sortTasks(bret);
+
+  var totalOpen = eduardo.length + bret.length;
+  document.getElementById('task-count').textContent = totalOpen + ' open task' + (totalOpen !== 1 ? 's' : '');
+
+  document.getElementById('eduardo-tasks').innerHTML = eduardo.length === 0
+    ? '<div class="empty-state"><h3>All clear</h3><p>No open tasks.</p></div>'
+    : eduardo.map(function(t) { return taskCard(t, false); }).join('');
+
+  document.getElementById('bret-tasks').innerHTML = bret.length === 0
+    ? '<div class="empty-state"><h3>All clear</h3><p>No open tasks.</p></div>'
+    : bret.map(function(t) { return taskCard(t, false); }).join('');
+
+  if (done.length > 0) {
+    document.getElementById('done-section').style.display = 'block';
+    document.getElementById('done-tasks').innerHTML = done.map(function(t) { return taskCard(t, true); }).join('');
+  } else { document.getElementById('done-section').style.display = 'none'; }
+
+  if (archived.length > 0) {
+    document.getElementById('archived-section').style.display = 'block';
+    document.getElementById('archived-tasks').innerHTML = archived.map(function(t) { return taskCard(t, true, true); }).join('');
+  } else { document.getElementById('archived-section').style.display = 'none'; }
+}
+
+function taskCard(t, isDone, isArchived) {
+  var isOverdue = !isDone && t.due_date && new Date(t.due_date + 'T23:59:59') < today;
+  var prioClass = (t.priority || 'medium').toLowerCase();
+  var dueStr = t.due_date ? new Date(t.due_date + 'T00:00:00').toLocaleDateString('en-US', {month: 'short', day: 'numeric'}) : '';
+  var dueClass = isOverdue ? 'due overdue' : 'due';
+  var escalatedNote = t._escalated ? ' (auto-escalated)' : '';
+  var cardClass = 'task-card' + (isDone ? ' done' : '') + (isArchived ? ' archived' : '');
+
+  var actions = '';
+  if (!isDone && !isArchived) {
+    actions = '<div class="task-actions">' +
+      '<button onclick="openEditTaskModal(' + t.id + ')">Edit</button>' +
+      '<button onclick="toggleTaskDone(' + t.id + ')">Complete</button>' +
+    '</div>';
+  } else if (isDone && !isArchived) {
+    actions = '<div class="task-actions">' +
+      '<button onclick="toggleTaskDone(' + t.id + ')">Reopen</button>' +
+      '<button class="archive-btn" onclick="archiveTask(' + t.id + ')">Archive</button>' +
+    '</div>';
+  } else if (isArchived) {
+    actions = '<div class="task-actions"><span class="archived-label">Archived</span></div>';
+  }
+
+  return '<div class="' + cardClass + '">' +
+    '<div class="task-check" onclick="toggleTaskDone(' + t.id + ')"></div>' +
+    '<div class="task-body">' +
+      '<div class="task-name">' + esc(t.task) + '</div>' +
+      '<div class="task-meta">' +
+        '<span class="badge ' + prioClass + '">' + esc(t.priority || 'Medium') + escalatedNote + '</span>' +
+        (t.recurrence ? '<span class="badge recurring">' + recurrenceLabel(t.recurrence) + '</span>' : '') +
+        (dueStr ? '<span class="' + dueClass + '">' + (isOverdue ? 'OVERDUE \u2014 ' : 'Due ') + dueStr + '</span>' : '') +
+      '</div>' +
+      (t.notes ? '<div class="task-notes">' + esc(t.notes) + '</div>' : '') +
+      actions +
+    '</div>' +
+  '</div>';
+}
+
+function toggleTaskDone(id) {
+  var task = allTasks.find(function(t) { return t.id === id; });
+  if (!task) return;
+  if (task.status === 'open') {
+    task.status = 'done'; task.completed = todayStr();
+
+    // If recurring, auto-create the next occurrence
+    if (task.recurrence) {
+      var nextDue = getNextDueDate(task.recurrence, todayStr());
+      allTasks.push({
+        id: getNextTaskId(),
+        task: task.task,
+        priority: task.recurrence.type === 'daily' ? (task.priority || 'Medium') : 'Medium',
+        due_date: nextDue,
+        status: 'open',
+        owner: task.owner,
+        notes: task.notes || '',
+        created: todayStr(),
+        completed: null,
+        recurrence: task.recurrence
+      });
+      var dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      var nextLabel = new Date(nextDue + 'T00:00:00').toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+      showToast('Done! Next occurrence: ' + nextLabel, 'success');
+    } else {
+      showToast('Task completed', 'success');
+    }
+  } else {
+    task.status = 'open'; task.completed = null; task.archived = undefined;
+    showToast('Task reopened', 'info');
+  }
+  saveTasks(); renderTasks();
+}
+
+function archiveTask(id) {
+  var task = allTasks.find(function(t) { return t.id === id; });
+  if (!task) return;
+  task.archived = todayStr();
+  saveTasks(); renderTasks();
+  showToast('Task archived', 'info');
+}
+
+function closeModal() { document.getElementById('modal-root').innerHTML = ''; }
+
+function openNewTaskModal() { openTaskModal(null); }
+function openEditTaskModal(id) {
+  var task = allTasks.find(function(t) { return t.id === id; });
+  if (task) openTaskModal(task);
+}
+
+function openTaskModal(task) {
+  var isNew = !task;
+  var title = isNew ? 'New Task' : 'Edit Task';
+  var taskName = task ? task.task : '';
+  var priority = task ? (task.priority || 'Medium') : 'Medium';
+  var dueDate = task ? (task.due_date || '') : '';
+  var owner = task ? (task.owner || 'Eduardo') : 'Eduardo';
+  var notes = task ? (task.notes || '') : '';
+  var rec = task && task.recurrence ? task.recurrence : null;
+  var recType = rec ? rec.type : 'none';
+  var recDay = rec ? (rec.day != null ? rec.day : '') : '';
+  var recDate = rec ? (rec.date != null ? rec.date : '') : '';
+
+  var dayOptions = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].map(function(name, i) {
+    return '<option value="' + i + '"' + (recDay === i ? ' selected' : '') + '>' + name + '</option>';
+  }).join('');
+  var dateOptions = '';
+  for (var d = 1; d <= 28; d++) {
+    dateOptions += '<option value="' + d + '"' + (recDate === d ? ' selected' : '') + '>' + d + '</option>';
+  }
+
+  var html = '<div class="modal-overlay" onclick="if(event.target===this)closeModal()">' +
+    '<div class="modal">' +
+      '<h3>' + title + '</h3>' +
+      '<label>Task</label>' +
+      '<input type="text" id="modal-task" value="' + esc(taskName).replace(/"/g, '&quot;') + '">' +
+      '<label>Owner</label>' +
+      '<select id="modal-owner">' +
+        '<option value="Eduardo"' + (owner === 'Eduardo' ? ' selected' : '') + '>Eduardo</option>' +
+        '<option value="Bret"' + (owner === 'Bret' ? ' selected' : '') + '>Bret</option>' +
+      '</select>' +
+      '<label>Priority</label>' +
+      '<select id="modal-priority">' +
+        '<option value="High"' + (priority === 'High' ? ' selected' : '') + '>High</option>' +
+        '<option value="Medium"' + (priority === 'Medium' ? ' selected' : '') + '>Medium</option>' +
+        '<option value="Low"' + (priority === 'Low' ? ' selected' : '') + '>Low</option>' +
+      '</select>' +
+      '<label>Due Date</label>' +
+      '<input type="date" id="modal-due" value="' + dueDate + '">' +
+      '<label>Repeats</label>' +
+      '<div class="recurrence-row">' +
+        '<select id="modal-rec-type" onchange="toggleRecurrenceOptions()">' +
+          '<option value="none"' + (recType === 'none' ? ' selected' : '') + '>None</option>' +
+          '<option value="daily"' + (recType === 'daily' ? ' selected' : '') + '>Daily</option>' +
+          '<option value="weekly"' + (recType === 'weekly' ? ' selected' : '') + '>Weekly</option>' +
+          '<option value="biweekly"' + (recType === 'biweekly' ? ' selected' : '') + '>Every 2 Weeks</option>' +
+          '<option value="monthly"' + (recType === 'monthly' ? ' selected' : '') + '>Monthly</option>' +
+        '</select>' +
+        '<select id="modal-rec-day" style="display:none">' + dayOptions + '</select>' +
+        '<select id="modal-rec-date" style="display:none">' + dateOptions + '</select>' +
+      '</div>' +
+      '<div class="recurrence-hint" id="rec-hint"></div>' +
+      '<label>Notes</label>' +
+      '<textarea id="modal-notes">' + esc(notes) + '</textarea>' +
+      '<div class="modal-buttons">' +
+        (!isNew ? '<button class="btn-delete" onclick="deleteTask(' + task.id + ')">Delete</button>' : '') +
+        '<button class="btn-cancel" onclick="closeModal()">Cancel</button>' +
+        '<button class="btn-save" onclick="saveTaskModal(' + (isNew ? 'null' : task.id) + ')">Save</button>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+
+  document.getElementById('modal-root').innerHTML = html;
+  toggleRecurrenceOptions();
+  document.getElementById('modal-task').focus();
+}
+
+function toggleRecurrenceOptions() {
+  var type = document.getElementById('modal-rec-type').value;
+  var dayEl = document.getElementById('modal-rec-day');
+  var dateEl = document.getElementById('modal-rec-date');
+  var hint = document.getElementById('rec-hint');
+  dayEl.style.display = 'none';
+  dateEl.style.display = 'none';
+  hint.textContent = '';
+  if (type === 'weekly' || type === 'biweekly') {
+    dayEl.style.display = 'block';
+    hint.textContent = type === 'weekly' ? 'Repeats every week on the selected day' : 'Repeats every 2 weeks on the selected day';
+  } else if (type === 'monthly') {
+    dateEl.style.display = 'block';
+    hint.textContent = 'Repeats on this day of each month';
+  } else if (type === 'daily') {
+    hint.textContent = 'Repeats every day';
+  }
+}
+
+function buildRecurrence() {
+  var type = document.getElementById('modal-rec-type').value;
+  if (type === 'none') return null;
+  var rec = { type: type };
+  if (type === 'weekly' || type === 'biweekly') {
+    rec.day = parseInt(document.getElementById('modal-rec-day').value);
+  } else if (type === 'monthly') {
+    rec.date = parseInt(document.getElementById('modal-rec-date').value);
+  }
+  return rec;
+}
+
+function getNextDueDate(recurrence, fromDate) {
+  var from = fromDate ? new Date(fromDate + 'T00:00:00') : new Date(today);
+  var type = recurrence.type;
+
+  if (type === 'daily') {
+    from.setDate(from.getDate() + 1);
+  } else if (type === 'weekly' || type === 'biweekly') {
+    var targetDay = parseInt(recurrence.day);
+    if (isNaN(targetDay) || targetDay < 0 || targetDay > 6) targetDay = from.getDay();
+    from.setDate(from.getDate() + 1);
+    var safety = 0;
+    while (from.getDay() !== targetDay && safety < 7) { from.setDate(from.getDate() + 1); safety++; }
+    if (type === 'biweekly') from.setDate(from.getDate() + 7);
+  } else if (type === 'monthly') {
+    var targetDate = parseInt(recurrence.date) || 1;
+    from.setMonth(from.getMonth() + 1);
+    from.setDate(Math.min(targetDate, new Date(from.getFullYear(), from.getMonth() + 1, 0).getDate()));
+  }
+
+  return from.getFullYear() + '-' + String(from.getMonth() + 1).padStart(2, '0') + '-' + String(from.getDate()).padStart(2, '0');
+}
+
+function saveTaskModal(id) {
+  var taskName = document.getElementById('modal-task').value.trim();
+  if (!taskName) return;
+  var owner = document.getElementById('modal-owner').value;
+  var priority = document.getElementById('modal-priority').value;
+  var dueDate = document.getElementById('modal-due').value;
+  var notes = document.getElementById('modal-notes').value.trim();
+  var recurrence = buildRecurrence();
+
+  // If setting a recurrence and no due date, auto-calculate first due date
+  if (recurrence && !dueDate) {
+    dueDate = getNextDueDate(recurrence, todayStr());
+  }
+
+  if (id === null) {
+    allTasks.push({
+      id: getNextTaskId(), task: taskName, priority: priority,
+      due_date: dueDate || null, status: 'open', owner: owner,
+      notes: notes, created: todayStr(), completed: null,
+      recurrence: recurrence
+    });
+    showToast('Task added for ' + owner, 'success');
+  } else {
+    var task = allTasks.find(function(t) { return t.id === id; });
+    if (task) {
+      task.task = taskName; task.owner = owner; task.priority = priority;
+      task.due_date = dueDate || null; task.notes = notes;
+      task.recurrence = recurrence;
+    }
+    showToast('Task updated', 'success');
+  }
+  closeModal(); saveTasks(); renderTasks();
+}
+
+function deleteTask(id) {
+  if (!confirm('Delete this task?')) return;
+  allTasks = allTasks.filter(function(t) { return t.id !== id; });
+  closeModal(); saveTasks(); renderTasks();
+  showToast('Task deleted', 'info');
+}
+
+document.getElementById('done-toggle').addEventListener('click', function() {
+  var c = document.getElementById('done-tasks');
+  var v = c.style.display !== 'none';
+  c.style.display = v ? 'none' : 'block';
+  this.innerHTML = v ? 'Completed &#9656;' : 'Completed &#9662;';
+});
+document.getElementById('archived-toggle').addEventListener('click', function() {
+  var c = document.getElementById('archived-tasks');
+  var v = c.style.display !== 'none';
+  c.style.display = v ? 'none' : 'block';
+  this.innerHTML = v ? 'Archived &#9656;' : 'Archived &#9662;';
+});
+
+// ===== AGENDA (Interactive) =====
+var agendaData = { discussion_items: [], past_meetings: [] };
+
+async function loadAgenda() {
+  try {
+    agendaData = await storage.readFile('agenda.json');
+    if (!agendaData.discussion_items) agendaData.discussion_items = [];
+    if (!agendaData.past_meetings) agendaData.past_meetings = [];
+    renderAgenda();
+  } catch(e) {
+    agendaData = { discussion_items: [], past_meetings: [] };
+    renderAgenda();
+  }
+}
+
+async function saveAgenda() {
+  await storage.writeFile('agenda.json', agendaData);
+}
+
+function getNextDiscId() {
+  var max = 0;
+  agendaData.discussion_items.forEach(function(d) { if (d.id > max) max = d.id; });
+  return max + 1;
+}
+
+function addDiscItem(owner) {
+  var inputId = owner.toLowerCase() + '-new-item';
+  var tagId = owner.toLowerCase() + '-new-tag';
+  var text = document.getElementById(inputId).value.trim();
+  if (!text) return;
+  var tag = document.getElementById(tagId).value;
+
+  agendaData.discussion_items.push({
+    id: getNextDiscId(),
+    text: text,
+    owner: owner,
+    tag: tag,
+    added: todayStr(),
+    status: 'open'
+  });
+
+  document.getElementById(inputId).value = '';
+  saveAgenda();
+  renderAgenda();
+  showToast('Item added to ' + owner + "'s list", 'success');
+}
+
+function resolveDiscItem(id) {
+  var item = agendaData.discussion_items.find(function(d) { return d.id === id; });
+  if (item) {
+    item.status = item.status === 'resolved' ? 'open' : 'resolved';
+    item.resolved_date = item.status === 'resolved' ? todayStr() : null;
+    saveAgenda(); renderAgenda();
+  }
+}
+
+function deleteDiscItem(id) {
+  agendaData.discussion_items = agendaData.discussion_items.filter(function(d) { return d.id !== id; });
+  saveAgenda(); renderAgenda();
+  showToast('Item removed', 'info');
+}
+
+function editDiscItem(id) {
+  var item = agendaData.discussion_items.find(function(d) { return d.id === id; });
+  if (!item) return;
+
+  var html = '<div class="modal-overlay" onclick="if(event.target===this)closeModal()">' +
+    '<div class="modal">' +
+      '<h3>Edit Discussion Item</h3>' +
+      '<label>Item</label>' +
+      '<textarea id="modal-disc-text">' + esc(item.text) + '</textarea>' +
+      '<label>Tag</label>' +
+      '<select id="modal-disc-tag">' +
+        ['discussion','question','update','fyi','blocker'].map(function(t) {
+          return '<option value="' + t + '"' + (item.tag === t ? ' selected' : '') + '>' + t.charAt(0).toUpperCase() + t.slice(1) + '</option>';
+        }).join('') +
+      '</select>' +
+      '<label>Owner</label>' +
+      '<select id="modal-disc-owner">' +
+        '<option value="Bret"' + (item.owner === 'Bret' ? ' selected' : '') + '>Bret</option>' +
+        '<option value="Eduardo"' + (item.owner === 'Eduardo' ? ' selected' : '') + '>Eduardo</option>' +
+      '</select>' +
+      '<div class="modal-buttons">' +
+        '<button class="btn-delete" onclick="deleteDiscItem(' + id + ');closeModal()">Delete</button>' +
+        '<button class="btn-cancel" onclick="closeModal()">Cancel</button>' +
+        '<button class="btn-save" onclick="saveDiscEdit(' + id + ')">Save</button>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+
+  document.getElementById('modal-root').innerHTML = html;
+}
+
+function saveDiscEdit(id) {
+  var item = agendaData.discussion_items.find(function(d) { return d.id === id; });
+  if (!item) return;
+  item.text = document.getElementById('modal-disc-text').value.trim();
+  item.tag = document.getElementById('modal-disc-tag').value;
+  item.owner = document.getElementById('modal-disc-owner').value;
+  closeModal(); saveAgenda(); renderAgenda();
+  showToast('Item updated', 'success');
+}
+
+function renderAgenda() {
+  var bretOpen = agendaData.discussion_items.filter(function(d) { return d.owner === 'Bret' && d.status === 'open'; });
+  var eduardoOpen = agendaData.discussion_items.filter(function(d) { return d.owner === 'Eduardo' && d.status === 'open'; });
+  var resolved = agendaData.discussion_items.filter(function(d) { return d.status === 'resolved'; });
+
+  document.getElementById('bret-item-count').textContent = bretOpen.length + ' item' + (bretOpen.length !== 1 ? 's' : '');
+  document.getElementById('eduardo-item-count').textContent = eduardoOpen.length + ' item' + (eduardoOpen.length !== 1 ? 's' : '');
+
+  document.getElementById('bret-disc-items').innerHTML = bretOpen.length === 0
+    ? '<div style="text-align:center;padding:20px;color:var(--medium-blue);font-size:12px">No items yet</div>'
+    : bretOpen.map(function(d) { return discItemHtml(d, false); }).join('');
+
+  document.getElementById('eduardo-disc-items').innerHTML = eduardoOpen.length === 0
+    ? '<div style="text-align:center;padding:20px;color:var(--medium-blue);font-size:12px">No items yet</div>'
+    : eduardoOpen.map(function(d) { return discItemHtml(d, false); }).join('');
+
+  // Resolved section
+  if (resolved.length > 0) {
+    document.getElementById('resolved-section').style.display = 'block';
+    document.getElementById('resolved-items').innerHTML = resolved.map(function(d) { return discItemHtml(d, true); }).join('');
+  } else {
+    document.getElementById('resolved-section').style.display = 'none';
+  }
+
+  // Past meetings
+  var pastEl = document.getElementById('past-meetings');
+  var past = agendaData.past_meetings || [];
+  if (past.length === 0) {
+    pastEl.innerHTML = '<p style="color:var(--medium-blue);font-size:13px">No past meetings recorded yet.</p>';
+  } else {
+    pastEl.innerHTML = past.map(function(m) {
+      var meetingTitle = m.title ? esc(m.title) + ' \u2014 ' + esc(m.date) : esc(m.date);
+      return '<div class="past-meeting">' +
+        '<h4 onclick="this.parentElement.classList.toggle(\'expanded\')">' + meetingTitle + '</h4>' +
+        '<div class="pm-body">' +
+          (m.notes && m.notes.length > 0 ? '<div class="pm-label">Notes</div><ul>' + m.notes.map(function(n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>' : '') +
+          (m.action_items && m.action_items.length > 0 ? '<div class="pm-label">Action Items</div><ul>' + m.action_items.map(function(a) { return '<li>' + esc(a) + '</li>'; }).join('') + '</ul>' : '') +
+          (m.transcript ? '<div class="pm-label">Transcript</div><div class="pm-transcript">' + esc(m.transcript) + '</div>' : '') +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+}
+
+function discItemHtml(d, isResolved) {
+  var cls = 'disc-item' + (isResolved ? ' resolved' : '');
+  var addedDate = d.added ? new Date(d.added + 'T00:00:00').toLocaleDateString('en-US', {month: 'short', day: 'numeric'}) : '';
+
+  return '<div class="' + cls + '">' +
+    '<div class="disc-top">' +
+      '<span class="disc-tag ' + esc(d.tag || 'discussion') + '">' + esc(d.tag || 'discussion') + '</span>' +
+      '<span class="disc-text">' + esc(d.text) + '</span>' +
+    '</div>' +
+    '<div class="disc-meta">' +
+      '<span>Added ' + addedDate + (isResolved ? ' &middot; ' + esc(d.owner) : '') + '</span>' +
+      '<div class="disc-actions">' +
+        '<button onclick="editDiscItem(' + d.id + ')">Edit</button>' +
+        '<button onclick="resolveDiscItem(' + d.id + ')">' + (isResolved ? 'Reopen' : 'Resolve') + '</button>' +
+        '<button class="del-btn" onclick="deleteDiscItem(' + d.id + ')">Delete</button>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+}
+
+function toggleResolved() {
+  var c = document.getElementById('resolved-items');
+  var v = c.style.display !== 'none';
+  c.style.display = v ? 'none' : 'block';
+  document.getElementById('resolved-toggle').innerHTML = v ? 'Resolved Items &#9656;' : 'Resolved Items &#9662;';
+}
+
+// ===== MEETING TRANSCRIPT PROCESSOR =====
+function openTranscriptModal() {
+  var html = '<div class="modal-overlay" onclick="if(event.target===this)closeModal()">' +
+    '<div class="modal wide">' +
+      '<h3>Process Meeting Notes</h3>' +
+      '<p style="font-size:12px;color:var(--medium-blue);margin-bottom:12px">Paste your meeting notes or transcript below. The system will extract action items and discussion points.</p>' +
+      '<label>Meeting Title</label>' +
+      '<input type="text" id="transcript-title" placeholder="e.g. Weekly Sync \u2014 March 25">' +
+      '<label>Meeting Notes / Transcript</label>' +
+      '<textarea id="transcript-text" style="min-height:200px" placeholder="Paste meeting notes here...\n\nTip: Lines starting with BRET: or EDUARDO: will be detected as action items.\nLines with \'action item\', \'TODO\', \'need to\', \'follow up\' will also be flagged."></textarea>' +
+      '<div id="transcript-preview" style="display:none"></div>' +
+      '<div class="modal-buttons">' +
+        '<button class="btn-cancel" onclick="closeModal()">Cancel</button>' +
+        '<button class="btn-save" id="transcript-parse-btn" onclick="parseTranscript()">Extract Items</button>' +
+        '<button class="btn-save" id="transcript-save-btn" onclick="saveTranscriptResults()" style="display:none">Save Selected Items</button>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+
+  document.getElementById('modal-root').innerHTML = html;
+  document.getElementById('transcript-title').focus();
+}
+
+var parsedItems = [];
+
+function parseTranscript() {
+  var text = document.getElementById('transcript-text').value.trim();
+  if (!text) return;
+
+  parsedItems = [];
+  var lines = text.split('\n').map(function(l) { return l.trim(); }).filter(function(l) { return l.length > 0; });
+
+  var actionPatterns = [
+    /^(BRET|EDUARDO)\s*[:\-]\s*(.+)/i,
+    /^[\-\*]\s*(BRET|EDUARDO)\s*[:\-]\s*(.+)/i,
+    /^action\s*item\s*[:\-]\s*(.+)/i
+  ];
+  var taskKeywords = /\b(need to|needs to|should|will|must|TODO|action item|follow up|follow-up|deadline|due by|by \w+ \d+)\b/i;
+  var discussKeywords = /\b(discuss|revisit|talk about|circle back|next meeting|agenda|bring up|think about|consider)\b/i;
+
+  lines.forEach(function(line) {
+    // Check explicit owner patterns
+    var ownerMatch = line.match(/^[\-\*]?\s*(BRET|EDUARDO)\s*[:\-]\s*(.+)/i);
+    if (ownerMatch) {
+      parsedItems.push({
+        text: ownerMatch[2].trim(),
+        type: 'task',
+        owner: ownerMatch[1].charAt(0).toUpperCase() + ownerMatch[1].slice(1).toLowerCase(),
+        selected: true
+      });
+      return;
+    }
+
+    // Check action item prefix
+    var actionMatch = line.match(/^[\-\*]?\s*action\s*item\s*[:\-]\s*(.+)/i);
+    if (actionMatch) {
+      parsedItems.push({ text: actionMatch[1].trim(), type: 'task', owner: 'Bret', selected: true });
+      return;
+    }
+
+    // Check task keywords
+    if (taskKeywords.test(line)) {
+      var guessOwner = /\b(bret|eduardo)\b/i.test(line)
+        ? (line.match(/\b(bret|eduardo)\b/i)[1].charAt(0).toUpperCase() + line.match(/\b(bret|eduardo)\b/i)[1].slice(1).toLowerCase())
+        : 'Bret';
+      parsedItems.push({ text: line.replace(/^[\-\*]\s*/, ''), type: 'task', owner: guessOwner, selected: true });
+      return;
+    }
+
+    // Check discussion keywords
+    if (discussKeywords.test(line)) {
+      var discOwner = /\b(bret|eduardo)\b/i.test(line)
+        ? (line.match(/\b(bret|eduardo)\b/i)[1].charAt(0).toUpperCase() + line.match(/\b(bret|eduardo)\b/i)[1].slice(1).toLowerCase())
+        : 'Bret';
+      parsedItems.push({ text: line.replace(/^[\-\*]\s*/, ''), type: 'agenda', owner: discOwner, selected: true });
+      return;
+    }
+
+    // Everything else is a meeting note (auto-selected for notes)
+    parsedItems.push({ text: line.replace(/^[\-\*]\s*/, ''), type: 'note', owner: '', selected: true });
+  });
+
+  renderParsedPreview();
+}
+
+function renderParsedPreview() {
+  var tasks = parsedItems.filter(function(p) { return p.type === 'task'; });
+  var agenda = parsedItems.filter(function(p) { return p.type === 'agenda'; });
+  var notes = parsedItems.filter(function(p) { return p.type === 'note'; });
+
+  var html = '<div class="parsed-results">';
+
+  if (tasks.length > 0) {
+    html += '<div class="parsed-group"><h4>Tasks (' + tasks.length + ' found)</h4>';
+    tasks.forEach(function(p, i) {
+      var idx = parsedItems.indexOf(p);
+      html += '<div class="parsed-item">' +
+        '<input type="checkbox" ' + (p.selected ? 'checked' : '') + ' onchange="parsedItems[' + idx + '].selected=this.checked">' +
+        '<span class="parsed-text">' + esc(p.text) + '</span>' +
+        '<select onchange="parsedItems[' + idx + '].owner=this.value">' +
+          '<option value="Bret"' + (p.owner === 'Bret' ? ' selected' : '') + '>Bret</option>' +
+          '<option value="Eduardo"' + (p.owner === 'Eduardo' ? ' selected' : '') + '>Eduardo</option>' +
+        '</select>' +
+      '</div>';
+    });
+    html += '</div>';
+  }
+
+  if (agenda.length > 0) {
+    html += '<div class="parsed-group"><h4>Follow-up Discussion Items (' + agenda.length + ')</h4>';
+    agenda.forEach(function(p) {
+      var idx = parsedItems.indexOf(p);
+      html += '<div class="parsed-item">' +
+        '<input type="checkbox" ' + (p.selected ? 'checked' : '') + ' onchange="parsedItems[' + idx + '].selected=this.checked">' +
+        '<span class="parsed-text">' + esc(p.text) + '</span>' +
+        '<select onchange="parsedItems[' + idx + '].owner=this.value">' +
+          '<option value="Bret"' + (p.owner === 'Bret' ? ' selected' : '') + '>Bret</option>' +
+          '<option value="Eduardo"' + (p.owner === 'Eduardo' ? ' selected' : '') + '>Eduardo</option>' +
+        '</select>' +
+      '</div>';
+    });
+    html += '</div>';
+  }
+
+  if (notes.length > 0) {
+    html += '<div class="parsed-group"><h4>Meeting Notes (' + notes.length + ' lines)</h4>';
+    html += '<div style="font-size:11px;color:var(--medium-blue);margin-bottom:4px">These will be saved as meeting notes.</div>';
+    notes.forEach(function(p) {
+      var idx = parsedItems.indexOf(p);
+      html += '<div class="parsed-item">' +
+        '<input type="checkbox" ' + (p.selected ? 'checked' : '') + ' onchange="parsedItems[' + idx + '].selected=this.checked">' +
+        '<span class="parsed-text">' + esc(p.text) + '</span>' +
+      '</div>';
+    });
+    html += '</div>';
+  }
+
+  if (parsedItems.length === 0) {
+    html += '<p style="color:var(--medium-blue);font-size:13px;text-align:center;padding:20px">No actionable items detected. The full text will be saved as meeting notes.</p>';
+  }
+
+  html += '</div>';
+
+  document.getElementById('transcript-preview').innerHTML = html;
+  document.getElementById('transcript-preview').style.display = 'block';
+  document.getElementById('transcript-parse-btn').textContent = 'Re-Extract';
+  document.getElementById('transcript-save-btn').style.display = 'inline-block';
+}
+
+function getNextFriday() {
+  var d = new Date(today);
+  var dayOfWeek = d.getDay();
+  var daysUntilFri = (5 - dayOfWeek + 7) % 7;
+  if (daysUntilFri === 0) daysUntilFri = 7; // if today is Friday, default to next Friday
+  d.setDate(d.getDate() + daysUntilFri);
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+
+function saveTranscriptResults() {
+  var title = document.getElementById('transcript-title').value.trim() || 'Meeting \u2014 ' + todayStr();
+  var fullText = document.getElementById('transcript-text').value.trim();
+  var defaultDue = getNextFriday();
+
+  // Create tasks from selected task items — default due date is upcoming Friday
+  var taskItems = parsedItems.filter(function(p) { return p.type === 'task' && p.selected; });
+  taskItems.forEach(function(p) {
+    allTasks.push({
+      id: getNextTaskId(),
+      task: p.text,
+      priority: 'Medium',
+      due_date: defaultDue,
+      status: 'open',
+      owner: p.owner,
+      notes: 'From meeting: ' + title,
+      created: todayStr(),
+      completed: null
+    });
+  });
+
+  // Create agenda items from selected discussion items
+  var discItems = parsedItems.filter(function(p) { return p.type === 'agenda' && p.selected; });
+  discItems.forEach(function(p) {
+    agendaData.discussion_items.push({
+      id: getNextDiscId(),
+      text: p.text,
+      owner: p.owner,
+      tag: 'discussion',
+      added: todayStr(),
+      status: 'open'
+    });
+  });
+
+  // Create past meeting record
+  var noteTexts = parsedItems.filter(function(p) { return p.type === 'note' && p.selected; }).map(function(p) { return p.text; });
+  var actionTexts = taskItems.map(function(p) { return p.owner.toUpperCase() + ': ' + p.text; });
+
+  agendaData.past_meetings.unshift({
+    date: todayStr(),
+    title: title,
+    notes: noteTexts,
+    action_items: actionTexts,
+    transcript: fullText
+  });
+
+  // Save everything
+  saveTasks();
+  saveAgenda();
+  renderTasks();
+  renderAgenda();
+  closeModal();
+
+  var summary = taskItems.length + ' task' + (taskItems.length !== 1 ? 's' : '') +
+    ', ' + discItems.length + ' agenda item' + (discItems.length !== 1 ? 's' : '') + ' created';
+  showToast(summary, 'success');
+}
+
+// ===== CALENDAR =====
+function loadCalendar() {
+  var data = getCalendarData();
+  document.getElementById('campaign-name').textContent = data.name || '';
+  document.getElementById('campaign-desc').textContent = data.description || '';
+  document.getElementById('campaign-cta1').textContent = data.primary_cta || '';
+  document.getElementById('campaign-cta2').textContent = data.secondary_cta || '';
+  document.getElementById('synopsis-components').innerHTML = (data.components || []).map(function(c) { return '<li>' + esc(c) + '</li>'; }).join('');
+  renderMonthlyCalendar(data.entries || []);
+}
+
+function getCalendarData() {
+  return {
+    name: "Dumb Theater Campaign",
+    description: "An 8-week campaign using Amazon\u2019s Company Retreat show and original Dumb Leadership Theater character videos to expose surface-level leadership development and escalate to a direct Breakthrough Workshop CTA.",
+    primary_cta: "Breakthrough Workshop",
+    secondary_cta: "IFQ\u2122 / Validation Check\u2122",
+    components: [
+      "Company Retreat (Amazon Prime) \u2014 Weeks 1\u20134",
+      "Dumb Theater Character Videos \u2014 Weeks 5\u20138",
+      "Lunch with Chris (YouTube Live) \u2014 weekly Wednesdays"
+    ],
+    entries: [
+      {date:"2026-03-16", entries:[]},
+      {date:"2026-03-17", entries:[{ch:"River",t:"Story email \u2014 worst team-building",type:"river"},{ch:"LinkedIn",t:"Chris hot take on retreats",type:"linkedin"}]},
+      {date:"2026-03-18", entries:[{ch:"YouTube",t:"Lunch with Chris LIVE",type:"youtube"},{ch:"IG",t:"Live reminder + poll",type:"instagram"}]},
+      {date:"2026-03-19", entries:[{ch:"River",t:"Framework \u2014 leadership event vs system",type:"river"}]},
+      {date:"2026-03-20", entries:[{ch:"\u2014",t:"Company Retreat Ep 1\u20133 premiere",type:"cultural"}]},
+      {date:"2026-03-21", entries:[]},{date:"2026-03-22", entries:[]},
+      {date:"2026-03-23", entries:[{ch:"LinkedIn",t:"Monday story post",type:"linkedin"}]},
+      {date:"2026-03-24", entries:[{ch:"River",t:"Story email \u2014 culture fix",type:"river"},{ch:"LinkedIn",t:"Chris commentary Ep 1\u20133",type:"linkedin"}]},
+      {date:"2026-03-25", entries:[{ch:"YouTube",t:"Lunch with Chris LIVE",type:"youtube"},{ch:"IG",t:"Stories \u2014 Live reminder",type:"instagram"}]},
+      {date:"2026-03-26", entries:[{ch:"River",t:"Framework \u2014 teach drift",type:"river"},{ch:"LinkedIn",t:"Framework post \u2014 drift",type:"linkedin"}]},
+      {date:"2026-03-27", entries:[{ch:"\u2014",t:"Ep 4\u20135 drop on Amazon",type:"cultural"},{ch:"LinkedIn",t:"Engagement post",type:"linkedin"}]},
+      {date:"2026-03-28", entries:[]},{date:"2026-03-29", entries:[]},
+      {date:"2026-03-30", entries:[{ch:"LinkedIn",t:"Provocation \u2014 eat your product tease",type:"linkedin"}]},
+      {date:"2026-03-31", entries:[{ch:"River",t:"Story email \u2014 eat your product",type:"river"},{ch:"LinkedIn",t:"Direct promo of the Live",type:"linkedin"}]},
+      {date:"2026-04-01", entries:[{ch:"YouTube",t:"Eat Your Product LIVE",type:"youtube"},{ch:"IG",t:"Stories \u2014 Live + IFQ tease",type:"instagram"}]},
+      {date:"2026-04-02", entries:[{ch:"River",t:"Framework \u2014 proving/hiding",type:"river"},{ch:"LinkedIn",t:"Framework \u2014 the mirror test",type:"linkedin"}]},
+      {date:"2026-04-03", entries:[{ch:"\u2014",t:"Ep 6\u20138 finale drop",type:"cultural"},{ch:"LinkedIn",t:"Engagement \u2014 IFQ reflection",type:"linkedin"}]},
+      {date:"2026-04-04", entries:[]},{date:"2026-04-05", entries:[]},
+      {date:"2026-04-06", entries:[{ch:"LinkedIn",t:"Story \u2014 vulnerability in leadership",type:"linkedin"}]},
+      {date:"2026-04-07", entries:[{ch:"River",t:"Story email \u2014 mirror moment",type:"river"},{ch:"LinkedIn",t:"Provocation \u2014 what the IFQ reveals",type:"linkedin"}]},
+      {date:"2026-04-08", entries:[{ch:"YouTube",t:"Lunch with Chris LIVE",type:"youtube"},{ch:"IG",t:"Stories + Reel",type:"instagram"}]},
+      {date:"2026-04-09", entries:[{ch:"River",t:"Framework \u2014 Breakthrough Workshop intro",type:"river"},{ch:"LinkedIn",t:"Framework \u2014 systems over events",type:"linkedin"}]},
+      {date:"2026-04-10", entries:[{ch:"\u2014",t:"PREP: Confirm Michael #1 ready",type:"production"},{ch:"LinkedIn",t:"Provocation \u2014 stop developing leaders",type:"linkedin"}]},
+      {date:"2026-04-11", entries:[]},{date:"2026-04-12", entries:[]},
+      {date:"2026-04-13", entries:[{ch:"LinkedIn",t:"Story \u2014 motivational speaker aftermath",type:"linkedin"}]},
+      {date:"2026-04-14", entries:[{ch:"River",t:"Story email \u2014 hype not a plan",type:"river"},{ch:"LinkedIn",t:"VIDEO: Michael #1 premiere",type:"linkedin"},{ch:"IG",t:"Reel: Michael #1",type:"instagram"}]},
+      {date:"2026-04-15", entries:[{ch:"YouTube",t:"Hype Is Not a Plan LIVE",type:"youtube"},{ch:"IG",t:"Stories \u2014 Live reminder",type:"instagram"}]},
+      {date:"2026-04-16", entries:[{ch:"River",t:"Framework \u2014 why hype fades",type:"river"},{ch:"LinkedIn",t:"Framework \u2014 hype-to-habit gap",type:"linkedin"}]},
+      {date:"2026-04-17", entries:[{ch:"LinkedIn",t:"Engagement \u2014 how long did the hype last?",type:"linkedin"}]},
+      {date:"2026-04-18", entries:[]},{date:"2026-04-19", entries:[]},
+      {date:"2026-04-20", entries:[{ch:"LinkedIn",t:"Story \u2014 wellness as avoidance",type:"linkedin"}]},
+      {date:"2026-04-21", entries:[{ch:"River",t:"Story email \u2014 mindfulness as hiding",type:"river"},{ch:"LinkedIn",t:"VIDEO: Nathan #1 premiere",type:"linkedin"},{ch:"IG",t:"Reel: Nathan #1",type:"instagram"}]},
+      {date:"2026-04-22", entries:[{ch:"YouTube",t:"Zen and Avoiding Leadership LIVE",type:"youtube"},{ch:"IG",t:"Stories \u2014 Do you have a Nathan?",type:"instagram"}]},
+      {date:"2026-04-23", entries:[{ch:"River",t:"Framework \u2014 hiding pattern deep dive",type:"river"},{ch:"LinkedIn",t:"Framework \u2014 performative stillness",type:"linkedin"}]},
+      {date:"2026-04-24", entries:[{ch:"LinkedIn",t:"Engagement \u2014 meditation vs leadership",type:"linkedin"}]},
+      {date:"2026-04-25", entries:[]},{date:"2026-04-26", entries:[]},
+      {date:"2026-04-27", entries:[{ch:"LinkedIn",t:"Provocation \u2014 $50K on leadership dev",type:"linkedin"}]},
+      {date:"2026-04-28", entries:[{ch:"River",t:"Story email \u2014 two weeks later",type:"river"},{ch:"LinkedIn",t:"VIDEO: Michael #2 or re-release",type:"linkedin"},{ch:"IG",t:"Reel: character video",type:"instagram"}]},
+      {date:"2026-04-29", entries:[{ch:"YouTube",t:"Two Weeks Later LIVE",type:"youtube"},{ch:"IG",t:"Stories \u2014 Live reminder",type:"instagram"}]},
+      {date:"2026-04-30", entries:[{ch:"River",t:"Framework \u2014 97/3 principle",type:"river"},{ch:"LinkedIn",t:"Framework \u2014 root-cause vs symptom",type:"linkedin"}]},
+      {date:"2026-05-01", entries:[{ch:"LinkedIn",t:"Proof post \u2014 Breakthrough Workshop mention",type:"linkedin"}]},
+      {date:"2026-05-02", entries:[]},{date:"2026-05-03", entries:[]},
+      {date:"2026-05-04", entries:[{ch:"LinkedIn",t:"Story \u2014 client transformation arc",type:"linkedin"}]},
+      {date:"2026-05-05", entries:[{ch:"River",t:"Story email \u2014 before/after breakthrough",type:"river"},{ch:"LinkedIn",t:"Proof post \u2014 90-day outcomes",type:"linkedin"}]},
+      {date:"2026-05-06", entries:[{ch:"YouTube",t:"What a Real Breakthrough Looks Like LIVE",type:"youtube"},{ch:"IG",t:"Stories \u2014 proof content",type:"instagram"}]},
+      {date:"2026-05-07", entries:[{ch:"River",t:"Framework \u2014 Impact Script concept",type:"river"},{ch:"LinkedIn",t:"Framework \u2014 identity shift",type:"linkedin"}]},
+      {date:"2026-05-08", entries:[{ch:"LinkedIn",t:"Engagement \u2014 campaign reflection",type:"linkedin"}]},
+      {date:"2026-05-09", entries:[]},{date:"2026-05-10", entries:[]}
+    ]
+  };
+}
+
+function renderMonthlyCalendar(entries) {
+  var container = document.getElementById('calendar-content');
+  var byDate = {};
+  entries.forEach(function(e) { byDate[e.date] = e.entries || []; });
+
+  var dates = entries.map(function(e) { return new Date(e.date + 'T00:00:00'); });
+  var minDate = dates[0];
+  var maxDate = dates[dates.length - 1];
+
+  var html = '';
+  var curMonth = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
+  var endMonth = new Date(maxDate.getFullYear(), maxDate.getMonth(), 1);
+
+  while (curMonth <= endMonth) {
+    html += renderOneMonth(curMonth, byDate);
+    curMonth = new Date(curMonth.getFullYear(), curMonth.getMonth() + 1, 1);
+  }
+  container.innerHTML = html;
+}
+
+function renderOneMonth(monthStart, byDate) {
+  var year = monthStart.getFullYear();
+  var month = monthStart.getMonth();
+  var monthName = monthStart.toLocaleDateString('en-US', {month: 'long', year: 'numeric'});
+  var daysInMonth = new Date(year, month + 1, 0).getDate();
+  var firstDow = new Date(year, month, 1).getDay();
+  var todayS = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
+
+  // Calculate total rows to know which cells are in the last row
+  var totalCells = firstDow + daysInMonth;
+  var totalRows = Math.ceil(totalCells / 7);
+  var lastRowStart = (totalRows - 1) * 7;
+
+  var html = '<div class="month-block">';
+  html += '<div class="month-title">' + esc(monthName) + '</div>';
+  html += '<div class="cal-grid">';
+
+  ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(function(d) { html += '<div class="cal-day-header">' + d + '</div>'; });
+
+  for (var i = 0; i < firstDow; i++) html += '<div class="cal-cell empty"></div>';
+
+  for (var day = 1; day <= daysInMonth; day++) {
+    var dateStr = year + '-' + String(month+1).padStart(2,'0') + '-' + String(day).padStart(2,'0');
+    var isToday = dateStr === todayS;
+    var dayEntries = byDate[dateStr] || [];
+    var cellIndex = firstDow + day - 1;
+    var isLastRow = cellIndex >= lastRowStart;
+
+    html += '<div class="cal-cell' + (isToday ? ' today' : '') + (isLastRow ? ' pop-above' : '') + '">';
+    html += '<div class="cal-date">' + day + '</div>';
+    dayEntries.forEach(function(entry) {
+      html += '<div class="cal-entry ' + getEntryClass(entry.type) + '">' + esc(entry.t) + '</div>';
+    });
+    if (dayEntries.length > 0) {
+      var fullDate = new Date(year, month, day).toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'});
+      html += '<div class="cal-popover"><div class="pop-date">' + esc(fullDate) + '</div>';
+      dayEntries.forEach(function(entry) {
+        html += '<div class="pop-entry ' + getEntryClass(entry.type) + '"><span class="pop-ch">' + esc(entry.ch) + ':</span> ' + esc(entry.t) + '</div>';
+      });
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+
+  var remainder = totalCells % 7;
+  if (remainder > 0) for (var j = 0; j < 7 - remainder; j++) html += '<div class="cal-cell empty"></div>';
+
+  html += '</div></div>';
+  return html;
+}
+
+function getEntryClass(type) {
+  var map = {youtube:'youtube', linkedin:'linkedin', instagram:'instagram', email:'river', river:'river', cultural:'cultural', production:'production'};
+  return map[(type || '').toLowerCase()] || '';
+}
+
+// ===== SETTINGS =====
+function openSettingsModal() {
+  var html = '<div class="modal-overlay" onclick="if(event.target===this)closeModal()">' +
+    '<div class="modal wide">' +
+      '<h3>Dashboard Settings</h3>' +
+
+      '<div class="settings-section">' +
+        '<h4>GitHub Pages Sync (Optional)</h4>' +
+        '<p style="font-size:11px;color:var(--medium-blue);margin-bottom:12px">Connect to a GitHub repo to sync data between you and Eduardo. Both of you need to configure this with the same repo.</p>' +
+        '<div class="setting-row"><label>GitHub Token</label><input type="password" id="setting-gh-token" value="' + esc(storage.ghToken) + '" placeholder="ghp_..."></div>' +
+        '<div class="setting-hint">Personal Access Token with repo scope. Get one at GitHub &rarr; Settings &rarr; Developer Settings &rarr; Tokens.</div>' +
+        '<div class="setting-row"><label>Repo Owner</label><input type="text" id="setting-gh-owner" value="' + esc(storage.ghOwner) + '" placeholder="your-github-username"></div>' +
+        '<div class="setting-row"><label>Repo Name</label><input type="text" id="setting-gh-repo" value="' + esc(storage.ghRepo) + '" placeholder="sightshift-dashboard"></div>' +
+        '<div class="setting-row"><label>Branch</label><input type="text" id="setting-gh-branch" value="' + esc(storage.ghBranch || 'main') + '" placeholder="main"></div>' +
+      '</div>' +
+
+      '<div class="settings-section">' +
+        '<h4>About</h4>' +
+        '<p style="font-size:12px;color:#5a7273;line-height:1.6">' +
+          'SightShift Marketing Dashboard v1.0<br>' +
+          'Running in <strong>' + storage.mode + '</strong> mode.<br>' +
+          'When running locally: <code>python3 serve.py</code><br>' +
+          'When hosted on GitHub Pages: configure GitHub sync above.' +
+        '</p>' +
+      '</div>' +
+
+      '<div class="modal-buttons">' +
+        '<button class="btn-cancel" onclick="closeModal()">Cancel</button>' +
+        '<button class="btn-save" onclick="saveSettings()">Save Settings</button>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+
+  document.getElementById('modal-root').innerHTML = html;
+}
+
+function saveSettings() {
+  var token = document.getElementById('setting-gh-token').value.trim();
+  var owner = document.getElementById('setting-gh-owner').value.trim();
+  var repo = document.getElementById('setting-gh-repo').value.trim();
+  var branch = document.getElementById('setting-gh-branch').value.trim() || 'main';
+
+  localStorage.setItem('gh_token', token);
+  localStorage.setItem('gh_owner', owner);
+  localStorage.setItem('gh_repo', repo);
+  localStorage.setItem('gh_branch', branch);
+
+  storage.ghToken = token;
+  storage.ghOwner = owner;
+  storage.ghRepo = repo;
+  storage.ghBranch = branch;
+
+  if (token && owner && repo) {
+    storage.mode = 'github';
+    document.getElementById('sync-indicator').style.display = 'flex';
+    // Re-load data from GitHub
+    loadTasks();
+    loadAgenda();
+    showToast('GitHub sync enabled \u2014 reloading data', 'success');
+  } else {
+    storage.mode = 'local';
+    document.getElementById('sync-indicator').style.display = 'none';
+    showToast('Settings saved \u2014 running locally', 'info');
+  }
+
+  closeModal();
+}
+
+// ===== AUTO-REFRESH =====
+// When using GitHub sync, refresh data every 60 seconds to pick up the other user's changes
+setInterval(function() {
+  if (storage.mode === 'github') {
+    loadTasks();
+    loadAgenda();
+  }
+}, 60000);
+
+// ===== CALENDAR CLICK-TO-EXPAND =====
+document.addEventListener('click', function(e) {
+  var cell = e.target.closest('.cal-cell');
+  // Close all other open popovers
+  document.querySelectorAll('.cal-cell.popover-open').forEach(function(c) {
+    if (c !== cell) c.classList.remove('popover-open');
+  });
+  // Toggle the clicked cell if it has a popover
+  if (cell && cell.querySelector('.cal-popover')) {
+    cell.classList.toggle('popover-open');
+    e.stopPropagation();
+  }
+});
+
+// ===== INIT =====
+storage.init();
+loadTasks();
+loadCalendar();
+loadAgenda();
+</script>
+</body>
+</html>
