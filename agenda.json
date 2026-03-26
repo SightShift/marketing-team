@@ -7,6 +7,14 @@
       "tag": "question",
       "added": "2026-03-23",
       "status": "open"
+    },
+    {
+      "id": 2,
+      "text": "Content responsibilities / Asana organization",
+      "owner": "Bret",
+      "tag": "update",
+      "added": "2026-03-26",
+      "status": "open"
     }
   ],
   "past_meetings": [
