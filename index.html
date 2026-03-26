@@ -246,6 +246,7 @@
       <div class="dot" id="sync-dot"></div>
       <span id="sync-text">Synced</span>
     </div>
+    <span class="updated" id="user-label" style="display:none"></span>
     <button class="settings-btn" onclick="openSettingsModal()" title="Settings">&#9881;</button>
     <div class="updated" id="last-updated"></div>
   </div>
@@ -391,12 +392,84 @@ var storage = {
   ghShas: {},
 
   init: function() {
-    // If we can reach /api/tasks, we're running locally
+    // Auto-detect GitHub Pages hosting
+    var host = window.location.hostname;
+    if (host.endsWith('.github.io')) {
+      // Extract owner/repo from URL: owner.github.io/repo/
+      var parts = window.location.pathname.split('/').filter(function(p) { return p; });
+      this.ghOwner = this.ghOwner || host.replace('.github.io', '');
+      this.ghRepo = this.ghRepo || (parts[0] || '');
+      localStorage.setItem('gh_owner', this.ghOwner);
+      localStorage.setItem('gh_repo', this.ghRepo);
+    }
+
+    // Show user label if set
+    var savedUser = localStorage.getItem('dashboard_user');
+    if (savedUser) {
+      var label = document.getElementById('user-label');
+      label.textContent = savedUser;
+      label.style.display = 'inline';
+    }
+
     if (this.ghToken && this.ghOwner && this.ghRepo) {
       this.mode = 'github';
       document.getElementById('sync-indicator').style.display = 'flex';
       this.updateSyncStatus('synced');
+    } else if (host.endsWith('.github.io') && !this.ghToken) {
+      // On GitHub Pages but no token — show setup prompt
+      this.showSetupPrompt();
     }
+  },
+
+  showSetupPrompt: function() {
+    var self = this;
+    var html = '<div class="modal-overlay">' +
+      '<div class="modal">' +
+        '<h3>Welcome to SightShift Dashboard</h3>' +
+        '<p style="font-size:13px;color:#5a7273;margin-bottom:16px;line-height:1.5">' +
+          'To enable real-time syncing between you and your team, paste your GitHub Personal Access Token below. ' +
+          'This is a one-time setup — your token is stored only in this browser.</p>' +
+        '<label>Your Name</label>' +
+        '<select id="setup-user">' +
+          '<option value="Bret">Bret</option>' +
+          '<option value="Eduardo">Eduardo</option>' +
+        '</select>' +
+        '<label>GitHub Personal Access Token</label>' +
+        '<input type="password" id="setup-token" placeholder="ghp_... or github_pat_...">' +
+        '<p style="font-size:11px;color:var(--medium-blue);margin-top:6px;line-height:1.5">' +
+          '<strong>How to get a token:</strong> Go to GitHub.com &rarr; Settings &rarr; Developer Settings &rarr; ' +
+          'Personal Access Tokens &rarr; Fine-grained tokens &rarr; Generate New Token. ' +
+          'Give it <strong>Read and Write</strong> access to <strong>Contents</strong> for the <strong>' + esc(self.ghOwner + '/' + self.ghRepo) + '</strong> repo.</p>' +
+        '<div class="modal-buttons">' +
+          '<button class="btn-cancel" onclick="storage.skipSetup()">Skip (Offline Mode)</button>' +
+          '<button class="btn-save" onclick="storage.completeSetup()">Connect</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+    document.getElementById('modal-root').innerHTML = html;
+  },
+
+  completeSetup: function() {
+    var token = document.getElementById('setup-token').value.trim();
+    var user = document.getElementById('setup-user').value;
+    if (!token) { showToast('Please enter a token', 'error'); return; }
+
+    localStorage.setItem('gh_token', token);
+    localStorage.setItem('dashboard_user', user);
+    this.ghToken = token;
+    this.mode = 'github';
+    document.getElementById('sync-indicator').style.display = 'flex';
+    document.getElementById('modal-root').innerHTML = '';
+
+    // Reload data from GitHub
+    loadTasks();
+    loadAgenda();
+    showToast('Connected! Syncing with GitHub as ' + user, 'success');
+  },
+
+  skipSetup: function() {
+    document.getElementById('modal-root').innerHTML = '';
+    showToast('Running in offline mode \u2014 changes won\u2019t sync', 'info');
   },
 
   updateSyncStatus: function(status) {
@@ -1404,27 +1477,35 @@ function getEntryClass(type) {
 
 // ===== SETTINGS =====
 function openSettingsModal() {
+  var curUser = localStorage.getItem('dashboard_user') || 'Bret';
   var html = '<div class="modal-overlay" onclick="if(event.target===this)closeModal()">' +
     '<div class="modal wide">' +
       '<h3>Dashboard Settings</h3>' +
 
       '<div class="settings-section">' +
-        '<h4>GitHub Pages Sync (Optional)</h4>' +
+        '<h4>Your Identity</h4>' +
+        '<div class="setting-row"><label>Your Name</label><select id="setting-user" style="flex:1;padding:6px 8px;border:1px solid #d0d8d8;border-radius:4px;font-size:12px">' +
+          '<option value="Bret"' + (curUser === 'Bret' ? ' selected' : '') + '>Bret</option>' +
+          '<option value="Eduardo"' + (curUser === 'Eduardo' ? ' selected' : '') + '>Eduardo</option>' +
+        '</select></div>' +
+      '</div>' +
+
+      '<div class="settings-section">' +
+        '<h4>GitHub Sync</h4>' +
         '<p style="font-size:11px;color:var(--medium-blue);margin-bottom:12px">Connect to a GitHub repo to sync data between you and Eduardo. Both of you need to configure this with the same repo.</p>' +
-        '<div class="setting-row"><label>GitHub Token</label><input type="password" id="setting-gh-token" value="' + esc(storage.ghToken) + '" placeholder="ghp_..."></div>' +
-        '<div class="setting-hint">Personal Access Token with repo scope. Get one at GitHub &rarr; Settings &rarr; Developer Settings &rarr; Tokens.</div>' +
-        '<div class="setting-row"><label>Repo Owner</label><input type="text" id="setting-gh-owner" value="' + esc(storage.ghOwner) + '" placeholder="your-github-username"></div>' +
-        '<div class="setting-row"><label>Repo Name</label><input type="text" id="setting-gh-repo" value="' + esc(storage.ghRepo) + '" placeholder="sightshift-dashboard"></div>' +
+        '<div class="setting-row"><label>GitHub Token</label><input type="password" id="setting-gh-token" value="' + esc(storage.ghToken) + '" placeholder="ghp_... or github_pat_..."></div>' +
+        '<div class="setting-hint">Personal Access Token with Contents read/write scope.</div>' +
+        '<div class="setting-row"><label>Repo Owner</label><input type="text" id="setting-gh-owner" value="' + esc(storage.ghOwner) + '" placeholder="SightShift"></div>' +
+        '<div class="setting-row"><label>Repo Name</label><input type="text" id="setting-gh-repo" value="' + esc(storage.ghRepo) + '" placeholder="marketing-team"></div>' +
         '<div class="setting-row"><label>Branch</label><input type="text" id="setting-gh-branch" value="' + esc(storage.ghBranch || 'main') + '" placeholder="main"></div>' +
       '</div>' +
 
       '<div class="settings-section">' +
-        '<h4>About</h4>' +
+        '<h4>Status</h4>' +
         '<p style="font-size:12px;color:#5a7273;line-height:1.6">' +
           'SightShift Marketing Dashboard v1.0<br>' +
-          'Running in <strong>' + storage.mode + '</strong> mode.<br>' +
-          'When running locally: <code>python3 serve.py</code><br>' +
-          'When hosted on GitHub Pages: configure GitHub sync above.' +
+          'Sync mode: <strong>' + storage.mode + '</strong>' +
+          (storage.mode === 'github' ? ' \u2714 Connected to ' + esc(storage.ghOwner + '/' + storage.ghRepo) : '') +
         '</p>' +
       '</div>' +
 
@@ -1443,24 +1524,30 @@ function saveSettings() {
   var owner = document.getElementById('setting-gh-owner').value.trim();
   var repo = document.getElementById('setting-gh-repo').value.trim();
   var branch = document.getElementById('setting-gh-branch').value.trim() || 'main';
+  var user = document.getElementById('setting-user').value;
 
   localStorage.setItem('gh_token', token);
   localStorage.setItem('gh_owner', owner);
   localStorage.setItem('gh_repo', repo);
   localStorage.setItem('gh_branch', branch);
+  localStorage.setItem('dashboard_user', user);
 
   storage.ghToken = token;
   storage.ghOwner = owner;
   storage.ghRepo = repo;
   storage.ghBranch = branch;
 
+  // Update user label
+  var label = document.getElementById('user-label');
+  label.textContent = user;
+  label.style.display = 'inline';
+
   if (token && owner && repo) {
     storage.mode = 'github';
     document.getElementById('sync-indicator').style.display = 'flex';
-    // Re-load data from GitHub
     loadTasks();
     loadAgenda();
-    showToast('GitHub sync enabled \u2014 reloading data', 'success');
+    showToast('Connected as ' + user + ' \u2014 syncing with GitHub', 'success');
   } else {
     storage.mode = 'local';
     document.getElementById('sync-indicator').style.display = 'none';
