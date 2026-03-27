@@ -26,14 +26,15 @@
     {
       "id": 3,
       "task": "Update Signs of Drift video endings to point to cultureimpactscript.com",
-      "priority": "High",
-      "due_date": "2026-03-28",
+      "priority": "Medium",
+      "due_date": "2026-04-03",
       "status": "open",
       "owner": "Eduardo",
       "notes": "",
       "created": "2026-03-23",
       "completed": null,
-      "_escalated": true
+      "_escalated": true,
+      "recurrence": null
     },
     {
       "id": 4,
