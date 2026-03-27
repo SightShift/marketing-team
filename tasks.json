@@ -40,11 +40,11 @@
       "task": "Send Buffer API token to Bret via email",
       "priority": "High",
       "due_date": "2026-03-26",
-      "status": "open",
+      "status": "done",
       "owner": "Eduardo",
       "notes": "",
       "created": "2026-03-23",
-      "completed": null,
+      "completed": "2026-03-26",
       "_escalated": true
     },
     {
