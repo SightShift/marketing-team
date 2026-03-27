@@ -1,6 +1,14 @@
 {
   "discussion_items": [
     {
+      "id": 6,
+      "text": "Did you update the headshots on YouTube+social pages or someone else?",
+      "owner": "Bret",
+      "tag": "question",
+      "added": "2026-03-26",
+      "status": "open"
+    },
+    {
       "id": 1,
       "text": "Buffer API token needed from Eduardo so Bret can automate social scheduling",
       "owner": "Bret",
@@ -43,14 +51,6 @@
       "added": "2026-03-26",
       "status": "open",
       "notes": "• Did you save new episode from Chris?\n• Which MCYE episode are we on? Check published with calendar: https://docs.google.com/spreadsheets/d/1w1Z-G2gnNMdaxw0fkaMh0PSawFhD6bOHzSdLu4PWBHw/edit?gid=1602727380#gid=1602727380\n• Canceled podbean account\n• Inserting AI episode"
-    },
-    {
-      "id": 6,
-      "text": "Did you update the headshots on YouTube+social pages or someone else?",
-      "owner": "Bret",
-      "tag": "question",
-      "added": "2026-03-26",
-      "status": "open"
     },
     {
       "id": 5,
