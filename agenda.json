@@ -15,7 +15,7 @@
       "tag": "update",
       "added": "2026-03-23",
       "status": "open",
-      "notes": null,
+      "notes": "Still looking into this. May bypass buffer and go straight to the channel.",
       "answer": null
     },
     {
