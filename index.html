@@ -65,17 +65,20 @@
   .cal-day-header:first-child { border-radius: 8px 0 0 0; }
   .cal-day-header:nth-child(7) { border-radius: 0 8px 0 0; }
   .cal-cell { background: var(--white); height: 90px; padding: 3px 4px; font-size: 11px; overflow: hidden; position: relative; cursor: default; }
-  .cal-cell.popover-open { z-index: 10; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
+  .cal-cell.popover-open { z-index: 10; box-shadow: 0 2px 12px rgba(0,0,0,0.15); overflow: visible; }
   .cal-cell.empty { background: #f6f8f8; }
   .cal-cell.today { outline: 2px solid var(--gold); outline-offset: -2px; z-index: 1; position: relative; }
   .cal-cell .cal-date { font-weight: 600; margin-bottom: 1px; color: var(--dark-blue); font-size: 12px; }
-  .cal-entry { padding: 2px 3px; margin-bottom: 1px; border-radius: 3px; font-size: 10px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: default; font-weight: 500; }
-  .cal-cell .cal-popover { display: none; position: absolute; top: 100%; left: 0; min-width: 240px; background: var(--white); border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.18); padding: 8px 10px; z-index: 100; border: 1px solid #d0d8d8; }
+  .cal-entry { padding: 2px 3px; margin-bottom: 1px; border-radius: 3px; font-size: 10px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; font-weight: 500; }
+  .cal-cell .cal-popover { display: none; position: absolute; top: 100%; left: 0; min-width: 300px; max-width: 380px; background: var(--white); border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.18); padding: 10px 12px; z-index: 100; border: 1px solid #d0d8d8; }
   .cal-cell:nth-child(7n) .cal-popover, .cal-cell:nth-child(7n-1) .cal-popover { left: auto; right: 0; }
   .cal-cell.popover-open .cal-popover { display: block; }
-  .cal-popover .pop-date { font-size: 12px; font-weight: 700; color: var(--dark-blue); margin-bottom: 5px; }
-  .cal-popover .pop-entry { padding: 4px 6px; margin-bottom: 3px; border-radius: 4px; font-size: 12px; line-height: 1.4; white-space: normal; }
+  .cal-popover .pop-date { font-size: 12px; font-weight: 700; color: var(--dark-blue); margin-bottom: 6px; padding-bottom: 5px; border-bottom: 1px solid #e0e6e6; }
+  .cal-popover .pop-entry { padding: 6px 8px; margin-bottom: 4px; border-radius: 4px; font-size: 12px; line-height: 1.4; white-space: normal; }
   .cal-popover .pop-entry .pop-ch { font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 0.3px; }
+  .cal-popover .pop-detail { font-size: 11px; margin-top: 3px; opacity: 0.85; line-height: 1.35; }
+  .cal-popover .pop-detail span { display: block; padding-left: 8px; }
+  .cal-popover .pop-detail .pop-label { font-weight: 600; display: inline; }
   .cal-entry.youtube { background: #fce4ec; color: #c62828; }
   .cal-entry.linkedin { background: #e0eef6; color: #0a5c8a; }
   .cal-entry.instagram { background: #fce4ec; color: #ad1457; }
@@ -1332,7 +1335,7 @@ function loadCalendar() {
   document.getElementById('campaign-cta1').textContent = data.primary_cta || '';
   document.getElementById('campaign-cta2').textContent = data.secondary_cta || '';
   document.getElementById('synopsis-components').innerHTML = (data.components || []).map(function(c) { return '<li>' + esc(c) + '</li>'; }).join('');
-  renderMonthlyCalendar(data.entries || []);
+  renderMonthlyCalendar(enrichCalendarDetails(data.entries || []));
 }
 
 function getCalendarData() {
@@ -1450,13 +1453,21 @@ function renderOneMonth(monthStart, byDate) {
     html += '<div class="cal-cell' + (isToday ? ' today' : '') + (isLastRow ? ' pop-above' : '') + '">';
     html += '<div class="cal-date">' + day + '</div>';
     dayEntries.forEach(function(entry) {
-      html += '<div class="cal-entry ' + getEntryClass(entry.type) + '">' + esc(entry.t) + '</div>';
+      html += '<div class="cal-entry ' + getEntryClass(entry.type) + '">' + esc(chAbbrev(entry.ch)) + ': ' + esc(entry.t) + '</div>';
     });
     if (dayEntries.length > 0) {
       var fullDate = new Date(year, month, day).toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'});
       html += '<div class="cal-popover"><div class="pop-date">' + esc(fullDate) + '</div>';
       dayEntries.forEach(function(entry) {
-        html += '<div class="pop-entry ' + getEntryClass(entry.type) + '"><span class="pop-ch">' + esc(entry.ch) + ':</span> ' + esc(entry.t) + '</div>';
+        html += '<div class="pop-entry ' + getEntryClass(entry.type) + '"><span class="pop-ch">' + esc(chAbbrev(entry.ch)) + ' (' + esc(entry.ch) + '):</span> ' + esc(entry.t);
+        if (entry.msg || entry.cta || entry.ps) {
+          html += '<div class="pop-detail">';
+          if (entry.msg) html += '<span><span class="pop-label">Hook:</span> ' + esc(entry.msg) + '</span>';
+          if (entry.cta) html += '<span><span class="pop-label">CTA:</span> ' + esc(entry.cta) + '</span>';
+          if (entry.ps) html += '<span><span class="pop-label">P.S./Note:</span> ' + esc(entry.ps) + '</span>';
+          html += '</div>';
+        }
+        html += '</div>';
       });
       html += '</div>';
     }
@@ -1470,9 +1481,178 @@ function renderOneMonth(monthStart, byDate) {
   return html;
 }
 
+function enrichCalendarDetails(entries) {
+  var details = {
+    "2026-03-17": [
+      {msg:"Personal story about the worst team-building experience and why retreats fail",cta:"Watch Company Retreat on Amazon Prime",ps:"P.S. Have you seen what happens when a boss plans a surprise retreat?"},
+      {msg:"Provocative take: corporate retreats are where accountability goes to die",cta:"Comment with your worst retreat story"}
+    ],
+    "2026-03-18": [
+      {msg:"Live breakdown of Company Retreat Ep 1 \u2014 what Amazon got right about bad leadership",cta:"Join live + drop questions in chat"},
+      {msg:"Stories: Poll \u2014 'Has a retreat ever actually changed your team?' + Live countdown",cta:"Tune in to YouTube Live at noon"}
+    ],
+    "2026-03-19": [
+      {msg:"Teaching: Why one-off leadership events don\u2019t create lasting change \u2014 events vs. systems",cta:"Take the IFQ\u2122 to see where you really stand",ps:"P.S. If your leadership development fits in a weekend, it\u2019s entertainment"}
+    ],
+    "2026-03-20": [
+      {msg:"Episodes 1\u20133 of Company Retreat drop on Amazon Prime \u2014 cultural reference point for the campaign"}
+    ],
+    "2026-03-23": [
+      {msg:"Personal story to set the week\u2019s theme \u2014 hooks the 'culture fix' narrative",cta:"Follow for more this week"}
+    ],
+    "2026-03-24": [
+      {msg:"Story about a leader who tried to 'fix culture' with pizza parties and pep talks",cta:"Watch Company Retreat Ep 1\u20133",ps:"P.S. Culture isn\u2019t a project \u2014 it\u2019s a mirror"},
+      {msg:"Chris breaks down Ep 1\u20133: what each character reveals about real-world leadership avoidance",cta:"Watch the episodes, then tell me which character is your boss"}
+    ],
+    "2026-03-25": [
+      {msg:"Live discussion: The 3 types of leaders you meet at a company retreat",cta:"Join live + ask your question"},
+      {msg:"Countdown sticker + 'Which retreat character are you?' interactive story",cta:"Join the Live on YouTube"}
+    ],
+    "2026-03-26": [
+      {msg:"Teaching: How leaders slowly drift from their values without noticing \u2014 the drift framework",cta:"Take the Validation Check\u2122 to measure your drift",ps:"P.S. Drift doesn\u2019t announce itself. That\u2019s what makes it dangerous."},
+      {msg:"Framework graphic: The 5 signs you\u2019re drifting as a leader (and don\u2019t know it yet)",cta:"Save this post. Come back to it in 30 days."}
+    ],
+    "2026-03-27": [
+      {msg:"Episodes 4\u20135 of Company Retreat drop \u2014 escalation point in the show\u2019s narrative"},
+      {msg:"Question post to spark discussion around Ep 4\u20135 themes",cta:"Drop your take in the comments"}
+    ],
+    "2026-03-30": [
+      {msg:"Teaser: Do you actually use what you teach? Most leadership coaches don\u2019t.",cta:"Tune in Wednesday for the full breakdown"}
+    ],
+    "2026-03-31": [
+      {msg:"Story about why Chris built SightShift on principles he personally lives \u2014 eating your own product",cta:"Register for the Breakthrough Workshop",ps:"P.S. If you wouldn\u2019t go through your own program, why should anyone else?"},
+      {msg:"Promo: This Wednesday\u2019s Lunch with Chris is 'Eat Your Product' \u2014 bring your hardest question",cta:"Set a reminder for the Live"}
+    ],
+    "2026-04-01": [
+      {msg:"Live session: Chris talks about eating your own product \u2014 practicing what you preach",cta:"Join live + IFQ\u2122 link in description"},
+      {msg:"Stories: IFQ\u2122 teaser graphic + Live countdown + 'Do you eat your own product?' poll",cta:"Take the IFQ\u2122 \u2014 link in bio"}
+    ],
+    "2026-04-02": [
+      {msg:"Teaching: The two default modes of insecure leadership \u2014 proving and hiding",cta:"Take the IFQ\u2122 to see your pattern",ps:"P.S. Most leaders oscillate between performing and disappearing. Which one are you?"},
+      {msg:"Framework graphic: The Mirror Test \u2014 can you look at your leadership without flinching?",cta:"Save this. Share with your team."}
+    ],
+    "2026-04-03": [
+      {msg:"Final episodes of Company Retreat drop on Amazon \u2014 narrative payoff and campaign transition point"},
+      {msg:"Reflection post: What did the IFQ\u2122 reveal about your leadership?",cta:"Take the IFQ\u2122 if you haven\u2019t yet"}
+    ],
+    "2026-04-06": [
+      {msg:"Personal story: A moment of real vulnerability that changed Chris\u2019s leadership trajectory",cta:"Follow for this week\u2019s deep dives"}
+    ],
+    "2026-04-07": [
+      {msg:"Story about facing yourself honestly as a leader \u2014 the mirror moment that starts real change",cta:"Register for the Breakthrough Workshop",ps:"P.S. The IFQ\u2122 is the mirror. The Workshop is what you do once you see the truth."},
+      {msg:"Provocation: The IFQ\u2122 doesn\u2019t tell you what\u2019s wrong. It shows you what you\u2019ve been avoiding.",cta:"Take the IFQ\u2122 \u2014 link in comments"}
+    ],
+    "2026-04-08": [
+      {msg:"Live: Transitioning from Company Retreat to Dumb Theater \u2014 why parody hits harder than training",cta:"Join live + share your story"},
+      {msg:"Reel: Quick-hit clip from the Live + interactive story poll",cta:"Watch the full Live on YouTube"}
+    ],
+    "2026-04-09": [
+      {msg:"Teaching: What the Breakthrough Workshop actually is \u2014 not motivation, not therapy, but a system for identity-level change",cta:"Apply for the Breakthrough Workshop",ps:"P.S. This isn\u2019t a seminar. It\u2019s the thing that replaces seminars."},
+      {msg:"Framework: Why leadership development fails \u2014 you\u2019re buying events when you need a system",cta:"DM 'BREAKTHROUGH' for details"}
+    ],
+    "2026-04-10": [
+      {msg:"Production milestone: Confirm Dumb Theater 'Michael' character video #1 is edited and ready"},
+      {msg:"Hot take: Stop developing leaders. Start developing humans who happen to lead.",cta:"Agree or disagree? Comment below."}
+    ],
+    "2026-04-13": [
+      {msg:"Story: What happens 48 hours after the motivational speaker leaves \u2014 the slow fade back to normal",cta:"Follow for the antidote this week"}
+    ],
+    "2026-04-14": [
+      {msg:"Story: Hype is not a plan \u2014 why the energy from events fades and what sustains change",cta:"Watch Michael #1 (Dumb Theater)",ps:"Graphic: Michael character poster \u2014 'The Motivator'"},
+      {msg:"Video premiere: Meet Michael \u2014 the leader who thinks inspiration is a strategy",cta:"Watch. Tag someone who manages like this."},
+      {msg:"Reel cut of Michael #1 video \u2014 punchy 30-sec edit for IG format",cta:"Full video on LinkedIn + YouTube"}
+    ],
+    "2026-04-15": [
+      {msg:"Live: Breaking down Michael \u2014 why 'hype leadership' feels good but changes nothing",cta:"Join live + Breakthrough Workshop link in description"},
+      {msg:"Countdown + 'Do you know a Michael?' poll + Live reminder",cta:"Join the Live on YouTube"}
+    ],
+    "2026-04-16": [
+      {msg:"Teaching: The neuroscience of why hype fades \u2014 dopamine vs. identity-level rewiring",cta:"Apply for the Breakthrough Workshop",ps:"P.S. Your team doesn\u2019t need another pep talk. They need a new operating system."},
+      {msg:"Framework graphic: The Hype-to-Habit Gap \u2014 why 90% of leadership training doesn\u2019t stick",cta:"Save this. Send it to your L&D team."}
+    ],
+    "2026-04-17": [
+      {msg:"Question: Think about the last leadership event you attended. How long did the energy last?",cta:"Comment your answer \u2014 I\u2019ll respond to every one"}
+    ],
+    "2026-04-20": [
+      {msg:"Story: When 'wellness culture' in leadership becomes a way to avoid hard conversations",cta:"Follow for Nathan this week"}
+    ],
+    "2026-04-21": [
+      {msg:"Story: The leader who meditated every morning but couldn\u2019t have a hard conversation",cta:"Watch Nathan #1 (Dumb Theater)",ps:"Graphic: Nathan character poster \u2014 'The Zen Master'"},
+      {msg:"Video premiere: Meet Nathan \u2014 the leader who weaponized wellness to avoid leadership",cta:"Watch. Do you know a Nathan?"},
+      {msg:"Reel cut of Nathan #1 \u2014 punchy 30-sec edit showing the 'wellness avoidance' archetype",cta:"Full video on LinkedIn + YouTube"}
+    ],
+    "2026-04-22": [
+      {msg:"Live: Breaking down Nathan \u2014 when mindfulness becomes a mask for avoiding real leadership",cta:"Join live + IFQ\u2122 link in description"},
+      {msg:"Interactive stories: 'Do you have a Nathan on your team?' quiz + Live countdown",cta:"Join the Live on YouTube"}
+    ],
+    "2026-04-23": [
+      {msg:"Deep dive into the 'hiding' pattern \u2014 how leaders use busyness, wellness, and delegation to avoid being seen",cta:"Take the IFQ\u2122 to see if you\u2019re hiding",ps:"P.S. Hiding doesn\u2019t look like weakness. It looks like 'being strategic.'"},
+      {msg:"Framework: Performative Stillness \u2014 when calm is just another mask for avoidance",cta:"Save this. Be honest about whether it\u2019s you."}
+    ],
+    "2026-04-24": [
+      {msg:"Is your mindfulness practice making you a better leader \u2014 or helping you avoid being one?",cta:"Comment honestly. No judgment."}
+    ],
+    "2026-04-27": [
+      {msg:"Your company spent $50K on leadership development last year. Can anyone name one thing that changed?",cta:"If this hits home, DM me 'BREAKTHROUGH'"}
+    ],
+    "2026-04-28": [
+      {msg:"Story: What your team looks like two weeks after the big leadership offsite",cta:"Register for the Breakthrough Workshop",ps:"Graphic: Side-by-side \u2014 'Day 1 after the retreat' vs. 'Day 14 after the retreat'"},
+      {msg:"Michael returns or re-release with fresh commentary. Reinforcing the 'hype leadership' archetype.",cta:"Watch + share with your HR team"},
+      {msg:"Reel cut of latest Dumb Theater character content \u2014 punchy engagement format",cta:"Full video on LinkedIn + YouTube"}
+    ],
+    "2026-04-29": [
+      {msg:"Live: The 'Two Weeks Later' test \u2014 what sticks after leadership training and what doesn\u2019t",cta:"Join live + Breakthrough Workshop link"},
+      {msg:"Live countdown + 'What\u2019s the last leadership lesson that actually stuck?' question sticker",cta:"Join the Live on YouTube"}
+    ],
+    "2026-04-30": [
+      {msg:"Teaching: The 97/3 Principle \u2014 97% of leadership dev addresses symptoms, only 3% reaches the root",cta:"Apply for the Breakthrough Workshop",ps:"P.S. The Breakthrough Workshop lives in the 3%."},
+      {msg:"Framework graphic: Root-Cause vs. Symptom leadership development \u2014 a visual breakdown",cta:"Save this. Show it to your executive team."}
+    ],
+    "2026-05-01": [
+      {msg:"Social proof: Client result or testimonial tied to the Breakthrough Workshop \u2014 real outcomes, not hype",cta:"DM 'BREAKTHROUGH' or click the link in comments"}
+    ],
+    "2026-05-04": [
+      {msg:"A client\u2019s full transformation arc \u2014 from skeptic to advocate after the process",cta:"Follow for the final week"}
+    ],
+    "2026-05-05": [
+      {msg:"Before and after the breakthrough \u2014 what changes when a leader stops performing and starts leading from identity",cta:"Apply for the Breakthrough Workshop",ps:"P.S. This is the last week of the campaign. If you\u2019ve been watching from the sidelines, now is the time."},
+      {msg:"Data-backed proof: 90-day outcomes from Breakthrough Workshop participants",cta:"See the results. Apply now."}
+    ],
+    "2026-05-06": [
+      {msg:"Live finale: What a real breakthrough looks like \u2014 stories, proof, and a direct invitation",cta:"Apply for the Breakthrough Workshop \u2014 link in description"},
+      {msg:"Stories: Client testimonial clips + before/after graphics + Workshop application CTA",cta:"Apply via link in bio"}
+    ],
+    "2026-05-07": [
+      {msg:"Teaching: The Impact Script \u2014 how to write the story of your leadership legacy starting today",cta:"Apply for the Breakthrough Workshop",ps:"P.S. Your Impact Script starts the moment you stop performing and start leading."},
+      {msg:"Final framework: Identity Shift \u2014 why behavior change fails but identity change lasts",cta:"This is what the Breakthrough Workshop does. Apply now."}
+    ],
+    "2026-05-08": [
+      {msg:"Closing question: Over the last 8 weeks, what\u2019s the one thing that shifted for you?",cta:"Apply for the Breakthrough Workshop before doors close"}
+    ]
+  };
+  entries.forEach(function(dayObj) {
+    var d = details[dayObj.date];
+    if (d && dayObj.entries) {
+      dayObj.entries.forEach(function(entry, i) {
+        if (d[i]) {
+          if (d[i].msg) entry.msg = d[i].msg;
+          if (d[i].cta) entry.cta = d[i].cta;
+          if (d[i].ps) entry.ps = d[i].ps;
+        }
+      });
+    }
+  });
+  return entries;
+}
+
 function getEntryClass(type) {
   var map = {youtube:'youtube', linkedin:'linkedin', instagram:'instagram', email:'river', river:'river', cultural:'cultural', production:'production'};
   return map[(type || '').toLowerCase()] || '';
+}
+
+function chAbbrev(ch) {
+  var map = {'River':'Email','LinkedIn':'LI','YouTube':'YT','IG':'IG','—':'Note'};
+  return map[ch] || ch;
 }
 
 // ===== SETTINGS =====
