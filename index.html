@@ -177,8 +177,17 @@
   .disc-item .disc-actions button:hover { background: var(--gray); color: var(--dark-blue); }
   .disc-item .disc-actions button.del-btn { color: var(--orange); border-color: #f0c8bc; }
   .disc-item .disc-actions button.del-btn:hover { background: #fde8e0; }
+  .disc-item .disc-notes { font-size: 12px; color: #5a7273; margin-top: 5px; padding: 5px 8px; background: var(--gray); border-radius: 5px; border-left: 3px solid var(--gold-tint); white-space: pre-wrap; word-break: break-word; }
+  .disc-item .disc-notes a { color: var(--teal); text-decoration: underline; word-break: break-all; }
+  .disc-item .disc-notes a:hover { color: #004a52; }
   .disc-item.resolved { opacity: 0.35; }
   .disc-item.resolved .disc-text { text-decoration: line-through; }
+
+  /* DRAG REORDER */
+  .disc-item .drag-handle { cursor: grab; color: var(--medium-blue); font-size: 14px; flex-shrink: 0; padding: 0 2px; user-select: none; opacity: 0.4; transition: opacity 0.15s; }
+  .disc-item:hover .drag-handle { opacity: 1; }
+  .disc-item.dragging { opacity: 0.4; }
+  .disc-item.drag-over { border-top: 2px solid var(--teal); margin-top: -2px; }
 
   .add-item-inline { display: flex; gap: 6px; margin-top: 8px; }
   .add-item-inline input { flex: 1; padding: 7px 10px; border: 1px dashed var(--medium-blue); border-radius: 6px; font-size: 12px; font-family: inherit; background: var(--white); color: var(--dark-blue); }
@@ -372,6 +381,10 @@
 <script>
 // ===== UTILITIES =====
 function esc(str) { var d = document.createElement('div'); d.textContent = str || ''; return d.innerHTML; }
+function linkify(str) {
+  var escaped = esc(str);
+  return escaped.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+}
 var today = new Date();
 function todayStr() { return today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0'); }
 document.getElementById('last-updated').textContent = 'Updated: ' + today.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'});
@@ -1019,6 +1032,8 @@ function editDiscItem(id) {
         '<option value="Bret"' + (item.owner === 'Bret' ? ' selected' : '') + '>Bret</option>' +
         '<option value="Eduardo"' + (item.owner === 'Eduardo' ? ' selected' : '') + '>Eduardo</option>' +
       '</select>' +
+      '<label>Notes <span style="font-weight:400;color:var(--medium-blue)">(links, details, sub-items)</span></label>' +
+      '<textarea id="modal-disc-notes" placeholder="Add links, sub-items, or details...">' + esc(item.notes || '') + '</textarea>' +
       '<div class="modal-buttons">' +
         '<button class="btn-delete" onclick="deleteDiscItem(' + id + ');closeModal()">Delete</button>' +
         '<button class="btn-cancel" onclick="closeModal()">Cancel</button>' +
@@ -1036,6 +1051,7 @@ function saveDiscEdit(id) {
   item.text = document.getElementById('modal-disc-text').value.trim();
   item.tag = document.getElementById('modal-disc-tag').value;
   item.owner = document.getElementById('modal-disc-owner').value;
+  item.notes = document.getElementById('modal-disc-notes').value.trim() || null;
   closeModal(); saveAgenda(); renderAgenda();
   showToast('Item updated', 'success');
 }
@@ -1088,11 +1104,13 @@ function discItemHtml(d, isResolved) {
   var cls = 'disc-item' + (isResolved ? ' resolved' : '');
   var addedDate = d.added ? new Date(d.added + 'T00:00:00').toLocaleDateString('en-US', {month: 'short', day: 'numeric'}) : '';
 
-  return '<div class="' + cls + '">' +
+  return '<div class="' + cls + '" draggable="true" data-disc-id="' + d.id + '" ondragstart="discDragStart(event,' + d.id + ')" ondragover="discDragOver(event)" ondragenter="discDragEnter(event)" ondragleave="discDragLeave(event)" ondrop="discDrop(event,' + d.id + ')" ondragend="discDragEnd(event)">' +
     '<div class="disc-top">' +
+      '<span class="drag-handle" title="Drag to reorder">&#9776;</span>' +
       '<span class="disc-tag ' + esc(d.tag || 'discussion') + '">' + esc(d.tag || 'discussion') + '</span>' +
       '<span class="disc-text">' + esc(d.text) + '</span>' +
     '</div>' +
+    (d.notes ? '<div class="disc-notes">' + linkify(d.notes) + '</div>' : '') +
     '<div class="disc-meta">' +
       '<span>Added ' + addedDate + (isResolved ? ' &middot; ' + esc(d.owner) : '') + '</span>' +
       '<div class="disc-actions">' +
@@ -1109,6 +1127,60 @@ function toggleResolved() {
   var v = c.style.display !== 'none';
   c.style.display = v ? 'none' : 'block';
   document.getElementById('resolved-toggle').innerHTML = v ? 'Resolved Items &#9656;' : 'Resolved Items &#9662;';
+}
+
+// ===== DRAG-AND-DROP REORDER =====
+var dragDiscId = null;
+
+function discDragStart(e, id) {
+  dragDiscId = id;
+  e.target.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/plain', id);
+}
+
+function discDragOver(e) {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'move';
+}
+
+function discDragEnter(e) {
+  e.preventDefault();
+  var el = e.target.closest('.disc-item');
+  if (el) el.classList.add('drag-over');
+}
+
+function discDragLeave(e) {
+  var el = e.target.closest('.disc-item');
+  if (el) el.classList.remove('drag-over');
+}
+
+function discDrop(e, targetId) {
+  e.preventDefault();
+  var el = e.target.closest('.disc-item');
+  if (el) el.classList.remove('drag-over');
+  if (dragDiscId === null || dragDiscId === targetId) return;
+
+  var items = agendaData.discussion_items;
+  var dragIdx = items.findIndex(function(d) { return d.id === dragDiscId; });
+  var targetIdx = items.findIndex(function(d) { return d.id === targetId; });
+  if (dragIdx === -1 || targetIdx === -1) return;
+
+  // Only reorder within same owner+status group
+  if (items[dragIdx].owner !== items[targetIdx].owner || items[dragIdx].status !== items[targetIdx].status) return;
+
+  var dragged = items.splice(dragIdx, 1)[0];
+  var newTargetIdx = items.findIndex(function(d) { return d.id === targetId; });
+  items.splice(newTargetIdx, 0, dragged);
+
+  saveAgenda();
+  renderAgenda();
+}
+
+function discDragEnd(e) {
+  dragDiscId = null;
+  document.querySelectorAll('.disc-item.dragging').forEach(function(el) { el.classList.remove('dragging'); });
+  document.querySelectorAll('.disc-item.drag-over').forEach(function(el) { el.classList.remove('drag-over'); });
 }
 
 // ===== MEETING TRANSCRIPT PROCESSOR =====
