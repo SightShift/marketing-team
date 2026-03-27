@@ -4,9 +4,11 @@
       "id": 1,
       "text": "Buffer API token needed from Eduardo so Bret can automate social scheduling",
       "owner": "Bret",
-      "tag": "question",
+      "tag": "fyi",
       "added": "2026-03-23",
-      "status": "open"
+      "status": "open",
+      "notes": null,
+      "answer": null
     },
     {
       "id": 2,
