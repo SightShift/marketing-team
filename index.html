@@ -180,6 +180,13 @@
   .disc-item .disc-notes { font-size: 12px; color: #5a7273; margin-top: 5px; padding: 5px 8px; background: var(--gray); border-radius: 5px; border-left: 3px solid var(--gold-tint); white-space: pre-wrap; word-break: break-word; }
   .disc-item .disc-notes a { color: var(--teal); text-decoration: underline; word-break: break-all; }
   .disc-item .disc-notes a:hover { color: #004a52; }
+  .disc-answer { margin-top: 5px; padding: 6px 10px; background: #edf7ed; border-radius: 5px; border-left: 3px solid var(--green); font-size: 12px; color: #2e5e2e; }
+  .disc-answer .answer-label { font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--green); margin-bottom: 2px; }
+  .disc-answer a { color: var(--green); text-decoration: underline; word-break: break-all; }
+  .disc-answer a:hover { color: #1a3d1a; }
+  .disc-answer-prompt { margin-top: 5px; }
+  .disc-answer-prompt button { font-size: 10px; padding: 3px 8px; border-radius: 4px; border: 1px dashed var(--green); background: transparent; color: var(--green); cursor: pointer; }
+  .disc-answer-prompt button:hover { background: #edf7ed; }
   .disc-item.resolved { opacity: 0.35; }
   .disc-item.resolved .disc-text { text-decoration: line-through; }
 
@@ -1034,6 +1041,7 @@ function editDiscItem(id) {
       '</select>' +
       '<label>Notes <span style="font-weight:400;color:var(--medium-blue)">(links, details, sub-items)</span></label>' +
       '<textarea id="modal-disc-notes" placeholder="Add links, sub-items, or details...">' + esc(item.notes || '') + '</textarea>' +
+      (item.tag === 'question' ? '<label>Answer</label><textarea id="modal-disc-answer" placeholder="Add an answer to this question...">' + esc(item.answer || '') + '</textarea>' : '') +
       '<div class="modal-buttons">' +
         '<button class="btn-delete" onclick="deleteDiscItem(' + id + ');closeModal()">Delete</button>' +
         '<button class="btn-cancel" onclick="closeModal()">Cancel</button>' +
@@ -1052,6 +1060,8 @@ function saveDiscEdit(id) {
   item.tag = document.getElementById('modal-disc-tag').value;
   item.owner = document.getElementById('modal-disc-owner').value;
   item.notes = document.getElementById('modal-disc-notes').value.trim() || null;
+  var answerEl = document.getElementById('modal-disc-answer');
+  if (answerEl) item.answer = answerEl.value.trim() || null;
   closeModal(); saveAgenda(); renderAgenda();
   showToast('Item updated', 'success');
 }
@@ -1111,6 +1121,10 @@ function discItemHtml(d, isResolved) {
       '<span class="disc-text">' + esc(d.text) + '</span>' +
     '</div>' +
     (d.notes ? '<div class="disc-notes">' + linkify(d.notes) + '</div>' : '') +
+    (d.tag === 'question' ? (d.answer
+      ? '<div class="disc-answer"><div class="answer-label">Answer</div>' + linkify(d.answer) + '</div>'
+      : (!isResolved ? '<div class="disc-answer-prompt"><button onclick="openAnswerInput(' + d.id + ')">+ Add Answer</button></div>' : ''))
+    : '') +
     '<div class="disc-meta">' +
       '<span>Added ' + addedDate + (isResolved ? ' &middot; ' + esc(d.owner) : '') + '</span>' +
       '<div class="disc-actions">' +
@@ -1127,6 +1141,35 @@ function toggleResolved() {
   var v = c.style.display !== 'none';
   c.style.display = v ? 'none' : 'block';
   document.getElementById('resolved-toggle').innerHTML = v ? 'Resolved Items &#9656;' : 'Resolved Items &#9662;';
+}
+
+// ===== QUESTION ANSWERS =====
+function openAnswerInput(id) {
+  var item = agendaData.discussion_items.find(function(d) { return d.id === id; });
+  if (!item) return;
+
+  var html = '<div class="modal-overlay" onclick="if(event.target===this)closeModal()">' +
+    '<div class="modal">' +
+      '<h3>Answer Question</h3>' +
+      '<div style="margin-bottom:12px;padding:8px 12px;background:#fff8e1;border-radius:6px;font-size:13px;border-left:3px solid #b8960a">' + esc(item.text) + '</div>' +
+      '<label>Your Answer</label>' +
+      '<textarea id="modal-answer" placeholder="Type your answer here...">' + esc(item.answer || '') + '</textarea>' +
+      '<div class="modal-buttons">' +
+        '<button class="btn-cancel" onclick="closeModal()">Cancel</button>' +
+        '<button class="btn-save" onclick="saveAnswer(' + id + ')">Save Answer</button>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+
+  document.getElementById('modal-root').innerHTML = html;
+}
+
+function saveAnswer(id) {
+  var item = agendaData.discussion_items.find(function(d) { return d.id === id; });
+  if (!item) return;
+  item.answer = document.getElementById('modal-answer').value.trim() || null;
+  closeModal(); saveAgenda(); renderAgenda();
+  showToast(item.answer ? 'Answer saved' : 'Answer removed', 'success');
 }
 
 // ===== DRAG-AND-DROP REORDER =====
