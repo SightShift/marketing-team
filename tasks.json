@@ -95,6 +95,21 @@
       "created": "2026-03-26",
       "completed": null,
       "recurrence": null
+    },
+    {
+      "id": 9,
+      "task": "Publish YT Live to Podcast",
+      "priority": "Medium",
+      "due_date": "2026-04-03",
+      "status": "open",
+      "owner": "Eduardo",
+      "notes": "Create separate playlist/designation on Podcast to differentiate Lunch with Chris from regular episodes.",
+      "created": "2026-03-26",
+      "completed": null,
+      "recurrence": {
+        "type": "weekly",
+        "day": 5
+      }
     }
   ]
 }
