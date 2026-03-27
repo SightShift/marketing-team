@@ -23,6 +23,14 @@
       "tag": "discussion",
       "added": "2026-03-26",
       "status": "open"
+    },
+    {
+      "id": 4,
+      "text": "New dashboard + Set up GitHub connection",
+      "owner": "Bret",
+      "tag": "update",
+      "added": "2026-03-26",
+      "status": "open"
     }
   ],
   "past_meetings": [
