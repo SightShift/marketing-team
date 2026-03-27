@@ -17,11 +17,11 @@
       "task": "Create character posters for Dumb Leadership Theater (all characters)",
       "priority": "High",
       "due_date": "2026-03-30",
-      "status": "open",
+      "status": "done",
       "owner": "Eduardo",
       "notes": "Needed for partner meeting",
       "created": "2026-03-23",
-      "completed": null
+      "completed": "2026-03-26"
     },
     {
       "id": 3,
