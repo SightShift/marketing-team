@@ -1,0 +1,83 @@
+{
+  "discussion_items": [
+    {
+      "id": 1,
+      "text": "Buffer API token needed from Eduardo so Bret can automate social scheduling",
+      "owner": "Bret",
+      "tag": "question",
+      "added": "2026-03-23",
+      "status": "open"
+    },
+    {
+      "id": 2,
+      "text": "Content responsibilities / Asana organization",
+      "owner": "Bret",
+      "tag": "update",
+      "added": "2026-03-26",
+      "status": "open"
+    },
+    {
+      "id": 3,
+      "text": "Lunch with Chris \"Eat Your Product\" promo",
+      "owner": "Bret",
+      "tag": "discussion",
+      "added": "2026-03-26",
+      "status": "open",
+      "notes": "See images in your G Drive: https://drive.google.com/drive/folders/1zOtqAzQE70Wh_PwiPGtyYh-n7jwT_YBZ?usp=drive_link"
+    },
+    {
+      "id": 4,
+      "text": "New dashboard + Set up GitHub connection",
+      "owner": "Bret",
+      "tag": "update",
+      "added": "2026-03-26",
+      "status": "open"
+    },
+    {
+      "id": 7,
+      "text": "Podcast",
+      "owner": "Bret",
+      "tag": "question",
+      "added": "2026-03-26",
+      "status": "open",
+      "notes": "• Did you save new episode from Chris?\n• Which MCYE episode are we on? Check published with calendar: https://docs.google.com/spreadsheets/d/1w1Z-G2gnNMdaxw0fkaMh0PSawFhD6bOHzSdLu4PWBHw/edit?gid=1602727380#gid=1602727380\n• Canceled podbean account\n• Inserting AI episode"
+    },
+    {
+      "id": 6,
+      "text": "Did you update the headshots on YouTube+social pages or someone else?",
+      "owner": "Bret",
+      "tag": "question",
+      "added": "2026-03-26",
+      "status": "open"
+    },
+    {
+      "id": 5,
+      "text": "YouTube Shorts AI tool https://sendshort.ai/",
+      "owner": "Bret",
+      "tag": "discussion",
+      "added": "2026-03-26",
+      "status": "open"
+    }
+  ],
+  "past_meetings": [
+    {
+      "date": "2026-03-23",
+      "title": "Weekly Sync — Campaign Kickoff",
+      "notes": [
+        "Lunch with Chris (YouTube Live) — branded as its own thing, weekly Wednesdays",
+        "First YouTube Live on Company Retreat went well — continue weekly format",
+        "Dumb Theater character videos in production — character posters needed by Mar 30 for partner meeting",
+        "Campaign calendar reviewed — Week 2 content on track",
+        "Buffer API token needed from Eduardo so Bret can automate social scheduling"
+      ],
+      "action_items": [
+        "BRET: Add new Dumb Theater character description (Alice the AI Evangelist — name TBD)",
+        "EDUARDO: Update Dumb Theater video endings — 'You could [dumb thing], or...' → next slide → 'Git SightShift' with horizontal logo (cut final logo-only slide)",
+        "EDUARDO: Update Signs of Drift video endings to point to cultureimpactscript.com",
+        "EDUARDO: Create character posters for Dumb Leadership Theater (all characters) — due March 30",
+        "EDUARDO: Send Buffer API token to Bret via email"
+      ],
+      "transcript": ""
+    }
+  ]
+}
