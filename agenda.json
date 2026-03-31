@@ -27,14 +27,6 @@
       "notes": "See images in your G Drive: https://drive.google.com/drive/folders/1zOtqAzQE70Wh_PwiPGtyYh-n7jwT_YBZ?usp=drive_link"
     },
     {
-      "id": 4,
-      "text": "New dashboard + Set up GitHub connection",
-      "owner": "Bret",
-      "tag": "update",
-      "added": "2026-03-26",
-      "status": "open"
-    },
-    {
       "id": 7,
       "text": "Podcast",
       "owner": "Bret",
@@ -48,6 +40,14 @@
       "text": "Did you update the headshots on YouTube+social pages or someone else?",
       "owner": "Bret",
       "tag": "question",
+      "added": "2026-03-26",
+      "status": "open"
+    },
+    {
+      "id": 4,
+      "text": "New dashboard + Set up GitHub connection",
+      "owner": "Bret",
+      "tag": "update",
       "added": "2026-03-26",
       "status": "open"
     },
