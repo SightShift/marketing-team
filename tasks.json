@@ -99,7 +99,7 @@
     {
       "id": 9,
       "task": "Publish YT Live to Podcast",
-      "priority": "Medium",
+      "priority": "High",
       "due_date": "2026-04-03",
       "status": "open",
       "owner": "Eduardo",
@@ -109,7 +109,20 @@
       "recurrence": {
         "type": "weekly",
         "day": 5
-      }
+      },
+      "_escalated": true
+    },
+    {
+      "id": 10,
+      "task": "Podcast transcript workflow",
+      "priority": "Medium",
+      "due_date": null,
+      "status": "open",
+      "owner": "Bret",
+      "notes": "",
+      "created": "2026-03-31",
+      "completed": null,
+      "recurrence": null
     }
   ]
 }
