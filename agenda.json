@@ -1,6 +1,14 @@
 {
   "discussion_items": [
     {
+      "id": 6,
+      "text": "Did you update the headshots on YouTube+social pages or someone else?",
+      "owner": "Bret",
+      "tag": "question",
+      "added": "2026-03-26",
+      "status": "open"
+    },
+    {
       "id": 1,
       "text": "Buffer API token needed from Eduardo so Bret can automate social scheduling",
       "owner": "Bret",
@@ -40,14 +48,6 @@
       "text": "YouTube Shorts AI tool https://sendshort.ai/",
       "owner": "Bret",
       "tag": "discussion",
-      "added": "2026-03-26",
-      "status": "open"
-    },
-    {
-      "id": 6,
-      "text": "Did you update the headshots on YouTube+social pages or someone else?",
-      "owner": "Bret",
-      "tag": "question",
       "added": "2026-03-26",
       "status": "open"
     },
