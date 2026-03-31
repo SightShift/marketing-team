@@ -36,6 +36,14 @@
       "notes": "• Did you save new episode from Chris?\n• Which MCYE episode are we on? Check published with calendar: https://docs.google.com/spreadsheets/d/1w1Z-G2gnNMdaxw0fkaMh0PSawFhD6bOHzSdLu4PWBHw/edit?gid=1602727380#gid=1602727380\n• Canceled podbean account\n• Inserting AI episode"
     },
     {
+      "id": 5,
+      "text": "YouTube Shorts AI tool https://sendshort.ai/",
+      "owner": "Bret",
+      "tag": "discussion",
+      "added": "2026-03-26",
+      "status": "open"
+    },
+    {
       "id": 6,
       "text": "Did you update the headshots on YouTube+social pages or someone else?",
       "owner": "Bret",
@@ -48,14 +56,6 @@
       "text": "New dashboard + Set up GitHub connection",
       "owner": "Bret",
       "tag": "update",
-      "added": "2026-03-26",
-      "status": "open"
-    },
-    {
-      "id": 5,
-      "text": "YouTube Shorts AI tool https://sendshort.ai/",
-      "owner": "Bret",
-      "tag": "discussion",
       "added": "2026-03-26",
       "status": "open"
     }
