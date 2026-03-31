@@ -123,6 +123,18 @@
       "created": "2026-03-31",
       "completed": null,
       "recurrence": null
+    },
+    {
+      "id": 11,
+      "task": "Create promo/invitation image for AI event",
+      "priority": "High",
+      "due_date": "2026-04-03",
+      "status": "open",
+      "owner": "Eduardo",
+      "notes": "Create an image that Chris, Mark, and the event host can text to their network to invite them to the AI leadership event in Columbus. Wording and details are at www.sightshift.com/columbus",
+      "created": "2026-03-31",
+      "completed": null,
+      "recurrence": null
     }
   ]
 }
