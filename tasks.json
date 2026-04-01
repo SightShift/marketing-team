@@ -101,11 +101,11 @@
       "task": "Publish YT Live to Podcast",
       "priority": "High",
       "due_date": "2026-04-03",
-      "status": "open",
+      "status": "done",
       "owner": "Eduardo",
       "notes": "Create separate playlist/designation on Podcast to differentiate Lunch with Chris from regular episodes.",
       "created": "2026-03-26",
-      "completed": null,
+      "completed": "2026-03-31",
       "recurrence": {
         "type": "weekly",
         "day": 5
@@ -135,6 +135,21 @@
       "created": "2026-03-31",
       "completed": null,
       "recurrence": null
+    },
+    {
+      "id": 12,
+      "task": "Publish YT Live to Podcast",
+      "priority": "Medium",
+      "due_date": "2026-04-03",
+      "status": "open",
+      "owner": "Eduardo",
+      "notes": "Create separate playlist/designation on Podcast to differentiate Lunch with Chris from regular episodes.",
+      "created": "2026-03-31",
+      "completed": null,
+      "recurrence": {
+        "type": "weekly",
+        "day": 5
+      }
     }
   ]
 }
