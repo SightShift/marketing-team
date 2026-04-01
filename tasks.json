@@ -65,11 +65,11 @@
       "task": "Validation check video (trim and post on YT)",
       "priority": "High",
       "due_date": "2026-03-30",
-      "status": "open",
+      "status": "done",
       "owner": "Eduardo",
       "notes": "",
       "created": "2026-03-26",
-      "completed": null,
+      "completed": "2026-03-31",
       "recurrence": null
     },
     {
