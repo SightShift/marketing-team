@@ -5,11 +5,11 @@
       "task": "Update Dumb Theater video endings",
       "priority": "High",
       "due_date": "2026-04-08",
-      "status": "open",
+      "status": "done",
       "owner": "Eduardo",
       "notes": "\"Get\" on top of horizontal SightShift logo",
       "created": "2026-03-23",
-      "completed": null,
+      "completed": "2026-03-31",
       "recurrence": null
     },
     {
@@ -139,7 +139,7 @@
     {
       "id": 12,
       "task": "Publish YT Live to Podcast",
-      "priority": "Medium",
+      "priority": "High",
       "due_date": "2026-04-03",
       "status": "open",
       "owner": "Eduardo",
@@ -149,7 +149,8 @@
       "recurrence": {
         "type": "weekly",
         "day": 5
-      }
+      },
+      "_escalated": true
     }
   ]
 }
