@@ -82,6 +82,14 @@
       "added": "2026-03-31",
       "status": "open",
       "notes": "Eduardo handle everything (upload transcript to github source content, use Claude connected to github to create headline + description and email, publish email to Asana for Marko, create thumbnail)\nOR: Eduardo plus Bret's automated Claude (Eduardo creates headline+description and thumbnail, Bret's automated agent writes email and posts to asana)?"
+    },
+    {
+      "id": 10,
+      "text": "Learning: Text in bottom right of YT thumbnail is covered by time",
+      "owner": "Bret",
+      "tag": "fyi",
+      "added": "2026-03-31",
+      "status": "open"
     }
   ],
   "past_meetings": [
