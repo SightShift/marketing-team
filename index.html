@@ -42,28 +42,91 @@
   .view { display: none; }
   .view.active { display: block; }
 
-  /* CONTENT CALENDAR HEADER */
-  .cal-header { display: flex; gap: 14px; margin-bottom: 10px; }
+  /* CONTENT CALENDAR HEADER — 3 panels */
+  .cal-header { display: flex; gap: 10px; margin-bottom: 10px; }
   .cal-header-left { flex: 1; background: var(--white); border-radius: 8px; padding: 10px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--gold); }
-  .cal-header-left h2 { font-size: 20px; color: var(--dark-blue); margin-bottom: 6px; }
-  .cal-topic { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+  .cal-header-left h2 { font-size: 20px; color: var(--dark-blue); margin-bottom: 4px; }
+  .cal-topic { margin-bottom: 0; }
   .cal-topic-label { font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; }
   .cal-topic-value { font-size: 13px; font-weight: 600; color: var(--dark-blue); }
-  .cal-topic-desc { font-size: 11px; color: #5a7273; }
-  .cal-legends { display: flex; gap: 20px; flex-wrap: wrap; }
-  .cal-legend-group { display: flex; flex-direction: column; gap: 3px; }
-  .cal-legend-title { font-size: 8px; font-weight: 700; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; }
-  .cal-legend-items { display: flex; gap: 6px; flex-wrap: wrap; }
-  .cal-legend-item { display: flex; align-items: center; gap: 3px; font-size: 10px; color: #4a5e5f; }
-  .cal-legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
-  .cal-legend-bar { width: 4px; height: 12px; border-radius: 1px; flex-shrink: 0; }
-  .cal-header-right { background: var(--white); border-radius: 8px; padding: 10px 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--teal); min-width: 300px; max-width: 380px; }
-  .cal-header-right .chr-label { font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; margin-bottom: 3px; }
+  .cal-topic-desc { font-size: 11px; color: #5a7273; display: block; margin-top: 2px; }
+  .cal-header-center { background: var(--white); border-radius: 8px; padding: 10px 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--teal); min-width: 220px; max-width: 280px; }
+  .cal-header-center .chr-label { font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; margin-bottom: 3px; }
   .cal-overlay-item { font-size: 11px; color: #4a5e5f; padding: 4px 0; border-bottom: 1px solid var(--gray); line-height: 1.4; }
   .cal-overlay-item:last-child { border-bottom: none; }
   .cal-overlay-name { font-weight: 600; color: var(--dark-blue); }
   .cal-overlay-dates { font-size: 10px; color: var(--medium-blue); }
   .cal-overlay-empty { font-size: 11px; color: var(--medium-blue); font-style: italic; }
+  .cal-header-right { background: var(--white); border-radius: 8px; padding: 10px 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--medium-blue); min-width: 240px; max-width: 300px; }
+  .cal-legend-group { margin-bottom: 6px; }
+  .cal-legend-group:last-child { margin-bottom: 0; }
+  .cal-legend-title { font-size: 8px; font-weight: 700; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; margin-bottom: 2px; }
+  .cal-legend-items { display: flex; gap: 6px; flex-wrap: wrap; }
+  .cal-legend-item { display: flex; align-items: center; gap: 3px; font-size: 10px; color: #4a5e5f; }
+  .cal-legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+  .cal-legend-bar { width: 4px; height: 12px; border-radius: 1px; flex-shrink: 0; }
+
+  /* CONTENT REVIEW TAB */
+  .batch-header { display: flex; justify-content: space-between; align-items: center; background: var(--white); border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--gold); }
+  .batch-header h2 { font-size: 20px; font-weight: 600; }
+  .batch-meta { font-size: 12px; color: #5a7273; }
+  .batch-meta strong { color: var(--dark-blue); }
+  .batch-actions { display: flex; gap: 8px; align-items: center; }
+  .batch-progress { font-size: 12px; color: var(--medium-blue); font-weight: 600; }
+  .btn-approve-all { padding: 7px 14px; border-radius: 6px; border: none; background: var(--green); color: var(--white); font-size: 12px; font-weight: 600; cursor: pointer; }
+  .btn-approve-all:hover { background: #3d8a5e; }
+  .draft-card { background: var(--white); border-radius: 8px; padding: 14px 16px; margin-bottom: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--gray); }
+  .draft-card.approved { border-left-color: var(--green); opacity: 0.7; }
+  .draft-card.changes-requested { border-left-color: var(--orange); }
+  .draft-card-top { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; flex-wrap: wrap; }
+  .draft-card-top .badge { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; }
+  .badge.type-email { background: #f3e5f5; color: #6a1b9a; }
+  .badge.type-linkedin { background: #e0eef6; color: #0a5c8a; }
+  .badge.type-instagram { background: #fce4ec; color: #ad1457; }
+  .badge.pillar-drift { background: rgba(88,158,168,0.15); color: var(--medium-blue); }
+  .badge.pillar-default { background: rgba(206,164,44,0.15); color: #9a7a10; }
+  .badge.pillar-dumb-theater { background: rgba(213,76,44,0.15); color: var(--orange); }
+  .draft-title { font-size: 15px; font-weight: 600; color: var(--dark-blue); margin-bottom: 2px; }
+  .draft-publish { font-size: 11px; color: var(--medium-blue); }
+  .draft-body { font-size: 13px; color: #3a4e4f; line-height: 1.55; margin: 8px 0; padding: 10px 12px; background: var(--gray); border-radius: 6px; white-space: pre-wrap; word-break: break-word; max-height: 200px; overflow-y: auto; }
+  .draft-body.editing { background: var(--white); border: 2px solid var(--teal); max-height: none; }
+  .draft-body.editing[contenteditable] { outline: none; }
+  .draft-cta { font-size: 12px; color: var(--teal); font-weight: 600; margin-bottom: 4px; }
+  .draft-source { font-size: 11px; color: var(--medium-blue); font-style: italic; }
+  .draft-actions { display: flex; gap: 6px; margin-top: 8px; }
+  .draft-actions button { padding: 6px 12px; border-radius: 5px; font-size: 12px; font-weight: 500; cursor: pointer; border: none; transition: all 0.15s; }
+  .btn-approve { background: var(--green); color: var(--white); }
+  .btn-approve:hover { background: #3d8a5e; }
+  .btn-edit { background: var(--teal); color: var(--white); }
+  .btn-edit:hover { background: #004a52; }
+  .btn-changes { background: var(--yellow); color: var(--dark-blue); }
+  .btn-changes:hover { background: #d4b830; }
+  .btn-save-edit { background: var(--green); color: var(--white); display: none; }
+  .btn-cancel-edit { background: var(--gray); color: var(--dark-blue); display: none; }
+  .draft-feedback { margin-top: 6px; display: none; }
+  .draft-feedback textarea { width: 100%; min-height: 60px; padding: 8px; border: 1px solid var(--orange); border-radius: 6px; font-size: 12px; font-family: inherit; resize: vertical; }
+  .draft-feedback .feedback-btns { display: flex; gap: 6px; margin-top: 4px; }
+  .draft-feedback .feedback-btns button { padding: 5px 10px; border-radius: 4px; font-size: 11px; border: none; cursor: pointer; }
+  .draft-status { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
+  .draft-status.status-approved { background: #e8f5e9; color: var(--green); }
+  .draft-status.status-changes { background: #fff3e0; color: var(--orange); }
+  .draft-status.status-pending { background: var(--gray); color: var(--medium-blue); }
+  .draft-graphic { margin-top: 4px; padding: 4px 8px; background: #fff8e1; border-left: 3px solid var(--gold); border-radius: 3px; font-size: 11px; color: #8a6d00; }
+
+  /* CONTENT QUEUE TAB */
+  .queue-section { margin-bottom: 24px; }
+  .queue-section-header { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--teal); margin-bottom: 8px; padding-bottom: 5px; border-bottom: 2px solid var(--gold); }
+  .queue-week { margin-bottom: 16px; }
+  .queue-week-label { font-size: 12px; font-weight: 600; color: var(--medium-blue); margin-bottom: 6px; }
+  .queue-card { background: var(--white); border-radius: 8px; padding: 12px 14px; margin-bottom: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .queue-card-top { display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap; }
+  .queue-card .draft-body { max-height: 150px; }
+  .queue-card .queue-graphic { padding: 6px 10px; background: #fff8e1; border-left: 3px solid var(--orange); border-radius: 4px; font-size: 12px; color: #8a6d00; margin-top: 6px; }
+  .queue-card .queue-graphic strong { color: var(--orange); }
+  .queue-status-toggle { display: flex; gap: 4px; margin-top: 6px; }
+  .queue-status-toggle button { padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 500; cursor: pointer; border: 1px solid #d0d8d8; background: var(--white); color: var(--medium-blue); }
+  .queue-status-toggle button.active { background: var(--green); color: var(--white); border-color: var(--green); }
+  .queue-status-toggle button:hover:not(.active) { background: var(--gray); }
 
   /* CALENDAR */
   .month-block { margin-bottom: 20px; }
@@ -286,6 +349,8 @@
   <div class="brand">SightShift Marketing</div>
   <div class="tabs">
     <button class="tab active" data-view="calendar">Content Calendar</button>
+    <button class="tab" data-view="review">Content Review</button>
+    <button class="tab" data-view="queue">Content Queue</button>
     <button class="tab" data-view="tasks">Tasks</button>
     <button class="tab" data-view="agenda">Meeting Agenda</button>
   </div>
@@ -311,33 +376,72 @@
           <span class="cal-topic-value" id="cal-topic-name"></span>
           <span class="cal-topic-desc" id="cal-topic-desc"></span>
         </div>
-        <div class="cal-legends">
-          <div class="cal-legend-group">
-            <div class="cal-legend-title">Channels</div>
-            <div class="cal-legend-items">
-              <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#fce4ec"></div>YT Live</div>
-              <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#e8f5e9"></div>Podcast</div>
-              <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#f3e5f5"></div>Email</div>
-              <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#e0eef6"></div>LinkedIn</div>
-              <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#fce4ec"></div>IG</div>
-            </div>
+      </div>
+      <div class="cal-header-center">
+        <div class="chr-label">Active Campaigns</div>
+        <div id="cal-overlays"></div>
+      </div>
+      <div class="cal-header-right">
+        <div class="cal-legend-group">
+          <div class="cal-legend-title">Channels</div>
+          <div class="cal-legend-items">
+            <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#fce4ec"></div>YT Live</div>
+            <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#e8f5e9"></div>Podcast</div>
+            <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#f3e5f5"></div>Email</div>
+            <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#e0eef6"></div>LinkedIn</div>
+            <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#fce4ec"></div>IG</div>
           </div>
-          <div class="cal-legend-group">
-            <div class="cal-legend-title">Timeless Template</div>
-            <div class="cal-legend-items">
-              <div class="cal-legend-item"><div class="cal-legend-bar" style="background:var(--medium-blue)"></div>Drift</div>
-              <div class="cal-legend-item"><div class="cal-legend-bar" style="background:var(--gold)"></div>Default</div>
-              <div class="cal-legend-item"><div class="cal-legend-bar" style="background:var(--orange)"></div>Dumb Theater</div>
-            </div>
+        </div>
+        <div class="cal-legend-group">
+          <div class="cal-legend-title">Timeless Template</div>
+          <div class="cal-legend-items">
+            <div class="cal-legend-item"><div class="cal-legend-bar" style="background:var(--medium-blue)"></div>Drift</div>
+            <div class="cal-legend-item"><div class="cal-legend-bar" style="background:var(--gold)"></div>Default</div>
+            <div class="cal-legend-item"><div class="cal-legend-bar" style="background:var(--orange)"></div>Dumb Theater</div>
           </div>
         </div>
       </div>
-      <div class="cal-header-right">
-        <div class="chr-label">Active Overlays</div>
-        <div id="cal-overlays"></div>
-      </div>
     </div>
     <div id="calendar-content"></div>
+  </div>
+
+  <!-- CONTENT REVIEW VIEW (Bret's approval workflow) -->
+  <div class="view" id="review-view">
+    <div class="batch-header">
+      <div>
+        <h2>Content Review</h2>
+        <div class="batch-meta" id="batch-meta"></div>
+      </div>
+      <div class="batch-actions">
+        <span class="batch-progress" id="batch-progress"></span>
+        <button class="btn-approve-all" onclick="approveAllDrafts()">Approve All</button>
+      </div>
+    </div>
+    <div id="draft-cards"></div>
+    <div class="empty-state" id="review-empty" style="display:none">
+      <h3>No batches pending review</h3>
+      <p>When Connie produces the weekly batch, it will appear here for your review.</p>
+    </div>
+  </div>
+
+  <!-- CONTENT QUEUE VIEW (Eduardo + Marko) -->
+  <div class="view" id="queue-view">
+    <div class="queue-section">
+      <div class="queue-section-header">Social Content (Eduardo)</div>
+      <div id="queue-eduardo"></div>
+      <div class="empty-state" id="queue-eduardo-empty" style="display:none">
+        <h3>No approved social content</h3>
+        <p>Approved LinkedIn and Instagram content will appear here.</p>
+      </div>
+    </div>
+    <div class="queue-section">
+      <div class="queue-section-header">Emails (Marko)</div>
+      <div id="queue-marko"></div>
+      <div class="empty-state" id="queue-marko-empty" style="display:none">
+        <h3>No approved emails</h3>
+        <p>Approved River emails will appear here. Marko schedules these in Kartra.</p>
+      </div>
+    </div>
   </div>
 
   <!-- TASKS VIEW -->
@@ -1510,7 +1614,7 @@ function renderCalendarHeader(data) {
   var overlays = data.active_overlays || [];
   var overlayEl = document.getElementById('cal-overlays');
   if (overlays.length === 0) {
-    overlayEl.innerHTML = '<div class="cal-overlay-empty">No active campaign overlays</div>';
+    overlayEl.innerHTML = '<div class="cal-overlay-empty">No active campaigns</div>';
   } else {
     overlayEl.innerHTML = overlays.map(function(o) {
       return '<div class="cal-overlay-item"><div class="cal-overlay-name">' + esc(o.name) + '</div><div class="cal-overlay-dates">' + esc(o.start) + ' to ' + esc(o.end) + '</div></div>';
@@ -1647,6 +1751,267 @@ function pillarLabel(p) {
   return map[(p || '').toLowerCase()] || p;
 }
 
+// ===== CONTENT REVIEW (Bret's approval workflow) =====
+var allDrafts = { batches: [] };
+
+async function loadDrafts() {
+  try {
+    allDrafts = await storage.readFile('drafts.json');
+    renderReview();
+    renderQueue();
+  } catch(e) {
+    allDrafts = { batches: [] };
+    renderReview();
+    renderQueue();
+  }
+}
+
+async function saveDrafts() {
+  await storage.writeFile('drafts.json', allDrafts);
+}
+
+function getCurrentBatch() {
+  // Find the most recent batch that's pending_review or in_review
+  var pending = allDrafts.batches.filter(function(b) { return b.status === 'pending_review' || b.status === 'in_review'; });
+  return pending.length > 0 ? pending[pending.length - 1] : null;
+}
+
+function renderReview() {
+  var batch = getCurrentBatch();
+  var container = document.getElementById('draft-cards');
+  var emptyEl = document.getElementById('review-empty');
+  var metaEl = document.getElementById('batch-meta');
+  var progressEl = document.getElementById('batch-progress');
+
+  if (!batch || !batch.items || batch.items.length === 0) {
+    container.innerHTML = '';
+    emptyEl.style.display = 'block';
+    metaEl.textContent = '';
+    progressEl.textContent = '';
+    return;
+  }
+  emptyEl.style.display = 'none';
+
+  var approved = batch.items.filter(function(i) { return i.status === 'approved'; }).length;
+  var total = batch.items.length;
+  metaEl.innerHTML = 'Week of <strong>' + esc(batch.week_of) + '</strong> | Source: ' + esc(batch.source_summary || 'Multiple') + ' | Produced by ' + esc(batch.produced_by || 'Connie');
+  progressEl.textContent = approved + '/' + total + ' approved';
+
+  container.innerHTML = batch.items.map(function(item, idx) {
+    var statusClass = item.status === 'approved' ? 'approved' : (item.status === 'changes_requested' ? 'changes-requested' : '');
+    var typeBadge = item.type === 'river-email' ? 'type-email' : (item.type === 'linkedin' ? 'type-linkedin' : 'type-instagram');
+    var typeLabel = item.type === 'river-email' ? 'Email' : (item.type === 'linkedin' ? 'LinkedIn' : 'Instagram');
+    var pillarBadge = item.pillar ? 'pillar-' + item.pillar : '';
+    var pillarText = item.pillar ? (item.pillar === 'dumb-theater' ? 'Dumb Theater' : item.pillar.charAt(0).toUpperCase() + item.pillar.slice(1)) : '';
+    var statusBadge = item.status === 'approved' ? '<span class="draft-status status-approved">Approved</span>' :
+                      item.status === 'changes_requested' ? '<span class="draft-status status-changes">Changes Requested</span>' :
+                      '<span class="draft-status status-pending">Pending</span>';
+
+    var html = '<div class="draft-card ' + statusClass + '" data-idx="' + idx + '">';
+    html += '<div class="draft-card-top">';
+    html += '<span class="badge ' + typeBadge + '">' + typeLabel + '</span>';
+    if (pillarText) html += '<span class="badge ' + pillarBadge + '">' + esc(pillarText) + '</span>';
+    html += statusBadge;
+    html += '<span class="draft-publish">Publish: ' + esc(item.publish_date) + '</span>';
+    html += '</div>';
+    html += '<div class="draft-title">' + esc(item.title || item.subject_line || '') + '</div>';
+    if (item.subject_line && item.title !== item.subject_line) html += '<div style="font-size:11px;color:var(--medium-blue);margin-bottom:4px">Subject: ' + esc(item.subject_line) + '</div>';
+    html += '<div class="draft-body" id="draft-body-' + idx + '">' + esc(item.body || '(No body content yet)') + '</div>';
+    if (item.cta) html += '<div class="draft-cta">CTA: ' + esc(item.cta) + '</div>';
+    if (item.source) html += '<div class="draft-source">Source: ' + esc(item.source) + '</div>';
+    if (item.graphic_needed) html += '<div class="draft-graphic"><strong>Graphic Needed:</strong> ' + esc(item.graphic_needed) + '</div>';
+    if (item.feedback) html += '<div style="margin-top:6px;padding:6px 10px;background:#fff3e0;border-radius:5px;border-left:3px solid var(--orange);font-size:12px"><strong style="color:var(--orange)">Feedback:</strong> ' + esc(item.feedback) + '</div>';
+
+    html += '<div class="draft-actions">';
+    if (item.status !== 'approved') {
+      html += '<button class="btn-approve" onclick="approveDraft(' + idx + ')">Approve</button>';
+      html += '<button class="btn-edit" onclick="editDraft(' + idx + ')">Edit</button>';
+      html += '<button class="btn-save-edit" id="save-edit-' + idx + '" onclick="saveEdit(' + idx + ')">Save</button>';
+      html += '<button class="btn-cancel-edit" id="cancel-edit-' + idx + '" onclick="cancelEdit(' + idx + ')">Cancel</button>';
+      html += '<button class="btn-changes" onclick="requestChanges(' + idx + ')">Request Changes</button>';
+    }
+    html += '</div>';
+
+    html += '<div class="draft-feedback" id="feedback-' + idx + '"><textarea id="feedback-text-' + idx + '" placeholder="Describe what needs to change..."></textarea><div class="feedback-btns"><button style="background:var(--orange);color:white" onclick="submitFeedback(' + idx + ')">Submit Feedback</button><button style="background:var(--gray)" onclick="cancelFeedback(' + idx + ')">Cancel</button></div></div>';
+    html += '</div>';
+    return html;
+  }).join('');
+}
+
+function approveDraft(idx) {
+  var batch = getCurrentBatch();
+  if (!batch) return;
+  batch.items[idx].status = 'approved';
+  batch.items[idx].feedback = null;
+  checkBatchComplete(batch);
+  saveDrafts();
+  renderReview();
+  renderQueue();
+  showToast('Item approved', 'success');
+}
+
+function approveAllDrafts() {
+  var batch = getCurrentBatch();
+  if (!batch) return;
+  batch.items.forEach(function(item) { item.status = 'approved'; item.feedback = null; });
+  checkBatchComplete(batch);
+  saveDrafts();
+  renderReview();
+  renderQueue();
+  showToast('All items approved', 'success');
+}
+
+function checkBatchComplete(batch) {
+  var allApproved = batch.items.every(function(i) { return i.status === 'approved'; });
+  if (allApproved) batch.status = 'approved';
+}
+
+var editOriginals = {};
+function editDraft(idx) {
+  var el = document.getElementById('draft-body-' + idx);
+  editOriginals[idx] = el.textContent;
+  el.contentEditable = 'true';
+  el.classList.add('editing');
+  el.focus();
+  document.getElementById('save-edit-' + idx).style.display = 'inline-block';
+  document.getElementById('cancel-edit-' + idx).style.display = 'inline-block';
+}
+
+function saveEdit(idx) {
+  var el = document.getElementById('draft-body-' + idx);
+  var batch = getCurrentBatch();
+  batch.items[idx].body = el.textContent;
+  el.contentEditable = 'false';
+  el.classList.remove('editing');
+  document.getElementById('save-edit-' + idx).style.display = 'none';
+  document.getElementById('cancel-edit-' + idx).style.display = 'none';
+  delete editOriginals[idx];
+  saveDrafts();
+  showToast('Edit saved', 'success');
+}
+
+function cancelEdit(idx) {
+  var el = document.getElementById('draft-body-' + idx);
+  el.textContent = editOriginals[idx] || el.textContent;
+  el.contentEditable = 'false';
+  el.classList.remove('editing');
+  document.getElementById('save-edit-' + idx).style.display = 'none';
+  document.getElementById('cancel-edit-' + idx).style.display = 'none';
+  delete editOriginals[idx];
+}
+
+function requestChanges(idx) {
+  document.getElementById('feedback-' + idx).style.display = 'block';
+}
+
+function submitFeedback(idx) {
+  var text = document.getElementById('feedback-text-' + idx).value.trim();
+  if (!text) { showToast('Please enter feedback', 'error'); return; }
+  var batch = getCurrentBatch();
+  batch.items[idx].status = 'changes_requested';
+  batch.items[idx].feedback = text;
+  saveDrafts();
+  renderReview();
+  showToast('Feedback submitted', 'info');
+}
+
+function cancelFeedback(idx) {
+  document.getElementById('feedback-' + idx).style.display = 'none';
+}
+
+// ===== CONTENT QUEUE (Eduardo + Marko) =====
+function renderQueue() {
+  var eduardoEl = document.getElementById('queue-eduardo');
+  var markoEl = document.getElementById('queue-marko');
+  var eduardoEmpty = document.getElementById('queue-eduardo-empty');
+  var markoEmpty = document.getElementById('queue-marko-empty');
+
+  // Collect approved items from all batches
+  var socialItems = [];
+  var emailItems = [];
+  allDrafts.batches.forEach(function(batch) {
+    (batch.items || []).forEach(function(item) {
+      if (item.status !== 'approved') return;
+      if (item.type === 'linkedin' || item.type === 'instagram') socialItems.push(item);
+      else if (item.type === 'river-email') emailItems.push(item);
+    });
+  });
+
+  // Render Eduardo's social content
+  if (socialItems.length === 0) {
+    eduardoEl.innerHTML = '';
+    eduardoEmpty.style.display = 'block';
+  } else {
+    eduardoEmpty.style.display = 'none';
+    eduardoEl.innerHTML = socialItems.map(function(item) {
+      var typeBadge = item.type === 'linkedin' ? 'type-linkedin' : 'type-instagram';
+      var typeLabel = item.type === 'linkedin' ? 'LinkedIn' : 'Instagram';
+      var pillarBadge = item.pillar ? 'pillar-' + item.pillar : '';
+      var pillarText = item.pillar ? (item.pillar === 'dumb-theater' ? 'Dumb Theater' : item.pillar.charAt(0).toUpperCase() + item.pillar.slice(1)) : '';
+      var queueStatus = item.queue_status || 'ready';
+
+      var html = '<div class="queue-card">';
+      html += '<div class="queue-card-top">';
+      html += '<span class="badge ' + typeBadge + '">' + typeLabel + '</span>';
+      if (pillarText) html += '<span class="badge ' + pillarBadge + '">' + esc(pillarText) + '</span>';
+      html += '<span class="draft-publish">Publish: ' + esc(item.publish_date) + '</span>';
+      html += '</div>';
+      html += '<div class="draft-title">' + esc(item.title) + '</div>';
+      html += '<div class="draft-body">' + esc(item.body || '') + '</div>';
+      if (item.cta) html += '<div class="draft-cta">CTA: ' + esc(item.cta) + '</div>';
+      if (item.graphic_needed) html += '<div class="queue-graphic"><strong>Graphic Needed:</strong> ' + esc(item.graphic_needed) + '</div>';
+      html += '<div class="queue-status-toggle">';
+      html += '<button class="' + (queueStatus === 'ready' ? 'active' : '') + '" onclick="setQueueStatus(this,\'' + item.id + '\',\'ready\')">Ready</button>';
+      html += '<button class="' + (queueStatus === 'scheduled' ? 'active' : '') + '" onclick="setQueueStatus(this,\'' + item.id + '\',\'scheduled\')">Scheduled</button>';
+      html += '<button class="' + (queueStatus === 'published' ? 'active' : '') + '" onclick="setQueueStatus(this,\'' + item.id + '\',\'published\')">Published</button>';
+      html += '</div>';
+      html += '</div>';
+      return html;
+    }).join('');
+  }
+
+  // Render Marko's emails (read-only for Eduardo, shows status)
+  if (emailItems.length === 0) {
+    markoEl.innerHTML = '';
+    markoEmpty.style.display = 'block';
+  } else {
+    markoEmpty.style.display = 'none';
+    markoEl.innerHTML = emailItems.map(function(item) {
+      var pillarBadge = item.pillar ? 'pillar-' + item.pillar : '';
+      var pillarText = item.pillar ? (item.pillar === 'dumb-theater' ? 'Dumb Theater' : item.pillar.charAt(0).toUpperCase() + item.pillar.slice(1)) : '';
+      var queueStatus = item.queue_status || 'ready';
+
+      var html = '<div class="queue-card">';
+      html += '<div class="queue-card-top">';
+      html += '<span class="badge type-email">Email</span>';
+      if (pillarText) html += '<span class="badge ' + pillarBadge + '">' + esc(pillarText) + '</span>';
+      html += '<span class="draft-publish">Publish: ' + esc(item.publish_date) + '</span>';
+      html += '</div>';
+      html += '<div class="draft-title">' + esc(item.subject_line || item.title) + '</div>';
+      html += '<div class="draft-body">' + esc(item.body || '') + '</div>';
+      if (item.cta) html += '<div class="draft-cta">CTA: ' + esc(item.cta) + '</div>';
+      html += '<div class="queue-status-toggle">';
+      html += '<button class="' + (queueStatus === 'ready' ? 'active' : '') + '" onclick="setQueueStatus(this,\'' + item.id + '\',\'ready\')">Ready</button>';
+      html += '<button class="' + (queueStatus === 'scheduled' ? 'active' : '') + '" onclick="setQueueStatus(this,\'' + item.id + '\',\'scheduled\')">Scheduled in Kartra</button>';
+      html += '</div>';
+      html += '</div>';
+      return html;
+    }).join('');
+  }
+}
+
+function setQueueStatus(btn, itemId, status) {
+  // Find the item across all batches
+  allDrafts.batches.forEach(function(batch) {
+    (batch.items || []).forEach(function(item) {
+      if (item.id === itemId) item.queue_status = status;
+    });
+  });
+  saveDrafts();
+  renderQueue();
+  showToast('Status updated', 'success');
+}
+
 // ===== SETTINGS =====
 function openSettingsModal() {
   var curUser = localStorage.getItem('dashboard_user') || 'Bret';
@@ -1659,7 +2024,7 @@ function openSettingsModal() {
         '<div class="setting-row"><label>Your Name</label><select id="setting-user" style="flex:1;padding:6px 8px;border:1px solid #d0d8d8;border-radius:4px;font-size:12px">' +
           '<option value="Bret"' + (curUser === 'Bret' ? ' selected' : '') + '>Bret</option>' +
           '<option value="Eduardo"' + (curUser === 'Eduardo' ? ' selected' : '') + '>Eduardo</option>' +
-          '<option value="Connor"' + (curUser === 'Connor' ? ' selected' : '') + '>Connor</option>' +
+          '<option value="Connie"' + (curUser === 'Connie' ? ' selected' : '') + '>Connie</option>' +
         '</select></div>' +
       '</div>' +
 
@@ -1757,6 +2122,7 @@ document.addEventListener('click', function(e) {
 storage.init();
 loadTasks();
 loadCalendar();
+loadDrafts();
 loadAgenda();
 </script>
 </body>
