@@ -38,6 +38,14 @@
       "resolved_date": "2026-04-05"
     },
     {
+      "id": 8,
+      "text": "Podcast production prep system",
+      "owner": "Bret",
+      "tag": "discussion",
+      "added": "2026-04-05",
+      "status": "open"
+    },
+    {
       "id": 7,
       "text": "Podcast",
       "owner": "Bret",
@@ -61,14 +69,6 @@
       "owner": "Bret",
       "tag": "discussion",
       "added": "2026-03-26",
-      "status": "open"
-    },
-    {
-      "id": 8,
-      "text": "Podcast production prep system",
-      "owner": "Bret",
-      "tag": "discussion",
-      "added": "2026-04-05",
       "status": "open"
     }
   ],
