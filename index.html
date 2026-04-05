@@ -42,20 +42,28 @@
   .view { display: none; }
   .view.active { display: block; }
 
-  /* CAMPAIGN HEADER */
-  .campaign-header { display: flex; gap: 14px; margin-bottom: 10px; }
-  .campaign-header-left { flex: 1; background: var(--white); border-radius: 8px; padding: 10px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--gold); display: flex; gap: 20px; }
-  .ch-main { flex: 1; }
-  .ch-main h2 { font-size: 22px; color: var(--dark-blue); margin-bottom: 3px; }
-  .ch-main .ch-desc { font-size: 12px; color: #5a7273; line-height: 1.4; }
-  .ch-ctas { flex-shrink: 0; text-align: right; padding-left: 16px; border-left: 1px solid var(--gray); }
-  .ch-ctas .cta-block { margin-bottom: 6px; }
-  .ch-ctas .cta-block:last-child { margin-bottom: 0; }
-  .ch-ctas .cta-label { font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; }
-  .ch-ctas .cta-value { font-size: 12px; font-weight: 600; color: var(--dark-blue); }
-  .campaign-header-right { background: var(--white); border-radius: 8px; padding: 10px 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--teal); min-width: 340px; max-width: 400px; }
-  .campaign-header-right .chr-label { font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; margin-bottom: 3px; }
-  .campaign-header-right ul { font-size: 11px; color: #4a5e5f; margin-left: 14px; line-height: 1.5; }
+  /* CONTENT CALENDAR HEADER */
+  .cal-header { display: flex; gap: 14px; margin-bottom: 10px; }
+  .cal-header-left { flex: 1; background: var(--white); border-radius: 8px; padding: 10px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--gold); }
+  .cal-header-left h2 { font-size: 20px; color: var(--dark-blue); margin-bottom: 6px; }
+  .cal-topic { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+  .cal-topic-label { font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; }
+  .cal-topic-value { font-size: 13px; font-weight: 600; color: var(--dark-blue); }
+  .cal-topic-desc { font-size: 11px; color: #5a7273; }
+  .cal-legends { display: flex; gap: 20px; flex-wrap: wrap; }
+  .cal-legend-group { display: flex; flex-direction: column; gap: 3px; }
+  .cal-legend-title { font-size: 8px; font-weight: 700; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; }
+  .cal-legend-items { display: flex; gap: 6px; flex-wrap: wrap; }
+  .cal-legend-item { display: flex; align-items: center; gap: 3px; font-size: 10px; color: #4a5e5f; }
+  .cal-legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+  .cal-legend-bar { width: 4px; height: 12px; border-radius: 1px; flex-shrink: 0; }
+  .cal-header-right { background: var(--white); border-radius: 8px; padding: 10px 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--teal); min-width: 300px; max-width: 380px; }
+  .cal-header-right .chr-label { font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; margin-bottom: 3px; }
+  .cal-overlay-item { font-size: 11px; color: #4a5e5f; padding: 4px 0; border-bottom: 1px solid var(--gray); line-height: 1.4; }
+  .cal-overlay-item:last-child { border-bottom: none; }
+  .cal-overlay-name { font-weight: 600; color: var(--dark-blue); }
+  .cal-overlay-dates { font-size: 10px; color: var(--medium-blue); }
+  .cal-overlay-empty { font-size: 11px; color: var(--medium-blue); font-style: italic; }
 
   /* CALENDAR */
   .month-block { margin-bottom: 20px; }
@@ -79,12 +87,33 @@
   .cal-popover .pop-detail { font-size: 11px; margin-top: 3px; opacity: 0.85; line-height: 1.35; }
   .cal-popover .pop-detail span { display: block; padding-left: 8px; }
   .cal-popover .pop-detail .pop-label { font-weight: 600; display: inline; }
+  .cal-entry.youtube-live { background: #fce4ec; color: #c62828; }
   .cal-entry.youtube { background: #fce4ec; color: #c62828; }
   .cal-entry.linkedin { background: #e0eef6; color: #0a5c8a; }
   .cal-entry.instagram { background: #fce4ec; color: #ad1457; }
   .cal-entry.river { background: #f3e5f5; color: #6a1b9a; }
+  .cal-entry.podcast { background: #e8f5e9; color: #2e7d32; }
   .cal-entry.cultural { background: var(--seafoam); color: var(--green); }
   .cal-entry.production { background: #fff8e1; color: #b8960a; }
+
+  /* Pillar left-border indicators (Timeless Template) */
+  .cal-entry.pillar-drift { border-left: 3px solid var(--medium-blue); }
+  .cal-entry.pillar-default { border-left: 3px solid var(--gold); }
+  .cal-entry.pillar-dumb-theater { border-left: 3px solid var(--orange); }
+  .cal-entry .graphic-icon { font-size: 8px; opacity: 0.7; margin-left: 1px; }
+
+  /* Overlay indicators on cells */
+  .cal-cell.has-overlay { border-top: 2px solid var(--gold); }
+  .cal-cell .overlay-label { font-size: 7px; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1; margin-bottom: 1px; }
+
+  /* Popover pillar badge */
+  .pop-pillar { display: inline-block; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px; margin-left: 6px; }
+  .pop-pillar.drift { background: rgba(88,158,168,0.15); color: var(--medium-blue); }
+  .pop-pillar.default { background: rgba(206,164,44,0.15); color: #9a7a10; }
+  .pop-pillar.dumb-theater { background: rgba(213,76,44,0.15); color: var(--orange); }
+  .pop-graphic { margin-top: 4px; padding: 4px 8px; background: #fff8e1; border-left: 3px solid var(--gold); border-radius: 3px; font-size: 11px; color: #8a6d00; }
+  .pop-graphic .pop-graphic-label { font-weight: 700; font-size: 9px; text-transform: uppercase; letter-spacing: 0.3px; color: var(--orange); }
+  .pop-source { font-size: 10px; color: var(--medium-blue); margin-top: 2px; font-style: italic; }
 
   /* Popover for last rows — show above instead of below */
   .cal-cell.pop-above .cal-popover { top: auto; bottom: 100%; }
@@ -256,7 +285,7 @@
 <nav>
   <div class="brand">SightShift Marketing</div>
   <div class="tabs">
-    <button class="tab active" data-view="calendar">Campaign Calendar</button>
+    <button class="tab active" data-view="calendar">Content Calendar</button>
     <button class="tab" data-view="tasks">Tasks</button>
     <button class="tab" data-view="agenda">Meeting Agenda</button>
   </div>
@@ -274,20 +303,38 @@
 <main>
   <!-- CALENDAR VIEW -->
   <div class="view active" id="calendar-view">
-    <div class="campaign-header">
-      <div class="campaign-header-left">
-        <div class="ch-main">
-          <h2 id="campaign-name"></h2>
-          <div class="ch-desc" id="campaign-desc"></div>
+    <div class="cal-header">
+      <div class="cal-header-left">
+        <h2>Content Calendar</h2>
+        <div class="cal-topic">
+          <span class="cal-topic-label">Timely Topic:</span>
+          <span class="cal-topic-value" id="cal-topic-name"></span>
+          <span class="cal-topic-desc" id="cal-topic-desc"></span>
         </div>
-        <div class="ch-ctas">
-          <div class="cta-block"><div class="cta-label">Primary CTA</div><div class="cta-value" id="campaign-cta1"></div></div>
-          <div class="cta-block"><div class="cta-label">Secondary CTA</div><div class="cta-value" id="campaign-cta2"></div></div>
+        <div class="cal-legends">
+          <div class="cal-legend-group">
+            <div class="cal-legend-title">Channels</div>
+            <div class="cal-legend-items">
+              <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#fce4ec"></div>YT Live</div>
+              <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#e8f5e9"></div>Podcast</div>
+              <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#f3e5f5"></div>Email</div>
+              <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#e0eef6"></div>LinkedIn</div>
+              <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#fce4ec"></div>IG</div>
+            </div>
+          </div>
+          <div class="cal-legend-group">
+            <div class="cal-legend-title">Timeless Template</div>
+            <div class="cal-legend-items">
+              <div class="cal-legend-item"><div class="cal-legend-bar" style="background:var(--medium-blue)"></div>Drift</div>
+              <div class="cal-legend-item"><div class="cal-legend-bar" style="background:var(--gold)"></div>Default</div>
+              <div class="cal-legend-item"><div class="cal-legend-bar" style="background:var(--orange)"></div>Dumb Theater</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="campaign-header-right">
-        <div class="chr-label">Key Components</div>
-        <ul id="synopsis-components"></ul>
+      <div class="cal-header-right">
+        <div class="chr-label">Active Overlays</div>
+        <div id="cal-overlays"></div>
       </div>
     </div>
     <div id="calendar-content"></div>
@@ -1443,86 +1490,43 @@ function saveTranscriptResults() {
 }
 
 // ===== CALENDAR =====
-function loadCalendar() {
-  var data = getCalendarData();
-  document.getElementById('campaign-name').textContent = data.name || '';
-  document.getElementById('campaign-desc').textContent = data.description || '';
-  document.getElementById('campaign-cta1').textContent = data.primary_cta || '';
-  document.getElementById('campaign-cta2').textContent = data.secondary_cta || '';
-  document.getElementById('synopsis-components').innerHTML = (data.components || []).map(function(c) { return '<li>' + esc(c) + '</li>'; }).join('');
-  renderMonthlyCalendar(enrichCalendarDetails(data.entries || []));
+var calendarData = null;
+
+async function loadCalendar() {
+  try {
+    calendarData = await storage.readFile('calendar.json');
+    renderCalendarHeader(calendarData);
+    renderMonthlyCalendar(calendarData.entries || [], calendarData.active_overlays || []);
+  } catch(e) {
+    document.getElementById('calendar-content').innerHTML = '<div class="empty-state"><h3>No calendar loaded</h3><p>calendar.json not found or invalid.</p></div>';
+  }
 }
 
-function getCalendarData() {
-  return {
-    name: "Dumb Theater Campaign",
-    description: "An 8-week campaign using Amazon\u2019s Company Retreat show and original Dumb Leadership Theater character videos to expose surface-level leadership development and escalate to a direct Breakthrough Workshop CTA.",
-    primary_cta: "Breakthrough Workshop",
-    secondary_cta: "IFQ\u2122 / Validation Check\u2122",
-    components: [
-      "Company Retreat (Amazon Prime) \u2014 Weeks 1\u20134",
-      "Dumb Theater Character Videos \u2014 Weeks 5\u20138",
-      "Lunch with Chris (YouTube Live) \u2014 weekly Wednesdays"
-    ],
-    entries: [
-      {date:"2026-03-16", entries:[]},
-      {date:"2026-03-17", entries:[{ch:"River",t:"Story email \u2014 worst team-building",type:"river"},{ch:"LinkedIn",t:"Chris hot take on retreats",type:"linkedin"}]},
-      {date:"2026-03-18", entries:[{ch:"YouTube",t:"Lunch with Chris LIVE",type:"youtube"},{ch:"IG",t:"Live reminder + poll",type:"instagram"}]},
-      {date:"2026-03-19", entries:[{ch:"River",t:"Framework \u2014 leadership event vs system",type:"river"}]},
-      {date:"2026-03-20", entries:[{ch:"\u2014",t:"Company Retreat Ep 1\u20133 premiere",type:"cultural"}]},
-      {date:"2026-03-21", entries:[]},{date:"2026-03-22", entries:[]},
-      {date:"2026-03-23", entries:[{ch:"LinkedIn",t:"Monday story post",type:"linkedin"}]},
-      {date:"2026-03-24", entries:[{ch:"River",t:"Story email \u2014 culture fix",type:"river"},{ch:"LinkedIn",t:"Chris commentary Ep 1\u20133",type:"linkedin"}]},
-      {date:"2026-03-25", entries:[{ch:"YouTube",t:"Lunch with Chris LIVE",type:"youtube"},{ch:"IG",t:"Stories \u2014 Live reminder",type:"instagram"}]},
-      {date:"2026-03-26", entries:[{ch:"River",t:"Framework \u2014 teach drift",type:"river"},{ch:"LinkedIn",t:"Framework post \u2014 drift",type:"linkedin"}]},
-      {date:"2026-03-27", entries:[{ch:"\u2014",t:"Ep 4\u20135 drop on Amazon",type:"cultural"},{ch:"LinkedIn",t:"Engagement post",type:"linkedin"}]},
-      {date:"2026-03-28", entries:[]},{date:"2026-03-29", entries:[]},
-      {date:"2026-03-30", entries:[{ch:"LinkedIn",t:"Provocation \u2014 eat your product tease",type:"linkedin"}]},
-      {date:"2026-03-31", entries:[{ch:"River",t:"Story email \u2014 eat your product",type:"river"},{ch:"LinkedIn",t:"Direct promo of the Live",type:"linkedin"}]},
-      {date:"2026-04-01", entries:[{ch:"YouTube",t:"Eat Your Product LIVE",type:"youtube"},{ch:"IG",t:"Stories \u2014 Live + IFQ tease",type:"instagram"}]},
-      {date:"2026-04-02", entries:[{ch:"River",t:"Framework \u2014 proving/hiding",type:"river"},{ch:"LinkedIn",t:"Framework \u2014 the mirror test",type:"linkedin"}]},
-      {date:"2026-04-03", entries:[{ch:"\u2014",t:"Ep 6\u20138 finale drop",type:"cultural"},{ch:"LinkedIn",t:"Engagement \u2014 IFQ reflection",type:"linkedin"}]},
-      {date:"2026-04-04", entries:[]},{date:"2026-04-05", entries:[]},
-      {date:"2026-04-06", entries:[{ch:"LinkedIn",t:"Story \u2014 vulnerability in leadership",type:"linkedin"}]},
-      {date:"2026-04-07", entries:[{ch:"River",t:"Story email \u2014 mirror moment",type:"river"},{ch:"LinkedIn",t:"Provocation \u2014 what the IFQ reveals",type:"linkedin"}]},
-      {date:"2026-04-08", entries:[{ch:"YouTube",t:"Lunch with Chris LIVE",type:"youtube"},{ch:"IG",t:"Stories + Reel",type:"instagram"}]},
-      {date:"2026-04-09", entries:[{ch:"River",t:"Framework \u2014 Breakthrough Workshop intro",type:"river"},{ch:"LinkedIn",t:"Framework \u2014 systems over events",type:"linkedin"}]},
-      {date:"2026-04-10", entries:[{ch:"\u2014",t:"PREP: Confirm Michael #1 ready",type:"production"},{ch:"LinkedIn",t:"Provocation \u2014 stop developing leaders",type:"linkedin"}]},
-      {date:"2026-04-11", entries:[]},{date:"2026-04-12", entries:[]},
-      {date:"2026-04-13", entries:[{ch:"LinkedIn",t:"Story \u2014 motivational speaker aftermath",type:"linkedin"}]},
-      {date:"2026-04-14", entries:[{ch:"River",t:"Story email \u2014 hype not a plan",type:"river"},{ch:"LinkedIn",t:"VIDEO: Michael #1 premiere",type:"linkedin"},{ch:"IG",t:"Reel: Michael #1",type:"instagram"}]},
-      {date:"2026-04-15", entries:[{ch:"YouTube",t:"Hype Is Not a Plan LIVE",type:"youtube"},{ch:"IG",t:"Stories \u2014 Live reminder",type:"instagram"}]},
-      {date:"2026-04-16", entries:[{ch:"River",t:"Framework \u2014 why hype fades",type:"river"},{ch:"LinkedIn",t:"Framework \u2014 hype-to-habit gap",type:"linkedin"}]},
-      {date:"2026-04-17", entries:[{ch:"LinkedIn",t:"Engagement \u2014 how long did the hype last?",type:"linkedin"}]},
-      {date:"2026-04-18", entries:[]},{date:"2026-04-19", entries:[]},
-      {date:"2026-04-20", entries:[{ch:"LinkedIn",t:"Story \u2014 wellness as avoidance",type:"linkedin"}]},
-      {date:"2026-04-21", entries:[{ch:"River",t:"Story email \u2014 mindfulness as hiding",type:"river"},{ch:"LinkedIn",t:"VIDEO: Nathan #1 premiere",type:"linkedin"},{ch:"IG",t:"Reel: Nathan #1",type:"instagram"}]},
-      {date:"2026-04-22", entries:[{ch:"YouTube",t:"Zen and Avoiding Leadership LIVE",type:"youtube"},{ch:"IG",t:"Stories \u2014 Do you have a Nathan?",type:"instagram"}]},
-      {date:"2026-04-23", entries:[{ch:"River",t:"Framework \u2014 hiding pattern deep dive",type:"river"},{ch:"LinkedIn",t:"Framework \u2014 performative stillness",type:"linkedin"}]},
-      {date:"2026-04-24", entries:[{ch:"LinkedIn",t:"Engagement \u2014 meditation vs leadership",type:"linkedin"}]},
-      {date:"2026-04-25", entries:[]},{date:"2026-04-26", entries:[]},
-      {date:"2026-04-27", entries:[{ch:"LinkedIn",t:"Provocation \u2014 $50K on leadership dev",type:"linkedin"}]},
-      {date:"2026-04-28", entries:[{ch:"River",t:"Story email \u2014 two weeks later",type:"river"},{ch:"LinkedIn",t:"VIDEO: Michael #2 or re-release",type:"linkedin"},{ch:"IG",t:"Reel: character video",type:"instagram"}]},
-      {date:"2026-04-29", entries:[{ch:"YouTube",t:"Two Weeks Later LIVE",type:"youtube"},{ch:"IG",t:"Stories \u2014 Live reminder",type:"instagram"}]},
-      {date:"2026-04-30", entries:[{ch:"River",t:"Framework \u2014 97/3 principle",type:"river"},{ch:"LinkedIn",t:"Framework \u2014 root-cause vs symptom",type:"linkedin"}]},
-      {date:"2026-05-01", entries:[{ch:"LinkedIn",t:"Proof post \u2014 Breakthrough Workshop mention",type:"linkedin"}]},
-      {date:"2026-05-02", entries:[]},{date:"2026-05-03", entries:[]},
-      {date:"2026-05-04", entries:[{ch:"LinkedIn",t:"Story \u2014 client transformation arc",type:"linkedin"}]},
-      {date:"2026-05-05", entries:[{ch:"River",t:"Story email \u2014 before/after breakthrough",type:"river"},{ch:"LinkedIn",t:"Proof post \u2014 90-day outcomes",type:"linkedin"}]},
-      {date:"2026-05-06", entries:[{ch:"YouTube",t:"What a Real Breakthrough Looks Like LIVE",type:"youtube"},{ch:"IG",t:"Stories \u2014 proof content",type:"instagram"}]},
-      {date:"2026-05-07", entries:[{ch:"River",t:"Framework \u2014 Impact Script concept",type:"river"},{ch:"LinkedIn",t:"Framework \u2014 identity shift",type:"linkedin"}]},
-      {date:"2026-05-08", entries:[{ch:"LinkedIn",t:"Engagement \u2014 campaign reflection",type:"linkedin"}]},
-      {date:"2026-05-09", entries:[]},{date:"2026-05-10", entries:[]}
-    ]
-  };
+function renderCalendarHeader(data) {
+  var topic = data.timely_topic || {};
+  document.getElementById('cal-topic-name').textContent = topic.name || 'Not set';
+  document.getElementById('cal-topic-desc').textContent = topic.description ? '— ' + topic.description : '';
+
+  var overlays = data.active_overlays || [];
+  var overlayEl = document.getElementById('cal-overlays');
+  if (overlays.length === 0) {
+    overlayEl.innerHTML = '<div class="cal-overlay-empty">No active campaign overlays</div>';
+  } else {
+    overlayEl.innerHTML = overlays.map(function(o) {
+      return '<div class="cal-overlay-item"><div class="cal-overlay-name">' + esc(o.name) + '</div><div class="cal-overlay-dates">' + esc(o.start) + ' to ' + esc(o.end) + '</div></div>';
+    }).join('');
+  }
 }
 
-function renderMonthlyCalendar(entries) {
+
+
+function renderMonthlyCalendar(entries, overlays) {
   var container = document.getElementById('calendar-content');
   var byDate = {};
-  entries.forEach(function(e) { byDate[e.date] = e.entries || []; });
+  entries.forEach(function(e) { byDate[e.date] = e.items || []; });
 
   var dates = entries.map(function(e) { return new Date(e.date + 'T00:00:00'); });
+  if (dates.length === 0) { container.innerHTML = '<div class="empty-state"><h3>No entries</h3></div>'; return; }
   var minDate = dates[0];
   var maxDate = dates[dates.length - 1];
 
@@ -1531,13 +1535,20 @@ function renderMonthlyCalendar(entries) {
   var endMonth = new Date(maxDate.getFullYear(), maxDate.getMonth(), 1);
 
   while (curMonth <= endMonth) {
-    html += renderOneMonth(curMonth, byDate);
+    html += renderOneMonth(curMonth, byDate, overlays);
     curMonth = new Date(curMonth.getFullYear(), curMonth.getMonth() + 1, 1);
   }
   container.innerHTML = html;
 }
 
-function renderOneMonth(monthStart, byDate) {
+function dateInOverlay(dateStr, overlays) {
+  for (var i = 0; i < overlays.length; i++) {
+    if (dateStr >= overlays[i].start && dateStr <= overlays[i].end) return overlays[i];
+  }
+  return null;
+}
+
+function renderOneMonth(monthStart, byDate, overlays) {
   var year = monthStart.getFullYear();
   var month = monthStart.getMonth();
   var monthName = monthStart.toLocaleDateString('en-US', {month: 'long', year: 'numeric'});
@@ -1545,7 +1556,6 @@ function renderOneMonth(monthStart, byDate) {
   var firstDow = new Date(year, month, 1).getDay();
   var todayS = today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + '-' + String(today.getDate()).padStart(2,'0');
 
-  // Calculate total rows to know which cells are in the last row
   var totalCells = firstDow + daysInMonth;
   var totalRows = Math.ceil(totalCells / 7);
   var lastRowStart = (totalRows - 1) * 7;
@@ -1561,26 +1571,45 @@ function renderOneMonth(monthStart, byDate) {
   for (var day = 1; day <= daysInMonth; day++) {
     var dateStr = year + '-' + String(month+1).padStart(2,'0') + '-' + String(day).padStart(2,'0');
     var isToday = dateStr === todayS;
-    var dayEntries = byDate[dateStr] || [];
+    var dayItems = byDate[dateStr] || [];
     var cellIndex = firstDow + day - 1;
     var isLastRow = cellIndex >= lastRowStart;
+    var overlay = dateInOverlay(dateStr, overlays || []);
 
-    html += '<div class="cal-cell' + (isToday ? ' today' : '') + (isLastRow ? ' pop-above' : '') + '">';
+    var cellClasses = 'cal-cell';
+    if (isToday) cellClasses += ' today';
+    if (isLastRow) cellClasses += ' pop-above';
+    if (overlay) cellClasses += ' has-overlay';
+
+    html += '<div class="' + cellClasses + '">';
+    if (overlay) html += '<div class="overlay-label">' + esc(overlay.name) + '</div>';
     html += '<div class="cal-date">' + day + '</div>';
-    dayEntries.forEach(function(entry) {
-      html += '<div class="cal-entry ' + getEntryClass(entry.type) + '">' + esc(chAbbrev(entry.ch)) + ': ' + esc(entry.t) + '</div>';
+
+    dayItems.forEach(function(item) {
+      var chClass = getChannelClass(item.channel);
+      var pillarClass = item.pillar ? ' pillar-' + item.pillar : '';
+      var graphicIcon = item.graphic_needed ? ' <span class="graphic-icon" title="Graphic needed">&#9998;</span>' : '';
+      html += '<div class="cal-entry ' + chClass + pillarClass + '">' + esc(channelAbbrev(item.channel)) + ': ' + esc(item.title) + graphicIcon + '</div>';
     });
-    if (dayEntries.length > 0) {
+
+    if (dayItems.length > 0) {
       var fullDate = new Date(year, month, day).toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'});
       html += '<div class="cal-popover"><div class="pop-date">' + esc(fullDate) + '</div>';
-      dayEntries.forEach(function(entry) {
-        html += '<div class="pop-entry ' + getEntryClass(entry.type) + '"><span class="pop-ch">' + esc(chAbbrev(entry.ch)) + ' (' + esc(entry.ch) + '):</span> ' + esc(entry.t);
-        if (entry.msg || entry.cta || entry.ps) {
+      dayItems.forEach(function(item) {
+        var chClass = getChannelClass(item.channel);
+        var pillarBadge = item.pillar ? '<span class="pop-pillar ' + item.pillar + '">' + esc(pillarLabel(item.pillar)) + '</span>' : '';
+        html += '<div class="pop-entry ' + chClass + '">';
+        html += '<span class="pop-ch">' + esc(channelLabel(item.channel)) + '</span>' + pillarBadge;
+        html += '<div style="margin-top:3px;font-weight:500">' + esc(item.title) + '</div>';
+        if (item.detail || item.cta) {
           html += '<div class="pop-detail">';
-          if (entry.msg) html += '<span><span class="pop-label">Hook:</span> ' + esc(entry.msg) + '</span>';
-          if (entry.cta) html += '<span><span class="pop-label">CTA:</span> ' + esc(entry.cta) + '</span>';
-          if (entry.ps) html += '<span><span class="pop-label">P.S./Note:</span> ' + esc(entry.ps) + '</span>';
+          if (item.detail) html += '<span><span class="pop-label">Hook:</span> ' + esc(item.detail) + '</span>';
+          if (item.cta) html += '<span><span class="pop-label">CTA:</span> ' + esc(item.cta) + '</span>';
           html += '</div>';
+        }
+        if (item.source) html += '<div class="pop-source">Source: ' + esc(item.source) + '</div>';
+        if (item.graphic_needed) {
+          html += '<div class="pop-graphic"><div class="pop-graphic-label">Graphic Needed</div>' + esc(item.graphic_needed) + '</div>';
         }
         html += '</div>';
       });
@@ -1596,178 +1625,26 @@ function renderOneMonth(monthStart, byDate) {
   return html;
 }
 
-function enrichCalendarDetails(entries) {
-  var details = {
-    "2026-03-17": [
-      {msg:"Personal story about the worst team-building experience and why retreats fail",cta:"Watch Company Retreat on Amazon Prime",ps:"P.S. Have you seen what happens when a boss plans a surprise retreat?"},
-      {msg:"Provocative take: corporate retreats are where accountability goes to die",cta:"Comment with your worst retreat story"}
-    ],
-    "2026-03-18": [
-      {msg:"Live breakdown of Company Retreat Ep 1 \u2014 what Amazon got right about bad leadership",cta:"Join live + drop questions in chat"},
-      {msg:"Stories: Poll \u2014 'Has a retreat ever actually changed your team?' + Live countdown",cta:"Tune in to YouTube Live at noon"}
-    ],
-    "2026-03-19": [
-      {msg:"Teaching: Why one-off leadership events don\u2019t create lasting change \u2014 events vs. systems",cta:"Take the IFQ\u2122 to see where you really stand",ps:"P.S. If your leadership development fits in a weekend, it\u2019s entertainment"}
-    ],
-    "2026-03-20": [
-      {msg:"Episodes 1\u20133 of Company Retreat drop on Amazon Prime \u2014 cultural reference point for the campaign"}
-    ],
-    "2026-03-23": [
-      {msg:"Personal story to set the week\u2019s theme \u2014 hooks the 'culture fix' narrative",cta:"Follow for more this week"}
-    ],
-    "2026-03-24": [
-      {msg:"Story about a leader who tried to 'fix culture' with pizza parties and pep talks",cta:"Watch Company Retreat Ep 1\u20133",ps:"P.S. Culture isn\u2019t a project \u2014 it\u2019s a mirror"},
-      {msg:"Chris breaks down Ep 1\u20133: what each character reveals about real-world leadership avoidance",cta:"Watch the episodes, then tell me which character is your boss"}
-    ],
-    "2026-03-25": [
-      {msg:"Live discussion: The 3 types of leaders you meet at a company retreat",cta:"Join live + ask your question"},
-      {msg:"Countdown sticker + 'Which retreat character are you?' interactive story",cta:"Join the Live on YouTube"}
-    ],
-    "2026-03-26": [
-      {msg:"Teaching: How leaders slowly drift from their values without noticing \u2014 the drift framework",cta:"Take the Validation Check\u2122 to measure your drift",ps:"P.S. Drift doesn\u2019t announce itself. That\u2019s what makes it dangerous."},
-      {msg:"Framework graphic: The 5 signs you\u2019re drifting as a leader (and don\u2019t know it yet)",cta:"Save this post. Come back to it in 30 days."}
-    ],
-    "2026-03-27": [
-      {msg:"Episodes 4\u20135 of Company Retreat drop \u2014 escalation point in the show\u2019s narrative"},
-      {msg:"Question post to spark discussion around Ep 4\u20135 themes",cta:"Drop your take in the comments"}
-    ],
-    "2026-03-30": [
-      {msg:"Teaser: Do you actually use what you teach? Most leadership coaches don\u2019t.",cta:"Tune in Wednesday for the full breakdown"}
-    ],
-    "2026-03-31": [
-      {msg:"Story about why Chris built SightShift on principles he personally lives \u2014 eating your own product",cta:"Register for the Breakthrough Workshop",ps:"P.S. If you wouldn\u2019t go through your own program, why should anyone else?"},
-      {msg:"Promo: This Wednesday\u2019s Lunch with Chris is 'Eat Your Product' \u2014 bring your hardest question",cta:"Set a reminder for the Live"}
-    ],
-    "2026-04-01": [
-      {msg:"Live session: Chris talks about eating your own product \u2014 practicing what you preach",cta:"Join live + IFQ\u2122 link in description"},
-      {msg:"Stories: IFQ\u2122 teaser graphic + Live countdown + 'Do you eat your own product?' poll",cta:"Take the IFQ\u2122 \u2014 link in bio"}
-    ],
-    "2026-04-02": [
-      {msg:"Teaching: The two default modes of insecure leadership \u2014 proving and hiding",cta:"Take the IFQ\u2122 to see your pattern",ps:"P.S. Most leaders oscillate between performing and disappearing. Which one are you?"},
-      {msg:"Framework graphic: The Mirror Test \u2014 can you look at your leadership without flinching?",cta:"Save this. Share with your team."}
-    ],
-    "2026-04-03": [
-      {msg:"Final episodes of Company Retreat drop on Amazon \u2014 narrative payoff and campaign transition point"},
-      {msg:"Reflection post: What did the IFQ\u2122 reveal about your leadership?",cta:"Take the IFQ\u2122 if you haven\u2019t yet"}
-    ],
-    "2026-04-06": [
-      {msg:"Personal story: A moment of real vulnerability that changed Chris\u2019s leadership trajectory",cta:"Follow for this week\u2019s deep dives"}
-    ],
-    "2026-04-07": [
-      {msg:"Story about facing yourself honestly as a leader \u2014 the mirror moment that starts real change",cta:"Register for the Breakthrough Workshop",ps:"P.S. The IFQ\u2122 is the mirror. The Workshop is what you do once you see the truth."},
-      {msg:"Provocation: The IFQ\u2122 doesn\u2019t tell you what\u2019s wrong. It shows you what you\u2019ve been avoiding.",cta:"Take the IFQ\u2122 \u2014 link in comments"}
-    ],
-    "2026-04-08": [
-      {msg:"Live: Transitioning from Company Retreat to Dumb Theater \u2014 why parody hits harder than training",cta:"Join live + share your story"},
-      {msg:"Reel: Quick-hit clip from the Live + interactive story poll",cta:"Watch the full Live on YouTube"}
-    ],
-    "2026-04-09": [
-      {msg:"Teaching: What the Breakthrough Workshop actually is \u2014 not motivation, not therapy, but a system for identity-level change",cta:"Apply for the Breakthrough Workshop",ps:"P.S. This isn\u2019t a seminar. It\u2019s the thing that replaces seminars."},
-      {msg:"Framework: Why leadership development fails \u2014 you\u2019re buying events when you need a system",cta:"DM 'BREAKTHROUGH' for details"}
-    ],
-    "2026-04-10": [
-      {msg:"Production milestone: Confirm Dumb Theater 'Michael' character video #1 is edited and ready"},
-      {msg:"Hot take: Stop developing leaders. Start developing humans who happen to lead.",cta:"Agree or disagree? Comment below."}
-    ],
-    "2026-04-13": [
-      {msg:"Story: What happens 48 hours after the motivational speaker leaves \u2014 the slow fade back to normal",cta:"Follow for the antidote this week"}
-    ],
-    "2026-04-14": [
-      {msg:"Story: Hype is not a plan \u2014 why the energy from events fades and what sustains change",cta:"Watch Michael #1 (Dumb Theater)",ps:"Graphic: Michael character poster \u2014 'The Motivator'"},
-      {msg:"Video premiere: Meet Michael \u2014 the leader who thinks inspiration is a strategy",cta:"Watch. Tag someone who manages like this."},
-      {msg:"Reel cut of Michael #1 video \u2014 punchy 30-sec edit for IG format",cta:"Full video on LinkedIn + YouTube"}
-    ],
-    "2026-04-15": [
-      {msg:"Live: Breaking down Michael \u2014 why 'hype leadership' feels good but changes nothing",cta:"Join live + Breakthrough Workshop link in description"},
-      {msg:"Countdown + 'Do you know a Michael?' poll + Live reminder",cta:"Join the Live on YouTube"}
-    ],
-    "2026-04-16": [
-      {msg:"Teaching: The neuroscience of why hype fades \u2014 dopamine vs. identity-level rewiring",cta:"Apply for the Breakthrough Workshop",ps:"P.S. Your team doesn\u2019t need another pep talk. They need a new operating system."},
-      {msg:"Framework graphic: The Hype-to-Habit Gap \u2014 why 90% of leadership training doesn\u2019t stick",cta:"Save this. Send it to your L&D team."}
-    ],
-    "2026-04-17": [
-      {msg:"Question: Think about the last leadership event you attended. How long did the energy last?",cta:"Comment your answer \u2014 I\u2019ll respond to every one"}
-    ],
-    "2026-04-20": [
-      {msg:"Story: When 'wellness culture' in leadership becomes a way to avoid hard conversations",cta:"Follow for Nathan this week"}
-    ],
-    "2026-04-21": [
-      {msg:"Story: The leader who meditated every morning but couldn\u2019t have a hard conversation",cta:"Watch Nathan #1 (Dumb Theater)",ps:"Graphic: Nathan character poster \u2014 'The Zen Master'"},
-      {msg:"Video premiere: Meet Nathan \u2014 the leader who weaponized wellness to avoid leadership",cta:"Watch. Do you know a Nathan?"},
-      {msg:"Reel cut of Nathan #1 \u2014 punchy 30-sec edit showing the 'wellness avoidance' archetype",cta:"Full video on LinkedIn + YouTube"}
-    ],
-    "2026-04-22": [
-      {msg:"Live: Breaking down Nathan \u2014 when mindfulness becomes a mask for avoiding real leadership",cta:"Join live + IFQ\u2122 link in description"},
-      {msg:"Interactive stories: 'Do you have a Nathan on your team?' quiz + Live countdown",cta:"Join the Live on YouTube"}
-    ],
-    "2026-04-23": [
-      {msg:"Deep dive into the 'hiding' pattern \u2014 how leaders use busyness, wellness, and delegation to avoid being seen",cta:"Take the IFQ\u2122 to see if you\u2019re hiding",ps:"P.S. Hiding doesn\u2019t look like weakness. It looks like 'being strategic.'"},
-      {msg:"Framework: Performative Stillness \u2014 when calm is just another mask for avoidance",cta:"Save this. Be honest about whether it\u2019s you."}
-    ],
-    "2026-04-24": [
-      {msg:"Is your mindfulness practice making you a better leader \u2014 or helping you avoid being one?",cta:"Comment honestly. No judgment."}
-    ],
-    "2026-04-27": [
-      {msg:"Your company spent $50K on leadership development last year. Can anyone name one thing that changed?",cta:"If this hits home, DM me 'BREAKTHROUGH'"}
-    ],
-    "2026-04-28": [
-      {msg:"Story: What your team looks like two weeks after the big leadership offsite",cta:"Register for the Breakthrough Workshop",ps:"Graphic: Side-by-side \u2014 'Day 1 after the retreat' vs. 'Day 14 after the retreat'"},
-      {msg:"Michael returns or re-release with fresh commentary. Reinforcing the 'hype leadership' archetype.",cta:"Watch + share with your HR team"},
-      {msg:"Reel cut of latest Dumb Theater character content \u2014 punchy engagement format",cta:"Full video on LinkedIn + YouTube"}
-    ],
-    "2026-04-29": [
-      {msg:"Live: The 'Two Weeks Later' test \u2014 what sticks after leadership training and what doesn\u2019t",cta:"Join live + Breakthrough Workshop link"},
-      {msg:"Live countdown + 'What\u2019s the last leadership lesson that actually stuck?' question sticker",cta:"Join the Live on YouTube"}
-    ],
-    "2026-04-30": [
-      {msg:"Teaching: The 97/3 Principle \u2014 97% of leadership dev addresses symptoms, only 3% reaches the root",cta:"Apply for the Breakthrough Workshop",ps:"P.S. The Breakthrough Workshop lives in the 3%."},
-      {msg:"Framework graphic: Root-Cause vs. Symptom leadership development \u2014 a visual breakdown",cta:"Save this. Show it to your executive team."}
-    ],
-    "2026-05-01": [
-      {msg:"Social proof: Client result or testimonial tied to the Breakthrough Workshop \u2014 real outcomes, not hype",cta:"DM 'BREAKTHROUGH' or click the link in comments"}
-    ],
-    "2026-05-04": [
-      {msg:"A client\u2019s full transformation arc \u2014 from skeptic to advocate after the process",cta:"Follow for the final week"}
-    ],
-    "2026-05-05": [
-      {msg:"Before and after the breakthrough \u2014 what changes when a leader stops performing and starts leading from identity",cta:"Apply for the Breakthrough Workshop",ps:"P.S. This is the last week of the campaign. If you\u2019ve been watching from the sidelines, now is the time."},
-      {msg:"Data-backed proof: 90-day outcomes from Breakthrough Workshop participants",cta:"See the results. Apply now."}
-    ],
-    "2026-05-06": [
-      {msg:"Live finale: What a real breakthrough looks like \u2014 stories, proof, and a direct invitation",cta:"Apply for the Breakthrough Workshop \u2014 link in description"},
-      {msg:"Stories: Client testimonial clips + before/after graphics + Workshop application CTA",cta:"Apply via link in bio"}
-    ],
-    "2026-05-07": [
-      {msg:"Teaching: The Impact Script \u2014 how to write the story of your leadership legacy starting today",cta:"Apply for the Breakthrough Workshop",ps:"P.S. Your Impact Script starts the moment you stop performing and start leading."},
-      {msg:"Final framework: Identity Shift \u2014 why behavior change fails but identity change lasts",cta:"This is what the Breakthrough Workshop does. Apply now."}
-    ],
-    "2026-05-08": [
-      {msg:"Closing question: Over the last 8 weeks, what\u2019s the one thing that shifted for you?",cta:"Apply for the Breakthrough Workshop before doors close"}
-    ]
-  };
-  entries.forEach(function(dayObj) {
-    var d = details[dayObj.date];
-    if (d && dayObj.entries) {
-      dayObj.entries.forEach(function(entry, i) {
-        if (d[i]) {
-          if (d[i].msg) entry.msg = d[i].msg;
-          if (d[i].cta) entry.cta = d[i].cta;
-          if (d[i].ps) entry.ps = d[i].ps;
-        }
-      });
-    }
-  });
-  return entries;
+/* enrichCalendarDetails removed — data now in calendar.json */
+
+function getChannelClass(ch) {
+  var map = {'youtube-live':'youtube-live','youtube':'youtube','linkedin':'linkedin','instagram':'instagram','river':'river','email':'river','podcast':'podcast','cultural':'cultural','production':'production'};
+  return map[(ch || '').toLowerCase()] || '';
 }
 
-function getEntryClass(type) {
-  var map = {youtube:'youtube', linkedin:'linkedin', instagram:'instagram', email:'river', river:'river', cultural:'cultural', production:'production'};
-  return map[(type || '').toLowerCase()] || '';
+function channelAbbrev(ch) {
+  var map = {'river':'Email','linkedin':'LI','youtube-live':'YT Live','youtube':'YT','instagram':'IG','podcast':'Pod','cultural':'Note','production':'Prod'};
+  return map[(ch || '').toLowerCase()] || ch;
 }
 
-function chAbbrev(ch) {
-  var map = {'River':'Email','LinkedIn':'LI','YouTube':'YT','IG':'IG','—':'Note'};
-  return map[ch] || ch;
+function channelLabel(ch) {
+  var map = {'river':'Email (River)','linkedin':'LinkedIn','youtube-live':'YouTube Live','youtube':'YouTube','instagram':'Instagram','podcast':'Podcast','cultural':'Cultural Moment','production':'Production'};
+  return map[(ch || '').toLowerCase()] || ch;
+}
+
+function pillarLabel(p) {
+  var map = {'drift':'Drift','default':'Default','dumb-theater':'Dumb Theater'};
+  return map[(p || '').toLowerCase()] || p;
 }
 
 // ===== SETTINGS =====
@@ -1782,6 +1659,7 @@ function openSettingsModal() {
         '<div class="setting-row"><label>Your Name</label><select id="setting-user" style="flex:1;padding:6px 8px;border:1px solid #d0d8d8;border-radius:4px;font-size:12px">' +
           '<option value="Bret"' + (curUser === 'Bret' ? ' selected' : '') + '>Bret</option>' +
           '<option value="Eduardo"' + (curUser === 'Eduardo' ? ' selected' : '') + '>Eduardo</option>' +
+          '<option value="Connor"' + (curUser === 'Connor' ? ' selected' : '') + '>Connor</option>' +
         '</select></div>' +
       '</div>' +
 
