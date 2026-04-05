@@ -5,11 +5,11 @@
       "task": "Update Dumb Theater video endings",
       "priority": "High",
       "due_date": "2026-04-08",
-      "status": "done",
+      "status": "open",
       "owner": "Eduardo",
       "notes": "\"Get\" on top of horizontal SightShift logo",
       "created": "2026-03-23",
-      "completed": "2026-03-31",
+      "completed": null,
       "recurrence": null
     },
     {
@@ -65,11 +65,11 @@
       "task": "Validation check video (trim and post on YT)",
       "priority": "High",
       "due_date": "2026-03-30",
-      "status": "done",
+      "status": "open",
       "owner": "Eduardo",
       "notes": "",
       "created": "2026-03-26",
-      "completed": "2026-03-31",
+      "completed": null,
       "recurrence": null
     },
     {
@@ -99,58 +99,17 @@
     {
       "id": 9,
       "task": "Publish YT Live to Podcast",
-      "priority": "High",
+      "priority": "Medium",
       "due_date": "2026-04-03",
-      "status": "done",
+      "status": "open",
       "owner": "Eduardo",
       "notes": "Create separate playlist/designation on Podcast to differentiate Lunch with Chris from regular episodes.",
       "created": "2026-03-26",
-      "completed": "2026-03-31",
-      "recurrence": {
-        "type": "weekly",
-        "day": 5
-      },
-      "_escalated": true
-    },
-    {
-      "id": 10,
-      "task": "Podcast transcript workflow",
-      "priority": "Medium",
-      "due_date": null,
-      "status": "open",
-      "owner": "Bret",
-      "notes": "",
-      "created": "2026-03-31",
-      "completed": null,
-      "recurrence": null
-    },
-    {
-      "id": 11,
-      "task": "Create promo/invitation image for AI event",
-      "priority": "High",
-      "due_date": "2026-04-03",
-      "status": "open",
-      "owner": "Eduardo",
-      "notes": "Create an image that Chris, Mark, and the event host can text to their network to invite them to the AI leadership event in Columbus. Wording and details are at www.sightshift.com/columbus",
-      "created": "2026-03-31",
-      "completed": null,
-      "recurrence": null
-    },
-    {
-      "id": 12,
-      "task": "Publish YT Live to Podcast",
-      "priority": "High",
-      "due_date": "2026-04-03",
-      "status": "open",
-      "owner": "Eduardo",
-      "notes": "Create separate playlist/designation on Podcast to differentiate Lunch with Chris from regular episodes.",
-      "created": "2026-03-31",
       "completed": null,
       "recurrence": {
         "type": "weekly",
         "day": 5
-      },
-      "_escalated": true
+      }
     }
   ]
 }

@@ -1,22 +1,12 @@
 {
   "discussion_items": [
     {
-      "id": 6,
-      "text": "Did you update the headshots on YouTube+social pages or someone else?",
+      "id": 1,
+      "text": "Buffer API token needed from Eduardo so Bret can automate social scheduling",
       "owner": "Bret",
       "tag": "question",
-      "added": "2026-03-26",
-      "status": "resolved",
-      "resolved_date": "2026-03-31"
-    },
-    {
-      "id": 7,
-      "text": "Podcast",
-      "owner": "Bret",
-      "tag": "question",
-      "added": "2026-03-26",
-      "status": "open",
-      "notes": "• Did you save new episode from Chris?\n• Which MCYE episode are we on? Check published with calendar: https://docs.google.com/spreadsheets/d/1w1Z-G2gnNMdaxw0fkaMh0PSawFhD6bOHzSdLu4PWBHw/edit?gid=1602727380#gid=1602727380\n• Canceled podbean account\n• Inserting AI episode"
+      "added": "2026-03-23",
+      "status": "open"
     },
     {
       "id": 2,
@@ -24,9 +14,7 @@
       "owner": "Bret",
       "tag": "update",
       "added": "2026-03-26",
-      "status": "resolved",
-      "notes": "Claude produces weekly content --> I approve --> Claude publishes to Asana and assigns to you --> You add visuals/videos --> You schedule to post (**NOTE** When to add link in comments of LinkedIn post, when an image would enhance the post, additional content if necessary.)",
-      "resolved_date": "2026-03-31"
+      "status": "open"
     },
     {
       "id": 3,
@@ -38,59 +26,37 @@
       "notes": "See images in your G Drive: https://drive.google.com/drive/folders/1zOtqAzQE70Wh_PwiPGtyYh-n7jwT_YBZ?usp=drive_link"
     },
     {
-      "id": 5,
-      "text": "YouTube Shorts AI tool https://sendshort.ai/",
-      "owner": "Bret",
-      "tag": "discussion",
-      "added": "2026-03-26",
-      "status": "resolved",
-      "resolved_date": "2026-03-31"
-    },
-    {
-      "id": 1,
-      "text": "Buffer API token needed from Eduardo so Bret can automate social scheduling",
-      "owner": "Bret",
-      "tag": "question",
-      "added": "2026-03-23",
-      "status": "resolved",
-      "answer": "2q5BxKtKeUlYmOLbzQykNAb4yughFOrfr3MwtYZzVoe",
-      "resolved_date": "2026-03-31"
-    },
-    {
       "id": 4,
       "text": "New dashboard + Set up GitHub connection",
       "owner": "Bret",
       "tag": "update",
       "added": "2026-03-26",
-      "status": "resolved",
-      "notes": "Accept invite. See email drafts for token instructions.",
-      "resolved_date": "2026-03-31"
-    },
-    {
-      "id": 8,
-      "text": "Testing to see if this works.",
-      "owner": "Bret",
-      "tag": "discussion",
-      "added": "2026-03-31",
       "status": "open"
     },
     {
-      "id": 9,
-      "text": "Podcast publishing",
+      "id": 7,
+      "text": "Podcast",
       "owner": "Bret",
-      "tag": "discussion",
-      "added": "2026-03-31",
+      "tag": "question",
+      "added": "2026-03-26",
       "status": "open",
-      "notes": "Eduardo handle everything (upload transcript to github source content, use Claude connected to github to create headline + description and email, publish email to Asana for Marko, create thumbnail)\nOR: Eduardo plus Bret's automated Claude (Eduardo creates headline+description and thumbnail, Bret's automated agent writes email and posts to asana)?"
+      "notes": "• Did you save new episode from Chris?\n• Which MCYE episode are we on? Check published with calendar: https://docs.google.com/spreadsheets/d/1w1Z-G2gnNMdaxw0fkaMh0PSawFhD6bOHzSdLu4PWBHw/edit?gid=1602727380#gid=1602727380\n• Canceled podbean account\n• Inserting AI episode"
     },
     {
-      "id": 10,
-      "text": "Learning: Text in bottom right of YT thumbnail is covered by time",
+      "id": 6,
+      "text": "Did you update the headshots on YouTube+social pages or someone else?",
       "owner": "Bret",
-      "tag": "fyi",
-      "added": "2026-03-31",
-      "status": "open",
-      "notes": "https://www.youtube.com/channel/UCXsTL23lMHota91Q5qEsJ7Q/live"
+      "tag": "question",
+      "added": "2026-03-26",
+      "status": "open"
+    },
+    {
+      "id": 5,
+      "text": "YouTube Shorts AI tool https://sendshort.ai/",
+      "owner": "Bret",
+      "tag": "discussion",
+      "added": "2026-03-26",
+      "status": "open"
     }
   ],
   "past_meetings": [

@@ -1,0 +1,391 @@
+{
+  "timely_topic": {
+    "name": "Dumb Theater: Company Retreat + Character Videos",
+    "description": "Amazon's Company Retreat show exposes surface-level leadership development. Eduardo's Dumb Theater character videos name the performative approaches SightShift replaces.",
+    "started": "2026-03-18"
+  },
+  "active_overlays": [
+    {
+      "name": "Dumb Theater Phase 1: Company Retreat",
+      "start": "2026-03-18",
+      "end": "2026-04-12",
+      "type": "cultural-moment"
+    },
+    {
+      "name": "Dumb Theater Phase 2: Character Launch",
+      "start": "2026-04-13",
+      "end": "2026-05-10",
+      "type": "pillar-push"
+    },
+    {
+      "name": "Post-Dumb Theater: Diagnostic Pivot",
+      "start": "2026-05-11",
+      "end": "2026-05-31",
+      "type": "cta-escalation"
+    }
+  ],
+  "entries": [
+    {
+      "date": "2026-03-17",
+      "items": [
+        {"channel": "river", "pillar": "drift", "title": "Story email — worst team-building", "detail": "Personal story about the worst team-building experience and why retreats fail", "cta": "Watch Company Retreat on Amazon Prime", "graphic_needed": null, "source": null},
+        {"channel": "linkedin", "pillar": "drift", "title": "Chris hot take on retreats", "detail": "Provocative take: corporate retreats are where accountability goes to die", "cta": "Comment with your worst retreat story", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-03-18",
+      "items": [
+        {"channel": "youtube-live", "pillar": null, "title": "The Company Retreat You've Been On", "detail": "Live breakdown of Company Retreat Ep 1 — what Amazon got right about bad leadership", "cta": "Join live + drop questions in chat", "graphic_needed": "Episode thumbnail", "source": null},
+        {"channel": "instagram", "pillar": null, "title": "Live reminder + poll", "detail": "Stories: Poll — 'Has a retreat ever actually changed your team?' + Live countdown", "cta": "Tune in to YouTube Live at noon", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "items": [
+        {"channel": "river", "pillar": "drift", "title": "Framework — leadership event vs system", "detail": "Teaching: Why one-off leadership events don't create lasting change — events vs. systems", "cta": "Take the IFQ to see where you really stand", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "items": [
+        {"channel": "cultural", "pillar": null, "title": "Company Retreat Ep 1–3 premiere", "detail": "Episodes 1–3 of Company Retreat drop on Amazon Prime — cultural reference point", "cta": null, "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "items": [
+        {"channel": "linkedin", "pillar": "drift", "title": "Monday story post", "detail": "Personal story to set the week's theme — hooks the 'culture fix' narrative", "cta": "Follow for more this week", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "items": [
+        {"channel": "river", "pillar": "drift", "title": "Story email — culture fix", "detail": "Story about a leader who tried to 'fix culture' with pizza parties and pep talks", "cta": "Watch Company Retreat Ep 1–3", "graphic_needed": null, "source": null},
+        {"channel": "linkedin", "pillar": "drift", "title": "Chris commentary Ep 1–3", "detail": "Chris breaks down Ep 1–3: what each character reveals about real-world leadership avoidance", "cta": "Watch the episodes, then tell me which character is your boss", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-03-25",
+      "items": [
+        {"channel": "youtube-live", "pillar": null, "title": "Retreat From What?", "detail": "Live discussion: The 3 types of leaders you meet at a company retreat", "cta": "Join live + ask your question", "graphic_needed": "Episode thumbnail", "source": null},
+        {"channel": "instagram", "pillar": null, "title": "Stories — Live reminder", "detail": "Countdown sticker + 'Which retreat character are you?' interactive story", "cta": "Join the Live on YouTube", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "items": [
+        {"channel": "river", "pillar": "drift", "title": "Framework — teach drift", "detail": "Teaching: How leaders slowly drift from their values without noticing — the drift framework", "cta": "Take the Validation Check to measure your drift", "graphic_needed": null, "source": null},
+        {"channel": "linkedin", "pillar": "drift", "title": "Framework post — drift", "detail": "Framework graphic: The 5 signs you're drifting as a leader (and don't know it yet)", "cta": "Save this post. Come back to it in 30 days.", "graphic_needed": "Framework graphic — 5 signs of drift", "source": null}
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "items": [
+        {"channel": "cultural", "pillar": null, "title": "Ep 4–5 drop on Amazon", "detail": "Episodes 4–5 of Company Retreat drop — escalation point in the show's narrative", "cta": null, "graphic_needed": null, "source": null},
+        {"channel": "linkedin", "pillar": "drift", "title": "Engagement post", "detail": "Question post to spark discussion around Ep 4–5 themes", "cta": "Drop your take in the comments", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "items": [
+        {"channel": "linkedin", "pillar": "default", "title": "Provocation — eat your product tease", "detail": "Teaser: Do you actually use what you teach? Most leadership coaches don't.", "cta": "Tune in Wednesday for the full breakdown", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-03-31",
+      "items": [
+        {"channel": "river", "pillar": "default", "title": "Story email — eat your product", "detail": "Story about why Chris built SightShift on principles he personally lives — eating your own product", "cta": "Register for the Breakthrough Workshop", "graphic_needed": null, "source": null},
+        {"channel": "linkedin", "pillar": null, "title": "Direct promo of the Live", "detail": "Promo: This Wednesday's Lunch with Chris is 'Eat Your Product' — bring your hardest question", "cta": "Set a reminder for the Live", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "items": [
+        {"channel": "youtube-live", "pillar": null, "title": "Eat Your Product LIVE", "detail": "Live session: Chris talks about eating your own product — practicing what you preach", "cta": "Join live + IFQ link in description", "graphic_needed": "Episode thumbnail", "source": null},
+        {"channel": "instagram", "pillar": null, "title": "Stories — Live + IFQ tease", "detail": "Stories: IFQ teaser graphic + Live countdown + 'Do you eat your own product?' poll", "cta": "Take the IFQ — link in bio", "graphic_needed": "IFQ teaser graphic", "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "items": [
+        {"channel": "river", "pillar": "default", "title": "Framework — proving/hiding", "detail": "Teaching: The two default modes of insecure leadership — proving and hiding", "cta": "Take the IFQ to see your pattern", "graphic_needed": null, "source": "YouTube Live 2026-03-25"},
+        {"channel": "linkedin", "pillar": "default", "title": "Framework — the mirror test", "detail": "Framework graphic: The Mirror Test — can you look at your leadership without flinching?", "cta": "Save this. Share with your team.", "graphic_needed": "Framework graphic — Mirror Test", "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "items": [
+        {"channel": "cultural", "pillar": null, "title": "Ep 6–8 finale drop", "detail": "Final episodes of Company Retreat drop on Amazon — narrative payoff and campaign transition point", "cta": null, "graphic_needed": null, "source": null},
+        {"channel": "linkedin", "pillar": "default", "title": "Engagement — IFQ reflection", "detail": "Reflection post: What did the IFQ reveal about your leadership?", "cta": "Take the IFQ if you haven't yet", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "items": [
+        {"channel": "linkedin", "pillar": "drift", "title": "Story — vulnerability in leadership", "detail": "Personal story: A moment of real vulnerability that changed Chris's leadership trajectory", "cta": "Follow for this week's deep dives", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "items": [
+        {"channel": "river", "pillar": "drift", "title": "Story email — mirror moment", "detail": "Story about facing yourself honestly as a leader — the mirror moment that starts real change", "cta": "Register for the Breakthrough Workshop", "graphic_needed": null, "source": "YouTube Live 2026-04-01"},
+        {"channel": "linkedin", "pillar": "default", "title": "Provocation — what the IFQ reveals", "detail": "The IFQ doesn't tell you what's wrong. It shows you what you've been avoiding.", "cta": "Take the IFQ — link in comments", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "items": [
+        {"channel": "youtube-live", "pillar": null, "title": "The Finale Nobody's Talking About", "detail": "Live: Transitioning from Company Retreat to Dumb Theater — why parody hits harder than training", "cta": "Join live + share your story", "graphic_needed": "Episode thumbnail", "source": null},
+        {"channel": "instagram", "pillar": null, "title": "Stories + Reel", "detail": "Reel: Quick-hit clip from the Live + interactive story poll", "cta": "Watch the full Live on YouTube", "graphic_needed": "Reel clip from Live", "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "items": [
+        {"channel": "river", "pillar": "dumb-theater", "title": "Framework — Breakthrough Workshop intro", "detail": "Teaching: What the Breakthrough Workshop actually is — not motivation, not therapy, but a system for identity-level change", "cta": "Apply for the Breakthrough Workshop", "graphic_needed": null, "source": "YouTube Live 2026-04-08"},
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Framework — systems over events", "detail": "Why leadership development fails — you're buying events when you need a system", "cta": "DM 'BREAKTHROUGH' for details", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "items": [
+        {"channel": "production", "pillar": null, "title": "PREP: Confirm Michael #1 ready", "detail": "Production milestone: Confirm Dumb Theater 'Michael' character video #1 is edited and ready", "cta": null, "graphic_needed": "Michael #1 video — final edit + thumbnail", "source": null},
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Provocation — stop developing leaders", "detail": "Hot take: Stop developing leaders. Start developing humans who happen to lead.", "cta": "Agree or disagree? Comment below.", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "items": [
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Story — motivational speaker aftermath", "detail": "Story: What happens 48 hours after the motivational speaker leaves — the slow fade back to normal", "cta": "Follow for the antidote this week", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "items": [
+        {"channel": "river", "pillar": "dumb-theater", "title": "Story email — hype not a plan", "detail": "Story: Hype is not a plan — why the energy from events fades and what sustains change", "cta": "Watch Michael #1 (Dumb Theater)", "graphic_needed": null, "source": "YouTube Live 2026-04-08"},
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "VIDEO: Michael #1 premiere", "detail": "Video premiere: Meet Michael — the leader who thinks inspiration is a strategy", "cta": "Watch. Tag someone who manages like this.", "graphic_needed": "Michael character poster — 'The Motivator'", "source": "Dumb Theater character video"},
+        {"channel": "instagram", "pillar": "dumb-theater", "title": "Reel: Michael #1", "detail": "Reel cut of Michael #1 video — punchy 30-sec edit for IG format", "cta": "Full video on LinkedIn + YouTube", "graphic_needed": "Reel cut from Michael #1 video", "source": "Dumb Theater character video"}
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "items": [
+        {"channel": "youtube-live", "pillar": null, "title": "Hype Is Not a Plan", "detail": "Live: Breaking down Michael — why 'hype leadership' feels good but changes nothing", "cta": "Join live + Breakthrough Workshop link in description", "graphic_needed": "Episode thumbnail", "source": null},
+        {"channel": "instagram", "pillar": null, "title": "Stories — Live reminder", "detail": "Countdown + 'Do you know a Michael?' poll + Live reminder", "cta": "Join the Live on YouTube", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-16",
+      "items": [
+        {"channel": "river", "pillar": "dumb-theater", "title": "Framework — why hype fades", "detail": "Teaching: The neuroscience of why hype fades — dopamine vs. identity-level rewiring", "cta": "Apply for the Breakthrough Workshop", "graphic_needed": null, "source": "YouTube Live 2026-04-15"},
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Framework — hype-to-habit gap", "detail": "Framework graphic: The Hype-to-Habit Gap — why 90% of leadership training doesn't stick", "cta": "Save this. Send it to your L&D team.", "graphic_needed": "Framework graphic — Hype-to-Habit Gap", "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "items": [
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Engagement — how long did the hype last?", "detail": "Think about the last leadership event you attended. How long did the energy last?", "cta": "Comment your answer — I'll respond to every one", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "items": [
+        {"channel": "linkedin", "pillar": "default", "title": "Story — wellness as avoidance", "detail": "Story: When 'wellness culture' in leadership becomes a way to avoid hard conversations", "cta": "Follow for Nathan this week", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "items": [
+        {"channel": "river", "pillar": "dumb-theater", "title": "Story email — mindfulness as hiding", "detail": "Story: The leader who meditated every morning but couldn't have a hard conversation", "cta": "Watch Nathan #1 (Dumb Theater)", "graphic_needed": null, "source": "YouTube Live 2026-04-15"},
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "VIDEO: Nathan #1 premiere", "detail": "Video premiere: Meet Nathan — the leader who weaponized wellness to avoid leadership", "cta": "Watch. Do you know a Nathan?", "graphic_needed": "Nathan character poster — 'The Zen Master'", "source": "Dumb Theater character video"},
+        {"channel": "instagram", "pillar": "dumb-theater", "title": "Reel: Nathan #1", "detail": "Reel cut of Nathan #1 — punchy 30-sec edit showing the 'wellness avoidance' archetype", "cta": "Full video on LinkedIn + YouTube", "graphic_needed": "Reel cut from Nathan #1 video", "source": "Dumb Theater character video"}
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "items": [
+        {"channel": "youtube-live", "pillar": null, "title": "Zen and the Art of Avoiding Leadership", "detail": "Live: Breaking down Nathan — when mindfulness becomes a mask for avoiding real leadership", "cta": "Join live + IFQ link in description", "graphic_needed": "Episode thumbnail", "source": null},
+        {"channel": "instagram", "pillar": null, "title": "Stories — Do you have a Nathan?", "detail": "Interactive stories: 'Do you have a Nathan on your team?' quiz + Live countdown", "cta": "Join the Live on YouTube", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "items": [
+        {"channel": "river", "pillar": "default", "title": "Framework — hiding pattern deep dive", "detail": "Deep dive into the 'hiding' pattern — how leaders use busyness, wellness, and delegation to avoid being seen", "cta": "Take the IFQ to see if you're hiding", "graphic_needed": null, "source": "YouTube Live 2026-04-22"},
+        {"channel": "linkedin", "pillar": "default", "title": "Framework — performative stillness", "detail": "Performative Stillness — when calm is just another mask for avoidance", "cta": "Save this. Be honest about whether it's you.", "graphic_needed": "Framework graphic — Performative Stillness", "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "items": [
+        {"channel": "linkedin", "pillar": "default", "title": "Engagement — meditation vs leadership", "detail": "Is your mindfulness practice making you a better leader — or helping you avoid being one?", "cta": "Comment honestly. No judgment.", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-27",
+      "items": [
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Provocation — $50K on leadership dev", "detail": "Your company spent $50K on leadership development last year. Can anyone name one thing that changed?", "cta": "If this hits home, DM me 'BREAKTHROUGH'", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "items": [
+        {"channel": "river", "pillar": "dumb-theater", "title": "Story email — two weeks later", "detail": "Story: What your team looks like two weeks after the big leadership offsite", "cta": "Register for the Breakthrough Workshop", "graphic_needed": null, "source": "YouTube Live 2026-04-22"},
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "VIDEO: Michael #2 or re-release", "detail": "Michael returns or re-release with fresh commentary. Reinforcing the 'hype leadership' archetype.", "cta": "Watch + share with your HR team", "graphic_needed": "Michael #2 video or updated caption graphic", "source": "Dumb Theater character video"},
+        {"channel": "instagram", "pillar": "dumb-theater", "title": "Reel: character video", "detail": "Reel cut of latest Dumb Theater character content — punchy engagement format", "cta": "Full video on LinkedIn + YouTube", "graphic_needed": "Reel cut from character video", "source": "Dumb Theater character video"}
+      ]
+    },
+    {
+      "date": "2026-04-29",
+      "items": [
+        {"channel": "youtube-live", "pillar": null, "title": "Two Weeks Later", "detail": "Live: The 'Two Weeks Later' test — what sticks after leadership training and what doesn't", "cta": "Join live + Breakthrough Workshop link", "graphic_needed": "Episode thumbnail", "source": null},
+        {"channel": "instagram", "pillar": null, "title": "Stories — Live reminder", "detail": "Live countdown + 'What's the last leadership lesson that actually stuck?' question sticker", "cta": "Join the Live on YouTube", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-04-30",
+      "items": [
+        {"channel": "river", "pillar": "dumb-theater", "title": "Framework — 97/3 principle", "detail": "Teaching: The 97/3 Principle — 97% of leadership dev addresses symptoms, only 3% reaches the root", "cta": "Apply for the Breakthrough Workshop", "graphic_needed": null, "source": "YouTube Live 2026-04-29"},
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Framework — root-cause vs symptom", "detail": "Framework graphic: Root-Cause vs. Symptom leadership development — a visual breakdown", "cta": "Save this. Show it to your executive team.", "graphic_needed": "Framework graphic — Root-Cause vs Symptom", "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "items": [
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Proof post — Breakthrough Workshop mention", "detail": "Social proof: Client result or testimonial tied to the Breakthrough Workshop — real outcomes, not hype", "cta": "DM 'BREAKTHROUGH' or click the link in comments", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "items": [
+        {"channel": "linkedin", "pillar": "drift", "title": "Story — client transformation arc", "detail": "A client's full transformation arc — from skeptic to advocate after the process", "cta": "Follow for the final week", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "items": [
+        {"channel": "river", "pillar": "dumb-theater", "title": "Story email — before/after breakthrough", "detail": "Before and after the breakthrough — what changes when a leader stops performing and starts leading from identity", "cta": "Apply for the Breakthrough Workshop", "graphic_needed": null, "source": null},
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Proof post — 90-day outcomes", "detail": "Data-backed proof: 90-day outcomes from Breakthrough Workshop participants", "cta": "See the results. Apply now.", "graphic_needed": "90-day outcomes infographic", "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-06",
+      "items": [
+        {"channel": "youtube-live", "pillar": null, "title": "What a Real Breakthrough Looks Like", "detail": "Live finale: What a real breakthrough looks like — stories, proof, and a direct invitation", "cta": "Apply for the Breakthrough Workshop — link in description", "graphic_needed": "Episode thumbnail", "source": null},
+        {"channel": "instagram", "pillar": null, "title": "Stories — proof content", "detail": "Stories: Client testimonial clips + before/after graphics + Workshop application CTA", "cta": "Apply via link in bio", "graphic_needed": "Client testimonial clips + before/after graphics", "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-07",
+      "items": [
+        {"channel": "river", "pillar": "dumb-theater", "title": "Framework — Impact Script concept", "detail": "Teaching: The Impact Script — how to write the story of your leadership legacy starting today", "cta": "Apply for the Breakthrough Workshop", "graphic_needed": null, "source": "YouTube Live 2026-05-06"},
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Framework — identity shift", "detail": "Final framework: Identity Shift — why behavior change fails but identity change lasts", "cta": "This is what the Breakthrough Workshop does. Apply now.", "graphic_needed": "Framework graphic — Identity Shift", "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "items": [
+        {"channel": "linkedin", "pillar": null, "title": "Engagement — campaign reflection", "detail": "Closing question: Over the last 8 weeks, what's the one thing that shifted for you?", "cta": "Apply for the Breakthrough Workshop before doors close", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-11",
+      "items": [
+        {"channel": "linkedin", "pillar": "default", "title": "Story — the beliefs that keep founders stuck", "detail": "Story: The three things every burned-out founder believes that keep them grinding instead of leading", "cta": "Follow for the full breakdown this week", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "items": [
+        {"channel": "river", "pillar": "default", "title": "Story email — work harder myth", "detail": "The 'work harder' belief is proving in disguise. When effort becomes identity, you can't stop without losing yourself.", "cta": "Take the IFQ to see your pattern", "graphic_needed": null, "source": null},
+        {"channel": "linkedin", "pillar": "default", "title": "Framework — three burnout myths", "detail": "Framework: 'Work harder,' 'hire better,' and 'just push through' are not strategies. They're fear responses wearing a productivity costume.", "cta": "Save this. Send it to a founder you know.", "graphic_needed": "Framework graphic — 3 Burnout Myths", "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "items": [
+        {"channel": "youtube-live", "pillar": null, "title": "3 Things Every Burned-Out Founder Believes That Aren't True", "detail": "Debunks the 'work harder' / 'hire better' / 'just push through' narratives. Proving myths reframed through identity.", "cta": "Join live + Breakthrough Workshop link in description", "graphic_needed": "Episode thumbnail", "source": null},
+        {"channel": "instagram", "pillar": null, "title": "Stories — Live reminder", "detail": "Countdown + 'Which burnout belief do you still hold?' poll", "cta": "Join the Live on YouTube", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-14",
+      "items": [
+        {"channel": "river", "pillar": "drift", "title": "Framework — when effort becomes identity", "detail": "Teaching: The burnout you feel isn't from working too hard. It's from proving you belong by never stopping.", "cta": "Apply for the Breakthrough Workshop", "graphic_needed": null, "source": "YouTube Live 2026-05-13"},
+        {"channel": "linkedin", "pillar": "default", "title": "Framework — effort as identity", "detail": "Framework: The leader who works the hardest isn't the most committed. They're the most afraid to stop.", "cta": "DM 'BREAKTHROUGH' for details", "graphic_needed": null, "source": "YouTube Live 2026-05-13"}
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "items": [
+        {"channel": "linkedin", "pillar": "default", "title": "Engagement — which myth did you believe longest?", "detail": "'Work harder.' 'Hire better.' 'Just push through.' Which one kept you stuck the longest?", "cta": "Comment below — I'll respond to every one", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "items": [
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Story — the team that kept getting 'developed'", "detail": "Story: A CEO who spent $200K on team development and couldn't name one thing that changed. Diagnosis before prescription.", "cta": "Follow for the antidote this week", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-19",
+      "items": [
+        {"channel": "river", "pillar": "dumb-theater", "title": "Story email — stop building, start diagnosing", "detail": "You don't have a team development problem. You have an undiagnosed team. The IFQ and Culture Risk Report exist because intuition isn't data.", "cta": "Take the IFQ to diagnose your team", "graphic_needed": null, "source": null},
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Framework — diagnostic before prescription", "detail": "Framework: The case for measurement over intuition. You wouldn't treat a patient without a blood test. Why are you treating your culture without a diagnostic?", "cta": "Take the IFQ — link in comments", "graphic_needed": "Framework graphic — Diagnostic Before Prescription", "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "items": [
+        {"channel": "youtube-live", "pillar": null, "title": "Stop Building Your Team. Start Diagnosing It.", "detail": "The diagnostic-before-prescription principle. IFQ and Culture Risk Report as the starting point. Natural bridge from 'training doesn't work' to 'here's what does.'", "cta": "Join live + IFQ link in description", "graphic_needed": "Episode thumbnail", "source": null},
+        {"channel": "instagram", "pillar": null, "title": "Stories — Live reminder", "detail": "'Have you ever diagnosed your team?' poll + Live countdown", "cta": "Join the Live on YouTube", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-21",
+      "items": [
+        {"channel": "river", "pillar": "default", "title": "Framework — measurement over intuition", "detail": "Teaching: Your gut is not a diagnostic tool. The IFQ measures what your instincts miss.", "cta": "Take the IFQ — see what you've been missing", "graphic_needed": null, "source": "YouTube Live 2026-05-20"},
+        {"channel": "linkedin", "pillar": "default", "title": "Framework — your team's blind spots", "detail": "Framework: The patterns your team can't see because they're living inside them. IFQ surfaces the invisible.", "cta": "Take the IFQ — link in comments", "graphic_needed": null, "source": "YouTube Live 2026-05-20"}
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "items": [
+        {"channel": "linkedin", "pillar": "dumb-theater", "title": "Engagement — what did your last team-building actually change?", "detail": "Honest question: What measurably changed after your last team development investment?", "cta": "Comment honestly. No judgment.", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "items": [
+        {"channel": "linkedin", "pillar": "drift", "title": "Story — the values on the wall vs. the values in the hall", "detail": "Story: A company with beautiful core values on the lobby wall and a culture that contradicted every one of them.", "cta": "Follow for the full framework this week", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "items": [
+        {"channel": "river", "pillar": "drift", "title": "Story email — culture isn't built on values", "detail": "Your culture isn't built on your values statement. It's built on the identity patterns of the people who lead it. Values are aspirational. Identity is operational.", "cta": "Take the Validation Check to see the gap", "graphic_needed": null, "source": null},
+        {"channel": "linkedin", "pillar": "drift", "title": "Framework — identity drives culture, not values", "detail": "Framework: Values are what you say. Culture is what you do under pressure. The gap between them is your identity pattern.", "cta": "Save this. Share it with your leadership team.", "graphic_needed": "Framework graphic — Values vs. Identity", "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "items": [
+        {"channel": "youtube-live", "pillar": null, "title": "What Your Culture Is Actually Built On (It's Not Your Values)", "detail": "Identity patterns drive behavior, not values statements. Culture Model introduction. The foundational reframe: culture is identity-driven.", "cta": "Join live + Breakthrough Workshop link in description", "graphic_needed": "Episode thumbnail", "source": null},
+        {"channel": "instagram", "pillar": null, "title": "Stories — Live reminder", "detail": "'What's the gap between your values and your culture?' question sticker + Live countdown", "cta": "Join the Live on YouTube", "graphic_needed": null, "source": null}
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "items": [
+        {"channel": "river", "pillar": "drift", "title": "Framework — the Culture Model", "detail": "Teaching: Your culture drifts in three dimensions: relationships, engagement, and sacrifice. When identity is insecure, all three erode.", "cta": "Apply for the Breakthrough Workshop", "graphic_needed": null, "source": "YouTube Live 2026-05-27"},
+        {"channel": "linkedin", "pillar": "default", "title": "Framework — three dimensions of culture drift", "detail": "Framework: Relationships go from caring to bitter. Engagement goes from calm to angry. Sacrifice goes from willing to dreading. That's drift.", "cta": "Take the Validation Check — link in comments", "graphic_needed": "Framework graphic — 3 Dimensions of Drift", "source": "YouTube Live 2026-05-27"}
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "items": [
+        {"channel": "linkedin", "pillar": "drift", "title": "Engagement — name the gap", "detail": "What's the biggest gap between what your company says it values and how your team actually operates?", "cta": "Comment below — this is the conversation most teams avoid", "graphic_needed": null, "source": null}
+      ]
+    }
+  ]
+}
