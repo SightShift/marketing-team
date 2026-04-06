@@ -127,6 +127,18 @@
         "day": 5
       },
       "_escalated": true
+    },
+    {
+      "id": 11,
+      "task": "Create thumbnail for Validation Check YouTube video",
+      "priority": "Medium",
+      "due_date": null,
+      "status": "open",
+      "owner": "Eduardo",
+      "notes": "The video placeholder shows up blurry on the validation check. Want to add a simple thumbnail for a cleaner look. A picture of Chris + \"A message from Chris McAlister\" should be sufficient.",
+      "created": "2026-04-05",
+      "completed": null,
+      "recurrence": null
     }
   ]
 }
