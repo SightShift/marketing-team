@@ -169,7 +169,16 @@
           "title": "CAMPAIGN: Columbus AI Event Announcement",
           "detail": "Dedicated announcement email to full list. 'Why does AI outperform your team?' hook. Event details + registration CTA + host-in-your-city seed. Send on off-day (Apr 8 or 10).",
           "cta": "Register at sightshift.com/columbus",
-          "graphic_needed": null,
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
+          "source": "Columbus AI Event campaign"
+        },
+        {
+          "channel": "linkedin",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus AI Event Announcement",
+          "detail": "LinkedIn announcement post. Same AI hook as email, adapted for social. Provocative opening, event details, 30 seats, registration link in comments, host-in-your-city ask.",
+          "cta": "Register link in comments \u2014 sightshift.com/columbus",
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
           "source": "Columbus AI Event campaign"
         }
       ]
@@ -181,8 +190,8 @@
           "channel": "river",
           "pillar": "dumb-theater",
           "title": "Framework \u2014 Breakthrough Workshop intro",
-          "detail": "Teaching: What the Breakthrough Workshop actually is \u2014 not motivation, not therapy, but a system for identity-level change",
-          "cta": "Apply for the Breakthrough Workshop",
+          "detail": "Teaching: What the Breakthrough Workshop actually is \u2014 not motivation, not therapy, but a system for identity-level change. P.S. ADDED: Columbus AI Event promo \u2014 'I'm teaching a live workshop in Columbus on May 6 about why AI outperforms most leadership teams.'",
+          "cta": "Apply for the Breakthrough Workshop + P.S. Columbus event register link",
           "graphic_needed": null,
           "source": "YouTube Live 2026-03-25"
         },
@@ -225,12 +234,12 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Story email \u2014 the retreat that changed nothing",
-          "detail": "The retreat was beautiful. The food was great. Everyone bonded. And within six weeks, nothing had changed. Because the retreat addressed symptoms, not the root.",
-          "cta": "Apply for the Breakthrough Workshop",
+          "pillar": "Dumb Theater",
+          "title": "The $40K Standing Ovation",
+          "detail": "Story: CEO spent $40K on a speaker. Standing ovation. By Thursday, every pattern was back. Hype doesn't reach the root. P.S. ADDED: Columbus AI Event \u2014 'I'm going deep on this in person. May 6 in Columbus... why AI now outperforms most leadership teams, and why it reveals the same identity crisis that $40K speaker couldn't touch.'",
+          "cta": "None (Sunday soil-tilling) + P.S. Columbus event register link",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-01"
+          "source": "Composite coaching scenario + March 25 Live themes"
         }
       ]
     },
@@ -253,12 +262,12 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Story email \u2014 hype not a plan",
-          "detail": "Story: Hype is not a plan \u2014 why the energy from events fades and what sustains change",
-          "cta": "Watch Michael #1 (Dumb Theater)",
+          "pillar": "Dumb Theater",
+          "title": "She Felt It Slipping",
+          "detail": "Story: Inspired crying at the offsite. By Wednesday, yelling at her assistant. Motivation targets the 97%, but leadership is defined by the 3% under pressure. Lunch with Chris promo. P.S. ADDED: Columbus AI Event \u2014 'AI doesn't have a 3%. No insecurity. No proving. No hiding. That's why it outperforms most teams.'",
+          "cta": "YouTube Live reminder + P.S. Columbus event register link",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-01"
+          "source": "Composite coaching scenario + March 25 Live + Week 5 outline"
         },
         {
           "channel": "linkedin",
@@ -308,12 +317,12 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Podcast email \u2014 why hype fades",
-          "detail": "(From this week's podcast episode) Teaching: The neuroscience of why hype fades \u2014 dopamine vs. identity-level rewiring",
-          "cta": "Apply for the Breakthrough Workshop",
+          "pillar": "Default",
+          "title": "The 3% That Runs Your Leadership",
+          "detail": "Framework: The IFQ measures what drives the 3% under pressure. Not personality, not strengths. The specific fears that take over when pressure hits. P.S. ADDED: Columbus AI Event \u2014 'Thirty leaders. One room. Columbus, May 6. Why AI exposes the identity gap most companies are ignoring.'",
+          "cta": "IFQ + P.S. Columbus event register link",
           "graphic_needed": null,
-          "source": "Podcast episode (releasing same day)"
+          "source": "March 25 Live (proving/hiding) + Week 5 outline (97/3 principle)"
         },
         {
           "channel": "linkedin",
