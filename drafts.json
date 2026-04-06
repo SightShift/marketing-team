@@ -87,8 +87,9 @@
           "body": "Your best people aren't leaving because of compensation.\n\nThey're leaving because of your environment.\n\nNot the office layout. Not the perks. The invisible thing that happens in every meeting, every hallway conversation, every Slack thread. The thing no one names out loud but everyone adapts to.\n\nHere's what I've seen after 15 years of working with leadership teams: the culture you think you have and the culture your people actually experience are almost never the same thing.\n\nYou think the culture is \"open and honest.\" Your VP thinks the culture is \"agree publicly, protect yourself privately.\" Your best engineer thinks the culture is \"work hard, keep your head down, don't get noticed for the wrong reasons.\"\n\nNone of them are lying. They're all adapting to the same environment differently, based on what feels safe.\n\nThat's drift. It's happening right now, in your company, and you won't see it until someone you can't afford to lose walks out the door.\n\nThe question isn't whether your culture is drifting. It's whether you'll catch it before it costs you.",
           "cta": "Engagement question (no link)",
           "source": "March 25 Live — environment shapes you, best people leaving",
-          "status": "pending",
-          "graphic_needed": false
+          "status": "changes_requested",
+          "graphic_needed": false,
+          "feedback": "This is a great post! Make the CTA the validation check. www.thevalidationcheck.com."
         },
         {
           "id": "wk5-thu-linkedin-framework",
