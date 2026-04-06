@@ -442,6 +442,17 @@
       "date": "2026-04-20",
       "items": [
         {
+          "channel": "campaign-email",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus reminder + social proof",
+          "detail": "Columbus segment direct email: reminder + social proof from registrations or past event testimonial. Personal tone.",
+          "cta": "Register at sightshift.com/columbus",
+          "audience": "COLUMBUS SEGMENT — past Columbus event attendees + Ohio-area contacts",
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
+          "source": "Columbus AI Event campaign",
+          "status": "proposed"
+        },
+        {
           "channel": "linkedin",
           "pillar": "default",
           "title": "Story — wellness as avoidance",
@@ -464,17 +475,6 @@
           "cta": "Watch Nathan #1 (Dumb Theater) + P.S. Columbus event register link",
           "graphic_needed": null,
           "source": "Podcast + YouTube Live 2026-04-08",
-          "status": "proposed"
-        },
-        {
-          "channel": "campaign-email",
-          "pillar": "columbus-ai-event",
-          "title": "CAMPAIGN: Columbus reminder + social proof",
-          "detail": "Columbus segment direct email: reminder + social proof from registrations or past event testimonial. Personal tone.",
-          "cta": "Register at sightshift.com/columbus",
-          "audience": "COLUMBUS SEGMENT — past Columbus event attendees + Ohio-area contacts",
-          "graphic_needed": "Columbus AI event graphic (Eduardo)",
-          "source": "Columbus AI Event campaign",
           "status": "proposed"
         },
         {
@@ -701,17 +701,6 @@
           "status": "proposed"
         },
         {
-          "channel": "campaign-email",
-          "pillar": "columbus-ai-event",
-          "title": "CAMPAIGN: Columbus final push (segment)",
-          "detail": "Columbus segment final push: 'This is happening in your backyard. Last seats.' Personal, direct, urgent.",
-          "cta": "Register at sightshift.com/columbus",
-          "audience": "COLUMBUS SEGMENT — past Columbus event attendees + Ohio-area contacts",
-          "graphic_needed": "Columbus AI event graphic (Eduardo)",
-          "source": "Columbus AI Event campaign",
-          "status": "proposed"
-        },
-        {
           "channel": "podcast",
           "pillar": null,
           "title": "Podcast Episode (TBD)",
@@ -736,6 +725,17 @@
     {
       "date": "2026-05-01",
       "items": [
+        {
+          "channel": "campaign-email",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus final push (segment)",
+          "detail": "Columbus segment final push: 'This is happening in your backyard. Last seats.' Personal, direct, urgent.",
+          "cta": "Register at sightshift.com/columbus",
+          "audience": "COLUMBUS SEGMENT — past Columbus event attendees + Ohio-area contacts",
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
+          "source": "Columbus AI Event campaign",
+          "status": "proposed"
+        },
         {
           "channel": "linkedin",
           "pillar": "dumb-theater",
@@ -767,6 +767,17 @@
       "date": "2026-05-04",
       "items": [
         {
+          "channel": "campaign-email",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus day-before reminder (segment only)",
+          "detail": "Short, personal: 'Tomorrow. See you there.' Columbus segment only — do NOT send to full list.",
+          "cta": "No CTA needed (already registered) or final register link",
+          "audience": "COLUMBUS SEGMENT ONLY — do NOT send to full list",
+          "graphic_needed": null,
+          "source": "Columbus AI Event campaign",
+          "status": "proposed"
+        },
+        {
           "channel": "linkedin",
           "pillar": "drift",
           "title": "Story — client transformation arc",
@@ -789,17 +800,6 @@
           "cta": "Apply for the Breakthrough Workshop",
           "graphic_needed": null,
           "source": "Podcast + YouTube Live 2026-04-22",
-          "status": "proposed"
-        },
-        {
-          "channel": "campaign-email",
-          "pillar": "columbus-ai-event",
-          "title": "CAMPAIGN: Columbus day-before reminder (segment only)",
-          "detail": "Short, personal: 'Tomorrow. See you there.' Columbus segment only — do NOT send to full list.",
-          "cta": "No CTA needed (already registered) or final register link",
-          "audience": "COLUMBUS SEGMENT ONLY — do NOT send to full list",
-          "graphic_needed": null,
-          "source": "Columbus AI Event campaign",
           "status": "proposed"
         },
         {
