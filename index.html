@@ -1741,10 +1741,8 @@ function renderOneMonth(monthStart, byDate, overlays) {
     var cellClasses = 'cal-cell';
     if (isToday) cellClasses += ' today';
     if (isLastRow) cellClasses += ' pop-above';
-    if (overlay) cellClasses += ' has-overlay';
 
     html += '<div class="' + cellClasses + '">';
-    if (overlay) html += '<div class="overlay-label">' + esc(overlay.name) + '</div>';
     html += '<div class="cal-date">' + day + '</div>';
 
     dayItems.forEach(function(item) {
@@ -1752,7 +1750,8 @@ function renderOneMonth(monthStart, byDate, overlays) {
       var pillarClass = item.pillar ? ' pillar-' + item.pillar : '';
       var graphicIcon = item.graphic_needed ? ' <span class="graphic-icon" title="Graphic needed">&#9998;</span>' : '';
       var statusDot = item.status ? '<span class="status-dot ' + item.status + '" title="' + item.status + '"></span>' : '';
-      html += '<div class="cal-entry ' + chClass + pillarClass + '">' + statusDot + esc(channelAbbrev(item.channel)) + ': ' + esc(item.title) + graphicIcon + '</div>';
+      var displayTitle = (item.title || '').replace(/^(CAMPAIGN|EVENT):\s*/i, '');
+      html += '<div class="cal-entry ' + chClass + pillarClass + '">' + statusDot + esc(channelAbbrev(item.channel)) + ': ' + esc(displayTitle) + graphicIcon + '</div>';
     });
 
     if (dayItems.length > 0) {
