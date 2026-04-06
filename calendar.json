@@ -53,16 +53,6 @@
           "status": "approved"
         },
         {
-          "channel": "linkedin",
-          "pillar": "default",
-          "title": "Framework — the mirror test",
-          "detail": "Framework graphic: The Mirror Test — can you look at your leadership without flinching?",
-          "cta": "Save this. Share with your team.",
-          "graphic_needed": "Framework graphic — Mirror Test",
-          "source": "YouTube Live 2026-03-18",
-          "status": "approved"
-        },
-        {
           "channel": "podcast",
           "pillar": null,
           "title": "Podcast Episode (TBD)",
@@ -70,6 +60,16 @@
           "cta": "Listen on Apple, Spotify, or YouTube",
           "graphic_needed": "Episode thumbnail + audiogram",
           "source": null,
+          "status": "approved"
+        },
+        {
+          "channel": "linkedin",
+          "pillar": "default",
+          "title": "Framework — the mirror test",
+          "detail": "Framework graphic: The Mirror Test — can you look at your leadership without flinching?",
+          "cta": "Save this. Share with your team.",
+          "graphic_needed": "Framework graphic — Mirror Test",
+          "source": "YouTube Live 2026-03-18",
           "status": "approved"
         }
       ]
@@ -168,16 +168,6 @@
           "status": "approved"
         },
         {
-          "channel": "instagram",
-          "pillar": null,
-          "title": "Stories + Reel",
-          "detail": "Reel: Quick-hit clip from the Live + interactive story poll",
-          "cta": "Watch the full Live on YouTube",
-          "graphic_needed": "Reel clip from Live",
-          "source": "YouTube Live 2026-03-25",
-          "status": "approved"
-        },
-        {
           "channel": "campaign-email",
           "pillar": "columbus-ai-event",
           "title": "CAMPAIGN: Columbus AI Event Announcement",
@@ -198,6 +188,16 @@
           "source": "Columbus AI Event campaign",
           "status": "pending",
           "audience": "Public (Eduardo posts)"
+        },
+        {
+          "channel": "instagram",
+          "pillar": null,
+          "title": "Stories + Reel",
+          "detail": "Reel: Quick-hit clip from the Live + interactive story poll",
+          "cta": "Watch the full Live on YouTube",
+          "graphic_needed": "Reel clip from Live",
+          "source": "YouTube Live 2026-03-25",
+          "status": "approved"
         }
       ]
     },
@@ -330,16 +330,6 @@
           "status": "proposed"
         },
         {
-          "channel": "instagram",
-          "pillar": null,
-          "title": "Stories — Live reminder",
-          "detail": "Countdown + 'Do you know a Michael?' poll + Live reminder",
-          "cta": "Join the Live on YouTube",
-          "graphic_needed": null,
-          "source": null,
-          "status": "proposed"
-        },
-        {
           "channel": "linkedin",
           "pillar": "Drift",
           "title": "Your Best People Aren't Leaving Because of Comp",
@@ -359,6 +349,16 @@
           "graphic_needed": "Columbus AI event graphic (Eduardo)",
           "source": "Columbus AI Event campaign",
           "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": null,
+          "title": "Stories — Live reminder",
+          "detail": "Countdown + 'Do you know a Michael?' poll + Live reminder",
+          "cta": "Join the Live on YouTube",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -376,16 +376,6 @@
           "status": "approved"
         },
         {
-          "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "The 97/3 Principle",
-          "detail": "Framework: Most leadership development addresses the 97% when things are going fine. But your leadership is defined by the 3% — when someone challenges you, when your best performer leaves, when you don't have the answer. That deeper operating system is built on fear, not training.",
-          "cta": "IFQ link in comments",
-          "graphic_needed": null,
-          "source": "Week 5 outline + March 25 Live",
-          "status": "approved"
-        },
-        {
           "channel": "podcast",
           "pillar": null,
           "title": "Podcast Episode (TBD)",
@@ -394,22 +384,22 @@
           "graphic_needed": "Episode thumbnail + audiogram",
           "source": null,
           "status": "proposed"
+        },
+        {
+          "channel": "linkedin",
+          "pillar": "dumb-theater",
+          "title": "The 97/3 Principle",
+          "detail": "Framework: Most leadership development addresses the 97% when things are going fine. But your leadership is defined by the 3% — when someone challenges you, when your best performer leaves, when you don't have the answer. That deeper operating system is built on fear, not training.",
+          "cta": "IFQ link in comments",
+          "graphic_needed": null,
+          "source": "Week 5 outline + March 25 Live",
+          "status": "approved"
         }
       ]
     },
     {
       "date": "2026-04-17",
       "items": [
-        {
-          "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "How Long Did the Feeling Last?",
-          "detail": "Engagement: What's the most fired-up you've ever been after a speaker or leadership event, and how long did it last? Chris shares his 2009 conference story — four pages of notes, couldn't find the notebook by Wednesday.",
-          "cta": "Reply engagement (no link)",
-          "graphic_needed": null,
-          "source": "Chris personal storytelling + March 25 Live themes",
-          "status": "approved"
-        },
         {
           "channel": "campaign-email",
           "pillar": "columbus-ai-event",
@@ -420,6 +410,16 @@
           "graphic_needed": "Columbus AI event graphic (Eduardo)",
           "source": "Columbus AI Event campaign",
           "status": "proposed"
+        },
+        {
+          "channel": "linkedin",
+          "pillar": "dumb-theater",
+          "title": "How Long Did the Feeling Last?",
+          "detail": "Engagement: What's the most fired-up you've ever been after a speaker or leadership event, and how long did it last? Chris shares his 2009 conference story — four pages of notes, couldn't find the notebook by Wednesday.",
+          "cta": "Reply engagement (no link)",
+          "graphic_needed": null,
+          "source": "Chris personal storytelling + March 25 Live themes",
+          "status": "approved"
         }
       ]
     },
@@ -467,6 +467,17 @@
           "status": "proposed"
         },
         {
+          "channel": "campaign-email",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus reminder + social proof",
+          "detail": "Columbus segment direct email: reminder + social proof from registrations or past event testimonial. Personal tone.",
+          "cta": "Register at sightshift.com/columbus",
+          "audience": "COLUMBUS SEGMENT — past Columbus event attendees + Ohio-area contacts",
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
+          "source": "Columbus AI Event campaign",
+          "status": "proposed"
+        },
+        {
           "channel": "linkedin",
           "pillar": "dumb-theater",
           "title": "VIDEO: Nathan #1 premiere",
@@ -485,17 +496,6 @@
           "graphic_needed": "Reel cut from Nathan #1 video",
           "source": "Dumb Theater character video",
           "status": "proposed"
-        },
-        {
-          "channel": "campaign-email",
-          "pillar": "columbus-ai-event",
-          "title": "CAMPAIGN: Columbus reminder + social proof",
-          "detail": "Columbus segment direct email: reminder + social proof from registrations or past event testimonial. Personal tone.",
-          "cta": "Register at sightshift.com/columbus",
-          "audience": "COLUMBUS SEGMENT — past Columbus event attendees + Ohio-area contacts",
-          "graphic_needed": "Columbus AI event graphic (Eduardo)",
-          "source": "Columbus AI Event campaign",
-          "status": "proposed"
         }
       ]
     },
@@ -513,16 +513,6 @@
           "status": "proposed"
         },
         {
-          "channel": "instagram",
-          "pillar": null,
-          "title": "Stories — Do you have a Nathan?",
-          "detail": "Interactive stories: 'Do you have a Nathan on your team?' quiz + Live countdown",
-          "cta": "Join the Live on YouTube",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-04-08",
-          "status": "proposed"
-        },
-        {
           "channel": "linkedin",
           "pillar": "columbus-ai-event",
           "title": "CAMPAIGN: Columbus AI event — proof/teaching post",
@@ -531,6 +521,16 @@
           "audience": "Public (Eduardo posts)",
           "graphic_needed": "Columbus AI event graphic or past event photo (Eduardo)",
           "source": "Columbus AI Event campaign",
+          "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": null,
+          "title": "Stories — Do you have a Nathan?",
+          "detail": "Interactive stories: 'Do you have a Nathan on your team?' quiz + Live countdown",
+          "cta": "Join the Live on YouTube",
+          "graphic_needed": null,
+          "source": "YouTube Live 2026-04-08",
           "status": "proposed"
         }
       ]
@@ -654,16 +654,6 @@
           "status": "proposed"
         },
         {
-          "channel": "instagram",
-          "pillar": null,
-          "title": "Stories — Live reminder",
-          "detail": "Live countdown + 'What's the last leadership lesson that actually stuck?' question sticker",
-          "cta": "Join the Live on YouTube",
-          "graphic_needed": null,
-          "source": null,
-          "status": "proposed"
-        },
-        {
           "channel": "campaign-email",
           "pillar": "columbus-ai-event",
           "title": "CAMPAIGN: Columbus last seats (full list)",
@@ -684,6 +674,16 @@
           "graphic_needed": "Columbus AI event graphic (Eduardo)",
           "source": "Columbus AI Event campaign",
           "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": null,
+          "title": "Stories — Live reminder",
+          "detail": "Live countdown + 'What's the last leadership lesson that actually stuck?' question sticker",
+          "cta": "Join the Live on YouTube",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -701,13 +701,14 @@
           "status": "proposed"
         },
         {
-          "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Framework — root-cause vs symptom",
-          "detail": "Framework graphic: Root-Cause vs. Symptom leadership development — a visual breakdown",
-          "cta": "Save this. Show it to your executive team.",
-          "graphic_needed": "Framework graphic — Root-Cause vs Symptom",
-          "source": "YouTube Live 2026-04-15",
+          "channel": "campaign-email",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus final push (segment)",
+          "detail": "Columbus segment final push: 'This is happening in your backyard. Last seats.' Personal, direct, urgent.",
+          "cta": "Register at sightshift.com/columbus",
+          "audience": "COLUMBUS SEGMENT — past Columbus event attendees + Ohio-area contacts",
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
+          "source": "Columbus AI Event campaign",
           "status": "proposed"
         },
         {
@@ -721,14 +722,13 @@
           "status": "proposed"
         },
         {
-          "channel": "campaign-email",
-          "pillar": "columbus-ai-event",
-          "title": "CAMPAIGN: Columbus final push (segment)",
-          "detail": "Columbus segment final push: 'This is happening in your backyard. Last seats.' Personal, direct, urgent.",
-          "cta": "Register at sightshift.com/columbus",
-          "audience": "COLUMBUS SEGMENT — past Columbus event attendees + Ohio-area contacts",
-          "graphic_needed": "Columbus AI event graphic (Eduardo)",
-          "source": "Columbus AI Event campaign",
+          "channel": "linkedin",
+          "pillar": "dumb-theater",
+          "title": "Framework — root-cause vs symptom",
+          "detail": "Framework graphic: Root-Cause vs. Symptom leadership development — a visual breakdown",
+          "cta": "Save this. Show it to your executive team.",
+          "graphic_needed": "Framework graphic — Root-Cause vs Symptom",
+          "source": "YouTube Live 2026-04-15",
           "status": "proposed"
         }
       ]
@@ -792,16 +792,6 @@
           "status": "proposed"
         },
         {
-          "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Proof post — 90-day outcomes",
-          "detail": "Data-backed proof: 90-day outcomes from Breakthrough Workshop participants",
-          "cta": "See the results. Apply now.",
-          "graphic_needed": "90-day outcomes infographic",
-          "source": "YouTube Live 2026-04-22",
-          "status": "proposed"
-        },
-        {
           "channel": "campaign-email",
           "pillar": "columbus-ai-event",
           "title": "CAMPAIGN: Columbus day-before reminder (segment only)",
@@ -810,6 +800,16 @@
           "audience": "COLUMBUS SEGMENT ONLY — do NOT send to full list",
           "graphic_needed": null,
           "source": "Columbus AI Event campaign",
+          "status": "proposed"
+        },
+        {
+          "channel": "linkedin",
+          "pillar": "dumb-theater",
+          "title": "Proof post — 90-day outcomes",
+          "detail": "Data-backed proof: 90-day outcomes from Breakthrough Workshop participants",
+          "cta": "See the results. Apply now.",
+          "graphic_needed": "90-day outcomes infographic",
+          "source": "YouTube Live 2026-04-22",
           "status": "proposed"
         },
         {
@@ -829,6 +829,16 @@
       "date": "2026-05-06",
       "items": [
         {
+          "channel": "event",
+          "pillar": "columbus-ai-event",
+          "title": "EVENT: Why AI Outperforms Your Team — Columbus",
+          "detail": "SightShift × C12 Columbus live event. 2:00–4:00 PM + networking reception. Summit Outdoors, Columbus, OH. 30 seats, $135. Speakers: Chris McAlister + Chris Orecchio. Two talks, table experiences, patio after-hang.",
+          "cta": "sightshift.com/columbus",
+          "graphic_needed": null,
+          "source": "Columbus AI Event",
+          "status": "approved"
+        },
+        {
           "channel": "youtube-live",
           "pillar": null,
           "title": "What a Real Breakthrough Looks Like",
@@ -847,16 +857,6 @@
           "graphic_needed": "Client testimonial clips + before/after graphics",
           "source": "YouTube Live 2026-04-22",
           "status": "proposed"
-        },
-        {
-          "channel": "event",
-          "pillar": "columbus-ai-event",
-          "title": "EVENT: Why AI Outperforms Your Team — Columbus",
-          "detail": "SightShift × C12 Columbus live event. 2:00–4:00 PM + networking reception. Summit Outdoors, Columbus, OH. 30 seats, $135. Speakers: Chris McAlister + Chris Orecchio. Two talks, table experiences, patio after-hang.",
-          "cta": "sightshift.com/columbus",
-          "graphic_needed": null,
-          "source": "Columbus AI Event",
-          "status": "approved"
         }
       ]
     },
@@ -994,16 +994,6 @@
           "status": "proposed"
         },
         {
-          "channel": "linkedin",
-          "pillar": "default",
-          "title": "Framework — effort as identity",
-          "detail": "Framework: The leader who works the hardest isn't the most committed. They're the most afraid to stop.",
-          "cta": "DM 'BREAKTHROUGH' for details",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-04-29",
-          "status": "proposed"
-        },
-        {
           "channel": "podcast",
           "pillar": null,
           "title": "Podcast Episode (TBD)",
@@ -1011,6 +1001,16 @@
           "cta": "Listen on Apple, Spotify, or YouTube",
           "graphic_needed": "Episode thumbnail + audiogram",
           "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "linkedin",
+          "pillar": "default",
+          "title": "Framework — effort as identity",
+          "detail": "Framework: The leader who works the hardest isn't the most committed. They're the most afraid to stop.",
+          "cta": "DM 'BREAKTHROUGH' for details",
+          "graphic_needed": null,
+          "source": "YouTube Live 2026-04-29",
           "status": "proposed"
         }
       ]
@@ -1244,16 +1244,6 @@
           "status": "proposed"
         },
         {
-          "channel": "linkedin",
-          "pillar": "default",
-          "title": "Framework — three dimensions of culture drift",
-          "detail": "Framework: Relationships go from caring to bitter. Engagement goes from calm to angry. Sacrifice goes from willing to dreading. That's drift.",
-          "cta": "Take the Validation Check — link in comments",
-          "graphic_needed": "Framework graphic — 3 Dimensions of Drift",
-          "source": "YouTube Live 2026-05-13",
-          "status": "proposed"
-        },
-        {
           "channel": "podcast",
           "pillar": null,
           "title": "Podcast Episode (TBD)",
@@ -1261,6 +1251,16 @@
           "cta": "Listen on Apple, Spotify, or YouTube",
           "graphic_needed": "Episode thumbnail + audiogram",
           "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "linkedin",
+          "pillar": "default",
+          "title": "Framework — three dimensions of culture drift",
+          "detail": "Framework: Relationships go from caring to bitter. Engagement goes from calm to angry. Sacrifice goes from willing to dreading. That's drift.",
+          "cta": "Take the Validation Check — link in comments",
+          "graphic_needed": "Framework graphic — 3 Dimensions of Drift",
+          "source": "YouTube Live 2026-05-13",
           "status": "proposed"
         }
       ]
