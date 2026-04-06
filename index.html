@@ -1866,10 +1866,17 @@ function renderReview() {
     html += '<span class="draft-publish">Publish: ' + esc(item.publish_date) + '</span>';
     html += '</div>';
     html += '<div class="draft-title">' + esc(item.title || item.subject_line || '') + '</div>';
-    if (item.type === 'river-email' && item.subject_line) html += '<div style="font-size:11px;color:var(--medium-blue);margin-bottom:2px"><strong>Subject:</strong> ' + esc(item.subject_line) + '</div>';
-    if (item.type === 'river-email' && item.preview_text) html += '<div class="draft-preview-text"><strong>Preview:</strong> ' + esc(item.preview_text) + '</div>';
+    if (item.type === 'river-email') {
+      html += '<div class="draft-inline-field" id="field-subject-' + idx + '" style="display:none"><label style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--medium-blue)">Subject Line</label><input type="text" id="edit-subject-' + idx + '" value="' + esc(item.subject_line || '') + '" style="width:100%;padding:6px 8px;border:1px solid var(--teal);border-radius:4px;font-size:13px;font-family:inherit;margin-bottom:6px"></div>';
+      html += '<div id="display-subject-' + idx + '" style="font-size:11px;color:var(--medium-blue);margin-bottom:2px"><strong>Subject:</strong> ' + esc(item.subject_line || '') + '</div>';
+      html += '<div class="draft-inline-field" id="field-preview-' + idx + '" style="display:none"><label style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--medium-blue)">Preview Text</label><input type="text" id="edit-preview-' + idx + '" value="' + esc(item.preview_text || '') + '" placeholder="Short preview shown in inbox before opening (40-90 chars)" style="width:100%;padding:6px 8px;border:1px solid var(--teal);border-radius:4px;font-size:13px;font-family:inherit;margin-bottom:6px"></div>';
+      if (item.preview_text) html += '<div id="display-preview-' + idx + '" class="draft-preview-text"><strong>Preview:</strong> ' + esc(item.preview_text) + '</div>';
+      else html += '<div id="display-preview-' + idx + '"></div>';
+    }
     html += '<div class="draft-body" id="draft-body-' + idx + '">' + esc(item.body || '(No body content yet)') + '</div>';
-    if (item.cta) html += '<div class="draft-cta">CTA: ' + esc(item.cta) + '</div>';
+    html += '<div class="draft-inline-field" id="field-cta-' + idx + '" style="display:none"><label style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--medium-blue)">CTA</label><input type="text" id="edit-cta-' + idx + '" value="' + esc(item.cta || '') + '" style="width:100%;padding:6px 8px;border:1px solid var(--teal);border-radius:4px;font-size:13px;font-family:inherit"></div>';
+    if (item.cta) html += '<div class="draft-cta" id="display-cta-' + idx + '">CTA: ' + esc(item.cta) + '</div>';
+    else html += '<div class="draft-cta" id="display-cta-' + idx + '"></div>';
     if (item.source) html += '<div class="draft-source">Source: ' + esc(item.source) + '</div>';
     if (item.graphic_needed) html += '<div class="draft-graphic"><strong>Graphic Needed:</strong> ' + esc(item.graphic_needed) + '</div>';
     if (item.feedback) html += '<div style="margin-top:6px;padding:6px 10px;background:#fff3e0;border-radius:5px;border-left:3px solid var(--orange);font-size:12px"><strong style="color:var(--orange)">Feedback:</strong> ' + esc(item.feedback) + '</div>';
@@ -1878,6 +1885,8 @@ function renderReview() {
     if (item.status !== 'approved') {
       html += '<button class="btn-approve" onclick="approveDraft(' + idx + ')">Approve</button>';
       html += '<button class="btn-edit" onclick="editDraft(' + idx + ')">Edit</button>';
+      html += '<button class="btn-save-edit" id="save-edit-' + idx + '" style="display:none" onclick="saveEdit(' + idx + ')">Save</button>';
+      html += '<button class="btn-cancel-edit" id="cancel-edit-' + idx + '" style="display:none" onclick="cancelEdit(' + idx + ')">Cancel</button>';
       html += '<button class="btn-changes" onclick="requestChanges(' + idx + ')">Request Changes</button>';
     }
     html += '</div>';
@@ -1922,30 +1931,34 @@ function editDraft(idx) {
   if (!batch) return;
   var item = batch.items[idx];
   var isEmail = item.type === 'river-email';
+  var el = document.getElementById('draft-body-' + idx);
 
-  var html = '<div class="modal-overlay" onclick="if(event.target===this)closeModal()">' +
-    '<div class="modal wide">' +
-      '<h3>Edit: ' + esc(item.title || item.subject_line || '') + '</h3>';
-
+  // Store originals for cancel
+  editOriginals[idx] = { body: el.textContent };
   if (isEmail) {
-    html += '<div class="edit-modal-field"><label>Subject Line</label>' +
-      '<input type="text" id="edit-subject" value="' + esc(item.subject_line || '') + '"></div>';
-    html += '<div class="edit-modal-field"><label>Preview Text</label>' +
-      '<input type="text" id="edit-preview" value="' + esc(item.preview_text || '') + '" placeholder="Short preview shown in inbox before opening"></div>';
+    editOriginals[idx].subject = item.subject_line || '';
+    editOriginals[idx].preview = item.preview_text || '';
   }
+  editOriginals[idx].cta = item.cta || '';
 
-  html += '<div class="edit-modal-field"><label>Body</label>' +
-    '<textarea id="edit-body">' + esc(item.body || '') + '</textarea></div>';
+  // Show inline edit fields
+  if (isEmail) {
+    document.getElementById('field-subject-' + idx).style.display = 'block';
+    document.getElementById('display-subject-' + idx).style.display = 'none';
+    document.getElementById('field-preview-' + idx).style.display = 'block';
+    document.getElementById('display-preview-' + idx).style.display = 'none';
+  }
+  document.getElementById('field-cta-' + idx).style.display = 'block';
+  document.getElementById('display-cta-' + idx).style.display = 'none';
 
-  html += '<div class="edit-modal-field"><label>CTA</label>' +
-    '<input type="text" id="edit-cta" value="' + esc(item.cta || '') + '"></div>';
+  // Make body editable
+  el.contentEditable = 'true';
+  el.classList.add('editing');
+  el.focus();
 
-  html += '<div class="modal-buttons">' +
-    '<button class="btn-cancel" onclick="closeModal()">Cancel</button>' +
-    '<button class="btn-save" onclick="saveEdit(' + idx + ')">Save Changes</button>' +
-  '</div></div></div>';
-
-  document.getElementById('modal-root').innerHTML = html;
+  // Show save/cancel
+  document.getElementById('save-edit-' + idx).style.display = 'inline-block';
+  document.getElementById('cancel-edit-' + idx).style.display = 'inline-block';
 }
 
 function saveEdit(idx) {
@@ -1953,16 +1966,23 @@ function saveEdit(idx) {
   if (!batch) return;
   var item = batch.items[idx];
   var isEmail = item.type === 'river-email';
+  var el = document.getElementById('draft-body-' + idx);
 
-  item.body = document.getElementById('edit-body').value;
-  item.cta = document.getElementById('edit-cta').value;
-
+  // Save all fields
+  item.body = el.textContent;
   if (isEmail) {
-    item.subject_line = document.getElementById('edit-subject').value;
-    item.preview_text = document.getElementById('edit-preview').value;
+    item.subject_line = document.getElementById('edit-subject-' + idx).value;
+    item.preview_text = document.getElementById('edit-preview-' + idx).value;
   }
+  item.cta = document.getElementById('edit-cta-' + idx).value;
 
-  closeModal();
+  // Close editing state
+  el.contentEditable = 'false';
+  el.classList.remove('editing');
+  document.getElementById('save-edit-' + idx).style.display = 'none';
+  document.getElementById('cancel-edit-' + idx).style.display = 'none';
+  delete editOriginals[idx];
+
   saveDrafts();
   renderReview();
   renderQueue();
@@ -1970,7 +1990,31 @@ function saveEdit(idx) {
 }
 
 function cancelEdit(idx) {
-  closeModal();
+  var batch = getCurrentBatch();
+  if (!batch) return;
+  var item = batch.items[idx];
+  var isEmail = item.type === 'river-email';
+  var el = document.getElementById('draft-body-' + idx);
+
+  // Restore originals
+  el.textContent = editOriginals[idx].body;
+  if (isEmail) {
+    document.getElementById('edit-subject-' + idx).value = editOriginals[idx].subject;
+    document.getElementById('edit-preview-' + idx).value = editOriginals[idx].preview;
+    document.getElementById('field-subject-' + idx).style.display = 'none';
+    document.getElementById('display-subject-' + idx).style.display = 'block';
+    document.getElementById('field-preview-' + idx).style.display = 'none';
+    document.getElementById('display-preview-' + idx).style.display = 'block';
+  }
+  document.getElementById('edit-cta-' + idx).value = editOriginals[idx].cta;
+  document.getElementById('field-cta-' + idx).style.display = 'none';
+  document.getElementById('display-cta-' + idx).style.display = 'block';
+
+  el.contentEditable = 'false';
+  el.classList.remove('editing');
+  document.getElementById('save-edit-' + idx).style.display = 'none';
+  document.getElementById('cancel-edit-' + idx).style.display = 'none';
+  delete editOriginals[idx];
 }
 
 function requestChanges(idx) {
