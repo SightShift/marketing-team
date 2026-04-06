@@ -206,13 +206,13 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Framework — Breakthrough Workshop intro",
-          "detail": "Teaching: What the Breakthrough Workshop actually is — not motivation, not therapy, but a system for identity-level change. P.S. ADDED: Columbus AI Event promo — 'I'm teaching a live workshop in Columbus on May 6 about why AI outperforms most leadership teams.'",
-          "cta": "Apply for the Breakthrough Workshop + P.S. Columbus event register link",
+          "pillar": "drift",
+          "title": "Validation Check Announcement",
+          "detail": "Announcement: The Validation Check is live. Nine questions, two minutes, see if your culture is drifting. Replaces Breakthrough Workshop intro email. Columbus AI Event P.S. included.",
+          "cta": "Take the Validation Check",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-03-25",
-          "status": "approved"
+          "source": "Original (Kim)",
+          "status": "proposed"
         },
         {
           "channel": "linkedin",
