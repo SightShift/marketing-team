@@ -20,7 +20,8 @@
           "source": "Composite coaching scenario + March 25 Live themes",
           "status": "approved",
           "graphic_needed": false,
-          "feedback": null
+          "feedback": null,
+          "publish_requested": true
         },
         {
           "id": "wk5-tue-river-hype-fades",
@@ -35,7 +36,8 @@
           "source": "Composite coaching scenario + March 25 Live + Week 5 outline",
           "status": "approved",
           "graphic_needed": false,
-          "feedback": null
+          "feedback": null,
+          "publish_requested": true
         },
         {
           "id": "wk5-thu-river-97-3",
@@ -50,7 +52,8 @@
           "source": "March 25 Live (proving/hiding) + Week 5 outline (97/3 principle)",
           "status": "approved",
           "graphic_needed": false,
-          "feedback": null
+          "feedback": null,
+          "publish_requested": true
         },
         {
           "id": "wk5-mon-linkedin-story",
@@ -64,7 +67,8 @@
           "source": "Composite coaching scenario + March 25 Live",
           "status": "approved",
           "graphic_needed": false,
-          "feedback": null
+          "feedback": null,
+          "publish_requested": true
         },
         {
           "id": "wk5-tue-linkedin-michael-premiere",
@@ -78,7 +82,8 @@
           "source": "Week 5 outline + March 25 Live (Taco Bell sauce metaphor)",
           "status": "approved",
           "graphic_needed": true,
-          "feedback": null
+          "feedback": null,
+          "publish_requested": true
         },
         {
           "id": "wk5-wed-linkedin-provocation",
@@ -92,7 +97,8 @@
           "source": "March 25 Live — environment shapes you, best people leaving",
           "status": "approved",
           "graphic_needed": false,
-          "feedback": null
+          "feedback": null,
+          "publish_requested": true
         },
         {
           "id": "wk5-thu-linkedin-framework",
@@ -106,7 +112,8 @@
           "source": "Week 5 outline + March 25 Live",
           "status": "approved",
           "graphic_needed": false,
-          "feedback": null
+          "feedback": null,
+          "publish_requested": true
         },
         {
           "id": "wk5-fri-linkedin-engagement",
@@ -120,7 +127,8 @@
           "source": "Chris personal storytelling + March 25 Live themes",
           "status": "approved",
           "graphic_needed": false,
-          "feedback": null
+          "feedback": null,
+          "publish_requested": true
         }
       ]
     }
