@@ -4,7 +4,7 @@
       "batch_id": "2026-04-13_week5_dumb-theater",
       "batch_week": "April 13-19, 2026",
       "campaign": "Dumb Theater Phase 2 — Michael the Motivational Speaker",
-      "status": "pending_review",
+      "status": "approved",
       "produced_date": "2026-04-06",
       "items": [
         {
@@ -118,8 +118,9 @@
           "body": "What's the most fired-up you've ever been after a speaker or leadership event, and how long did it last?\n\nI'll go first.\n\nI sat in a conference in 2009 and took four pages of notes. I left ready to overhaul everything. I told my wife on the drive home I was going to change the way we ran our entire operation.\n\nBy the following Wednesday, I couldn't find the notebook.\n\nThe speaker wasn't the problem. The speaker was excellent. But what I needed wasn't energy. What I needed was someone to help me see the pattern I kept running back to every time pressure showed up.\n\nBe honest in the comments. How long did the feeling last for you?",
           "cta": "Reply engagement (no link)",
           "source": "Chris personal storytelling + March 25 Live themes",
-          "status": "pending",
-          "graphic_needed": false
+          "status": "approved",
+          "graphic_needed": false,
+          "feedback": null
         }
       ]
     }
