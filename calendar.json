@@ -7,7 +7,8 @@
   "active_overlays": [
     {
       "name": "Columbus AI Event",
-      "dates": "2026-04-06 to 2026-05-05",
+      "start": "2026-04-06",
+      "end": "2026-05-06",
       "type": "Event promotion",
       "campaign_ref": "columbus-ai-event"
     }
@@ -184,7 +185,8 @@
           "cta": "Register at sightshift.com/columbus",
           "graphic_needed": "Columbus AI event graphic (Eduardo)",
           "source": "Columbus AI Event campaign",
-          "status": "pending"
+          "status": "pending",
+          "audience": "FULL LIST"
         },
         {
           "channel": "linkedin",
@@ -194,7 +196,8 @@
           "cta": "Register link in comments — sightshift.com/columbus",
           "graphic_needed": "Columbus AI event graphic (Eduardo)",
           "source": "Columbus AI Event campaign",
-          "status": "pending"
+          "status": "pending",
+          "audience": "Public (Eduardo posts)"
         }
       ]
     },
@@ -345,6 +348,17 @@
           "graphic_needed": null,
           "source": "March 25 Live — environment shapes you, best people leaving",
           "status": "approved"
+        },
+        {
+          "channel": "linkedin",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: AI wrote a better leadership plan",
+          "detail": "Engagement: 'AI just wrote a better leadership development plan than most consultants. Here's why that should terrify you — and why it shouldn't.' Provocation to drive conversation.",
+          "cta": "Engagement (no link — comments are the CTA)",
+          "audience": "Public (Eduardo posts)",
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
+          "source": "Columbus AI Event campaign",
+          "status": "proposed"
         }
       ]
     },
@@ -399,14 +413,30 @@
       ]
     },
     {
+      "date": "2026-04-18",
+      "items": [
+        {
+          "channel": "campaign-email",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus direct — 'This one's different'",
+          "detail": "Columbus segment direct email. Personal tone: 'You've been to our Columbus events before. This one's different.' Include social proof if seats are selling.",
+          "cta": "Register at sightshift.com/columbus",
+          "audience": "COLUMBUS SEGMENT — past Columbus event attendees + Ohio-area contacts",
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
+          "source": "Columbus AI Event campaign",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
       "date": "2026-04-19",
       "items": [
         {
           "channel": "river",
           "pillar": "dumb-theater",
           "title": "Story email — the motivational speaker hangover",
-          "detail": "The energy peaked on day one. By day three, it was fading. By day fourteen, you couldn't remember the keynote speaker's name. That's what happens when hype replaces identity work.",
-          "cta": "Watch Michael #1 (Dumb Theater)",
+          "detail": "The energy peaked on day one. By day three, it was fading. By day fourteen, you couldn't remember the keynote speaker's name. That's what happens when hype replaces identity work. P.S. ADDED: Columbus AI Event — '[Seat count] of 30 seats claimed for Columbus May 6. This room is filling.'",
+          "cta": "Watch Michael #1 (Dumb Theater) + P.S. Columbus event register link",
           "graphic_needed": null,
           "source": "Podcast + YouTube Live 2026-04-08",
           "status": "proposed"
@@ -435,8 +465,8 @@
           "channel": "river",
           "pillar": "dumb-theater",
           "title": "Story email — mindfulness as hiding",
-          "detail": "Story: The leader who meditated every morning but couldn't have a hard conversation",
-          "cta": "Watch Nathan #1 (Dumb Theater)",
+          "detail": "Story: The leader who meditated every morning but couldn't have a hard conversation P.S. ADDED: Columbus AI Event — 'The leaders who win the next decade will have built cultures where people are free enough to think thoughts that haven't been thought yet. I'm teaching how, May 6 in Columbus.'",
+          "cta": "Watch Nathan #1 (Dumb Theater) + P.S. Columbus event register link",
           "graphic_needed": null,
           "source": "Podcast + YouTube Live 2026-04-08",
           "status": "proposed"
@@ -459,6 +489,17 @@
           "cta": "Full video on LinkedIn + YouTube",
           "graphic_needed": "Reel cut from Nathan #1 video",
           "source": "Dumb Theater character video",
+          "status": "proposed"
+        },
+        {
+          "channel": "campaign-email",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus reminder + social proof",
+          "detail": "Columbus segment direct email: reminder + social proof from registrations or past event testimonial. Personal tone.",
+          "cta": "Register at sightshift.com/columbus",
+          "audience": "COLUMBUS SEGMENT — past Columbus event attendees + Ohio-area contacts",
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
+          "source": "Columbus AI Event campaign",
           "status": "proposed"
         }
       ]
@@ -485,6 +526,17 @@
           "graphic_needed": null,
           "source": "YouTube Live 2026-04-08",
           "status": "proposed"
+        },
+        {
+          "channel": "linkedin",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus AI event — proof/teaching post",
+          "detail": "Proof-oriented: past event photo/story or teaching clip that sets up the May 6 topic. Build credibility for the event.",
+          "cta": "Register link in comments — sightshift.com/columbus",
+          "audience": "Public (Eduardo posts)",
+          "graphic_needed": "Columbus AI event graphic or past event photo (Eduardo)",
+          "source": "Columbus AI Event campaign",
+          "status": "proposed"
         }
       ]
     },
@@ -495,8 +547,8 @@
           "channel": "river",
           "pillar": "default",
           "title": "Framework — hiding pattern deep dive",
-          "detail": "Deep dive into the 'hiding' pattern — how leaders use busyness, wellness, and delegation to avoid being seen",
-          "cta": "Take the IFQ to see if you're hiding",
+          "detail": "Deep dive into the 'hiding' pattern — how leaders use busyness, wellness, and delegation to avoid being seen P.S. ADDED: Columbus AI Event — 'If you lead a team and you haven't thought about what AI means for your culture, not your tech stack, join me May 6 in Columbus. 30 seats.'",
+          "cta": "Take the IFQ to see if you're hiding + P.S. Columbus event register link",
           "graphic_needed": null,
           "source": "YouTube Live 2026-04-08",
           "status": "proposed"
@@ -535,8 +587,8 @@
           "channel": "river",
           "pillar": "default",
           "title": "Story email — the leader who disappeared",
-          "detail": "He didn't quit. He didn't get fired. He just stopped showing up emotionally. That's what hiding looks like when it's wearing a suit and sitting at the head of the table.",
-          "cta": "Take the IFQ to see if you're hiding",
+          "detail": "He didn't quit. He didn't get fired. He just stopped showing up emotionally. That's what hiding looks like when it's wearing a suit and sitting at the head of the table. P.S. ADDED: Columbus AI Event — 'Single digits left for Columbus May 6. 30 leaders. One room. The conversation AI started but only humans can finish.'",
+          "cta": "Take the IFQ to see if you're hiding + P.S. Columbus event register link",
           "graphic_needed": null,
           "source": "YouTube Live 2026-04-15",
           "status": "proposed"
@@ -565,8 +617,8 @@
           "channel": "river",
           "pillar": "dumb-theater",
           "title": "Story email — two weeks later",
-          "detail": "Story: What your team looks like two weeks after the big leadership offsite",
-          "cta": "Register for the Breakthrough Workshop",
+          "detail": "Story: What your team looks like two weeks after the big leadership offsite P.S. ADDED: Columbus AI Event — 'Last chance — Columbus, May 6. Seats are almost gone.'",
+          "cta": "Register for the Breakthrough Workshop + P.S. Columbus event register link",
           "graphic_needed": null,
           "source": "YouTube Live 2026-04-15",
           "status": "proposed"
@@ -615,6 +667,28 @@
           "graphic_needed": null,
           "source": null,
           "status": "proposed"
+        },
+        {
+          "channel": "campaign-email",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus last seats (full list)",
+          "detail": "Urgency-driven last seats email to full list. Real scarcity (30 seats). Re-state the value. Final CTA. Not hype — genuine limited capacity.",
+          "cta": "Register at sightshift.com/columbus",
+          "audience": "FULL LIST",
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
+          "source": "Columbus AI Event campaign",
+          "status": "proposed"
+        },
+        {
+          "channel": "linkedin",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus AI event — last call",
+          "detail": "Final urgency post: seat count + registration link. 'Last seats. Columbus. May 6.'",
+          "cta": "Register link in comments — sightshift.com/columbus",
+          "audience": "Public (Eduardo posts)",
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
+          "source": "Columbus AI Event campaign",
+          "status": "proposed"
         }
       ]
     },
@@ -625,8 +699,8 @@
           "channel": "river",
           "pillar": "dumb-theater",
           "title": "Podcast email — 97/3 principle",
-          "detail": "(From this week's podcast episode) Teaching: The 97/3 Principle — 97% of leadership dev addresses symptoms, only 3% reaches the root",
-          "cta": "Apply for the Breakthrough Workshop",
+          "detail": "(From this week's podcast episode) Teaching: The 97/3 Principle — 97% of leadership dev addresses symptoms, only 3% reaches the root P.S. ADDED: Columbus AI Event — 'May 6 is this Wednesday. If you've been thinking about Columbus, now is the time.'",
+          "cta": "Apply for the Breakthrough Workshop + P.S. Columbus event register link",
           "graphic_needed": null,
           "source": "Podcast episode (releasing same day)",
           "status": "proposed"
@@ -649,6 +723,17 @@
           "cta": "Listen on Apple, Spotify, or YouTube",
           "graphic_needed": "Episode thumbnail + audiogram",
           "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "campaign-email",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus final push (segment)",
+          "detail": "Columbus segment final push: 'This is happening in your backyard. Last seats.' Personal, direct, urgent.",
+          "cta": "Register at sightshift.com/columbus",
+          "audience": "COLUMBUS SEGMENT — past Columbus event attendees + Ohio-area contacts",
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
+          "source": "Columbus AI Event campaign",
           "status": "proposed"
         }
       ]
@@ -720,6 +805,28 @@
           "graphic_needed": "90-day outcomes infographic",
           "source": "YouTube Live 2026-04-22",
           "status": "proposed"
+        },
+        {
+          "channel": "campaign-email",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus day-before reminder (segment only)",
+          "detail": "Short, personal: 'Tomorrow. See you there.' Columbus segment only — do NOT send to full list.",
+          "cta": "No CTA needed (already registered) or final register link",
+          "audience": "COLUMBUS SEGMENT ONLY — do NOT send to full list",
+          "graphic_needed": null,
+          "source": "Columbus AI Event campaign",
+          "status": "proposed"
+        },
+        {
+          "channel": "linkedin",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus — tomorrow teaser",
+          "detail": "'Tomorrow. Columbus. 30 leaders. One question: why does a machine with no soul produce better work than your people?'",
+          "cta": "Register link in comments (last chance)",
+          "audience": "Public (Eduardo posts)",
+          "graphic_needed": "Columbus AI event graphic (Eduardo)",
+          "source": "Columbus AI Event campaign",
+          "status": "proposed"
         }
       ]
     },
@@ -745,6 +852,16 @@
           "graphic_needed": "Client testimonial clips + before/after graphics",
           "source": "YouTube Live 2026-04-22",
           "status": "proposed"
+        },
+        {
+          "channel": "event",
+          "pillar": "columbus-ai-event",
+          "title": "EVENT: Why AI Outperforms Your Team — Columbus",
+          "detail": "SightShift × C12 Columbus live event. 2:00–4:00 PM + networking reception. Summit Outdoors, Columbus, OH. 30 seats, $135. Speakers: Chris McAlister + Chris Orecchio. Two talks, table experiences, patio after-hang.",
+          "cta": "sightshift.com/columbus",
+          "graphic_needed": null,
+          "source": "Columbus AI Event",
+          "status": "approved"
         }
       ]
     },
