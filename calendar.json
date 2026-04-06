@@ -216,13 +216,13 @@
         },
         {
           "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Framework — systems over events",
-          "detail": "Why leadership development fails — you're buying events when you need a system",
-          "cta": "DM 'BREAKTHROUGH' for details",
+          "pillar": "drift",
+          "title": "Validation Check Announcement",
+          "detail": "Personal announcement: I built something I wish I'd had 10 years ago. Nine questions, two minutes, see if your culture is drifting. Link in comments.",
+          "cta": "Validation Check — link in comments",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-03-25",
-          "status": "approved"
+          "source": "Original (Kim)",
+          "status": "proposed"
         }
       ]
     },
