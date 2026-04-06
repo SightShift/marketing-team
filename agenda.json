@@ -6,8 +6,7 @@
       "owner": "Bret",
       "tag": "question",
       "added": "2026-03-23",
-      "status": "resolved",
-      "resolved_date": "2026-04-05"
+      "status": "open"
     },
     {
       "id": 2,
@@ -15,8 +14,7 @@
       "owner": "Bret",
       "tag": "update",
       "added": "2026-03-26",
-      "status": "resolved",
-      "resolved_date": "2026-04-05"
+      "status": "open"
     },
     {
       "id": 3,
@@ -24,9 +22,8 @@
       "owner": "Bret",
       "tag": "discussion",
       "added": "2026-03-26",
-      "status": "resolved",
-      "notes": "See images in your G Drive: https://drive.google.com/drive/folders/1zOtqAzQE70Wh_PwiPGtyYh-n7jwT_YBZ?usp=drive_link",
-      "resolved_date": "2026-04-05"
+      "status": "open",
+      "notes": "See images in your G Drive: https://drive.google.com/drive/folders/1zOtqAzQE70Wh_PwiPGtyYh-n7jwT_YBZ?usp=drive_link"
     },
     {
       "id": 4,
@@ -34,15 +31,6 @@
       "owner": "Bret",
       "tag": "update",
       "added": "2026-03-26",
-      "status": "resolved",
-      "resolved_date": "2026-04-05"
-    },
-    {
-      "id": 8,
-      "text": "Podcast production prep system",
-      "owner": "Bret",
-      "tag": "discussion",
-      "added": "2026-04-05",
       "status": "open"
     },
     {
@@ -60,8 +48,7 @@
       "owner": "Bret",
       "tag": "question",
       "added": "2026-03-26",
-      "status": "resolved",
-      "resolved_date": "2026-04-05"
+      "status": "open"
     },
     {
       "id": 5,
@@ -69,14 +56,6 @@
       "owner": "Bret",
       "tag": "discussion",
       "added": "2026-03-26",
-      "status": "open"
-    },
-    {
-      "id": 9,
-      "text": "New Task: Thumbnail for validation check youtube video",
-      "owner": "Bret",
-      "tag": "fyi",
-      "added": "2026-04-05",
       "status": "open"
     }
   ],
