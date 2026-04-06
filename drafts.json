@@ -145,6 +145,7 @@
           "id": "columbus-wk1-announcement",
           "type": "river-email",
           "pillar": "Columbus AI Event",
+          "audience": "Full list",
           "publish_date": "2026-04-08",
           "title": "Why does AI outperform your team?",
           "subject_line": "Why does AI outperform your team?",
