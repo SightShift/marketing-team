@@ -101,12 +101,26 @@
   .btn-edit:hover { background: #004a52; }
   .btn-changes { background: var(--yellow); color: var(--dark-blue); }
   .btn-changes:hover { background: #d4b830; }
-  .btn-save-edit { background: var(--green); color: var(--white); display: none; }
-  .btn-cancel-edit { background: var(--gray); color: var(--dark-blue); display: none; }
+  .btn-save-edit { background: var(--green); color: var(--white); }
+  .btn-cancel-edit { background: var(--gray); color: var(--dark-blue); }
   .draft-feedback { margin-top: 6px; display: none; }
   .draft-feedback textarea { width: 100%; min-height: 60px; padding: 8px; border: 1px solid var(--orange); border-radius: 6px; font-size: 12px; font-family: inherit; resize: vertical; }
   .draft-feedback .feedback-btns { display: flex; gap: 6px; margin-top: 4px; }
   .draft-feedback .feedback-btns button { padding: 5px 10px; border-radius: 4px; font-size: 11px; border: none; cursor: pointer; }
+  .btn-publish-asana { padding: 8px 16px; border-radius: 6px; border: none; background: var(--teal); color: var(--white); font-size: 13px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+  .btn-publish-asana:hover { background: #004a52; }
+  .btn-publish-asana:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-publish-asana .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.6s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .queue-publish-bar { display: flex; justify-content: flex-end; gap: 10px; align-items: center; margin-bottom: 16px; padding: 10px 16px; background: var(--white); border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-left: 3px solid var(--teal); }
+  .queue-publish-bar .publish-info { font-size: 12px; color: var(--medium-blue); flex: 1; }
+  .draft-preview-text { font-size: 11px; color: var(--medium-blue); font-style: italic; margin-bottom: 4px; }
+  .edit-modal-field { margin-bottom: 12px; }
+  .edit-modal-field label { display: block; font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--medium-blue); letter-spacing: 0.3px; margin-bottom: 4px; }
+  .edit-modal-field input, .edit-modal-field textarea { width: 100%; padding: 8px 10px; border: 1px solid #d0d8d8; border-radius: 6px; font-size: 13px; font-family: inherit; color: var(--dark-blue); }
+  .edit-modal-field input:focus, .edit-modal-field textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 2px rgba(0,94,102,0.1); }
+  .edit-modal-field textarea { resize: vertical; min-height: 200px; line-height: 1.55; }
+  .revision-spinner { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--teal); margin-top: 6px; }
   .draft-status { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
   .draft-status.status-approved { background: #e8f5e9; color: var(--green); }
   .draft-status.status-changes { background: #fff3e0; color: var(--orange); }
@@ -426,6 +440,10 @@
 
   <!-- CONTENT QUEUE VIEW (Eduardo + Marko) -->
   <div class="view" id="queue-view">
+    <div class="queue-publish-bar" id="queue-publish-bar" style="display:none">
+      <span class="publish-info" id="queue-publish-info"></span>
+      <button class="btn-publish-asana" id="btn-publish-asana" onclick="publishToAsana()">Publish to Asana</button>
+    </div>
     <div class="queue-section">
       <div class="queue-section-header">Social Content (Eduardo)</div>
       <div id="queue-eduardo"></div>
@@ -740,6 +758,39 @@ var storage = {
       });
     } catch(e) {
       console.error('Local save error:', e);
+    }
+  },
+
+  triggerWorkflow: async function(workflowFile, inputs) {
+    if (this.mode !== 'github') {
+      showToast('GitHub sync required to trigger workflows', 'error');
+      return false;
+    }
+    // Workflows live in the source repo (sightshift-marketing)
+    var sourceOwner = 'SightShift';
+    var sourceRepo = 'sightshift-marketing';
+    var url = 'https://api.github.com/repos/' + sourceOwner + '/' + sourceRepo + '/actions/workflows/' + workflowFile + '/dispatches';
+    try {
+      var body = { ref: 'main' };
+      if (inputs) body.inputs = inputs;
+      var res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + this.ghToken,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+      if (res.status === 204 || res.ok) return true;
+      var err = await res.json();
+      console.error('Workflow trigger error:', err);
+      showToast('Could not trigger workflow: ' + (err.message || res.status), 'error');
+      return false;
+    } catch(e) {
+      console.error('Workflow trigger error:', e);
+      showToast('Could not trigger workflow', 'error');
+      return false;
     }
   }
 };
@@ -1815,7 +1866,8 @@ function renderReview() {
     html += '<span class="draft-publish">Publish: ' + esc(item.publish_date) + '</span>';
     html += '</div>';
     html += '<div class="draft-title">' + esc(item.title || item.subject_line || '') + '</div>';
-    if (item.subject_line && item.title !== item.subject_line) html += '<div style="font-size:11px;color:var(--medium-blue);margin-bottom:4px">Subject: ' + esc(item.subject_line) + '</div>';
+    if (item.type === 'river-email' && item.subject_line) html += '<div style="font-size:11px;color:var(--medium-blue);margin-bottom:2px"><strong>Subject:</strong> ' + esc(item.subject_line) + '</div>';
+    if (item.type === 'river-email' && item.preview_text) html += '<div class="draft-preview-text"><strong>Preview:</strong> ' + esc(item.preview_text) + '</div>';
     html += '<div class="draft-body" id="draft-body-' + idx + '">' + esc(item.body || '(No body content yet)') + '</div>';
     if (item.cta) html += '<div class="draft-cta">CTA: ' + esc(item.cta) + '</div>';
     if (item.source) html += '<div class="draft-source">Source: ' + esc(item.source) + '</div>';
@@ -1826,8 +1878,6 @@ function renderReview() {
     if (item.status !== 'approved') {
       html += '<button class="btn-approve" onclick="approveDraft(' + idx + ')">Approve</button>';
       html += '<button class="btn-edit" onclick="editDraft(' + idx + ')">Edit</button>';
-      html += '<button class="btn-save-edit" id="save-edit-' + idx + '" onclick="saveEdit(' + idx + ')">Save</button>';
-      html += '<button class="btn-cancel-edit" id="cancel-edit-' + idx + '" onclick="cancelEdit(' + idx + ')">Cancel</button>';
       html += '<button class="btn-changes" onclick="requestChanges(' + idx + ')">Request Changes</button>';
     }
     html += '</div>';
@@ -1868,36 +1918,59 @@ function checkBatchComplete(batch) {
 
 var editOriginals = {};
 function editDraft(idx) {
-  var el = document.getElementById('draft-body-' + idx);
-  editOriginals[idx] = el.textContent;
-  el.contentEditable = 'true';
-  el.classList.add('editing');
-  el.focus();
-  document.getElementById('save-edit-' + idx).style.display = 'inline-block';
-  document.getElementById('cancel-edit-' + idx).style.display = 'inline-block';
+  var batch = getCurrentBatch();
+  if (!batch) return;
+  var item = batch.items[idx];
+  var isEmail = item.type === 'river-email';
+
+  var html = '<div class="modal-overlay" onclick="if(event.target===this)closeModal()">' +
+    '<div class="modal wide">' +
+      '<h3>Edit: ' + esc(item.title || item.subject_line || '') + '</h3>';
+
+  if (isEmail) {
+    html += '<div class="edit-modal-field"><label>Subject Line</label>' +
+      '<input type="text" id="edit-subject" value="' + esc(item.subject_line || '') + '"></div>';
+    html += '<div class="edit-modal-field"><label>Preview Text</label>' +
+      '<input type="text" id="edit-preview" value="' + esc(item.preview_text || '') + '" placeholder="Short preview shown in inbox before opening"></div>';
+  }
+
+  html += '<div class="edit-modal-field"><label>Body</label>' +
+    '<textarea id="edit-body">' + esc(item.body || '') + '</textarea></div>';
+
+  html += '<div class="edit-modal-field"><label>CTA</label>' +
+    '<input type="text" id="edit-cta" value="' + esc(item.cta || '') + '"></div>';
+
+  html += '<div class="modal-buttons">' +
+    '<button class="btn-cancel" onclick="closeModal()">Cancel</button>' +
+    '<button class="btn-save" onclick="saveEdit(' + idx + ')">Save Changes</button>' +
+  '</div></div></div>';
+
+  document.getElementById('modal-root').innerHTML = html;
 }
 
 function saveEdit(idx) {
-  var el = document.getElementById('draft-body-' + idx);
   var batch = getCurrentBatch();
-  batch.items[idx].body = el.textContent;
-  el.contentEditable = 'false';
-  el.classList.remove('editing');
-  document.getElementById('save-edit-' + idx).style.display = 'none';
-  document.getElementById('cancel-edit-' + idx).style.display = 'none';
-  delete editOriginals[idx];
+  if (!batch) return;
+  var item = batch.items[idx];
+  var isEmail = item.type === 'river-email';
+
+  item.body = document.getElementById('edit-body').value;
+  item.cta = document.getElementById('edit-cta').value;
+
+  if (isEmail) {
+    item.subject_line = document.getElementById('edit-subject').value;
+    item.preview_text = document.getElementById('edit-preview').value;
+  }
+
+  closeModal();
   saveDrafts();
+  renderReview();
+  renderQueue();
   showToast('Edit saved', 'success');
 }
 
 function cancelEdit(idx) {
-  var el = document.getElementById('draft-body-' + idx);
-  el.textContent = editOriginals[idx] || el.textContent;
-  el.contentEditable = 'false';
-  el.classList.remove('editing');
-  document.getElementById('save-edit-' + idx).style.display = 'none';
-  document.getElementById('cancel-edit-' + idx).style.display = 'none';
-  delete editOriginals[idx];
+  closeModal();
 }
 
 function requestChanges(idx) {
@@ -1912,7 +1985,7 @@ function submitFeedback(idx) {
   batch.items[idx].feedback = text;
   saveDrafts();
   renderReview();
-  showToast('Feedback submitted', 'info');
+  showToast('Feedback saved — tell Connie "process revisions" to execute', 'info');
 }
 
 function cancelFeedback(idx) {
@@ -1970,6 +2043,8 @@ function renderQueue() {
     }).join('');
   }
 
+  updatePublishBar();
+
   // Render Marko's emails (read-only for Eduardo, shows status)
   if (emailItems.length === 0) {
     markoEl.innerHTML = '';
@@ -1988,6 +2063,7 @@ function renderQueue() {
       html += '<span class="draft-publish">Publish: ' + esc(item.publish_date) + '</span>';
       html += '</div>';
       html += '<div class="draft-title">' + esc(item.subject_line || item.title) + '</div>';
+      if (item.preview_text) html += '<div class="draft-preview-text"><strong>Preview:</strong> ' + esc(item.preview_text) + '</div>';
       html += '<div class="draft-body">' + esc(item.body || '') + '</div>';
       if (item.cta) html += '<div class="draft-cta">CTA: ' + esc(item.cta) + '</div>';
       html += '<div class="queue-status-toggle">';
@@ -2010,6 +2086,44 @@ function setQueueStatus(btn, itemId, status) {
   saveDrafts();
   renderQueue();
   showToast('Status updated', 'success');
+}
+
+function updatePublishBar() {
+  var bar = document.getElementById('queue-publish-bar');
+  var info = document.getElementById('queue-publish-info');
+  var unpublished = 0;
+  allDrafts.batches.forEach(function(batch) {
+    (batch.items || []).forEach(function(item) {
+      if (item.status === 'approved' && !item.asana_pushed) unpublished++;
+    });
+  });
+  if (unpublished > 0) {
+    bar.style.display = 'flex';
+    info.textContent = unpublished + ' approved item' + (unpublished > 1 ? 's' : '') + ' ready to push to Asana';
+  } else {
+    bar.style.display = 'none';
+  }
+}
+
+function publishToAsana() {
+  var btn = document.getElementById('btn-publish-asana');
+  // Set publish_requested flag on all approved, unpushed items
+  var count = 0;
+  allDrafts.batches.forEach(function(batch) {
+    (batch.items || []).forEach(function(item) {
+      if (item.status === 'approved' && !item.asana_pushed && !item.publish_requested) {
+        item.publish_requested = true;
+        count++;
+      }
+    });
+  });
+  if (count === 0) {
+    showToast('No new items to publish', 'info');
+    return;
+  }
+  saveDrafts();
+  showToast(count + ' item' + (count > 1 ? 's' : '') + ' flagged — tell Connie "publish to Asana"', 'success');
+  updatePublishBar();
 }
 
 // ===== SETTINGS =====
