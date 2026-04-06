@@ -4,7 +4,14 @@
     "description": "Amazon's Company Retreat show exposes surface-level leadership development. Eduardo's Dumb Theater character videos name the performative approaches SightShift replaces.",
     "started": "2026-03-18"
   },
-  "active_overlays": [],
+  "active_overlays": [
+    {
+      "name": "Columbus AI Event",
+      "dates": "2026-04-06 to 2026-05-05",
+      "type": "Event promotion",
+      "campaign_ref": "columbus-ai-event"
+    }
+  ],
   "entries": [
     {
       "date": "2026-04-01",
@@ -155,6 +162,15 @@
           "cta": "Watch the full Live on YouTube",
           "graphic_needed": "Reel clip from Live",
           "source": "YouTube Live 2026-03-25"
+        },
+        {
+          "channel": "campaign-email",
+          "pillar": "columbus-ai-event",
+          "title": "CAMPAIGN: Columbus AI Event Announcement",
+          "detail": "Dedicated announcement email to full list. 'Why does AI outperform your team?' hook. Event details + registration CTA + host-in-your-city seed. Send on off-day (Apr 8 or 10).",
+          "cta": "Register at sightshift.com/columbus",
+          "graphic_needed": null,
+          "source": "Columbus AI Event campaign"
         }
       ]
     },

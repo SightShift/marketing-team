@@ -2,7 +2,8 @@
   "batches": [
     {
       "batch_id": "2026-04-13_week5_dumb-theater",
-      "batch_week": "April 13-19, 2026",
+      "batch_week": "April 12-18, 2026",
+      "week_of": "April 12-18, 2026",
       "campaign": "Dumb Theater Phase 2 — Michael the Motivational Speaker",
       "status": "approved",
       "produced_date": "2026-04-06",
@@ -11,7 +12,7 @@
           "id": "wk5-sun-river-hype-speaker",
           "type": "river-email",
           "pillar": "Dumb Theater",
-          "publish_date": "2026-04-13",
+          "publish_date": "2026-04-12",
           "title": "The $40K Standing Ovation",
           "subject_line": "The $40k standing ovation",
           "preview_text": "",
@@ -129,6 +130,47 @@
           "graphic_needed": false,
           "feedback": null,
           "publish_requested": true
+        }
+      ]
+    },
+    {
+      "batch_id": "2026-04-08_columbus-ai-event_wk1",
+      "batch_week": "April 6-12, 2026",
+      "week_of": "April 6-12, 2026",
+      "campaign": "Columbus AI Event — Week 1 Announcement",
+      "status": "pending_review",
+      "produced_date": "2026-04-06",
+      "items": [
+        {
+          "id": "columbus-wk1-announcement",
+          "type": "river-email",
+          "pillar": "Columbus AI Event",
+          "publish_date": "2026-04-08",
+          "title": "Why does AI outperform your team?",
+          "subject_line": "Why does AI outperform your team?",
+          "preview_text": "It's not a technology problem.",
+          "body": "I asked AI to build a leadership development plan for a mid-size company last month.\n\nIt came back in four minutes. Detailed. Specific. Tailored to the company's size, industry, and stated goals. The kind of deliverable that would take a consulting team two weeks and a five-figure retainer.\n\nIt was better than 95% of what I've seen come out of actual leadership teams.\n\nThat stopped me. Not because AI is impressive. Because it raised a question most leaders aren't asking.\n\nIf a machine with no soul, no relationships, no skin in the game can outperform the people you've invested years developing, what does that tell you about your people?\n\nHere's what it tells me: it's not a skill gap. It's an identity gap.\n\nAI doesn't get insecure. It doesn't prove its worth by overworking. It doesn't hide from hard conversations. It doesn't default to controlling the room because it's afraid of what happens if it doesn't.\n\nYour people do. And that's not a training problem. It's a leadership culture problem. The kind no tool, no offsite, and no motivational speaker will fix.\n\nI'm teaching a workshop on this. One afternoon. Thirty leaders. Columbus, Ohio.\n\nWhy AI Outperforms Your Team, and What That Reveals About Your Leadership\nWednesday, May 6 | 2:00\u20134:00 PM + Networking\nSummit Outdoors, Columbus\n$135 per seat | 30 seats only\n\nThis isn't a tech talk. I won't teach you how to use AI. I'll teach you why it exposes the identity crisis hiding inside your leadership culture, and what to do about it.\n\nTwo talks. Small-group table conversations with other leaders. A concrete takeaway you can apply within a week. And an honest after-hours conversation on the patio afterward.\n\nChris Orecchio from C12 Columbus is co-hosting. If you lead a team and you've felt that gap between what your people are capable of and what they actually produce under pressure, this is the room to be in.\n\nThirty seats. That's it.\n\nsightshift.com/columbus?utm_source=campaign-email&utm_medium=email&utm_campaign=columbus-ai-event&utm_content=wk1-announcement&utm_term=columbus-event\n\nNot in Columbus? Reply to this email and tell me your city. We're bringing this conversation to more places this year.\n\nChris",
+          "cta": "Register — sightshift.com/columbus",
+          "source": "Columbus AI Event planning doc + event page",
+          "status": "pending",
+          "graphic_needed": true,
+          "graphic_note": "Include Columbus AI event graphic in email. Eduardo has the asset.",
+          "feedback": null
+        },
+        {
+          "id": "columbus-wk1-linkedin-announcement",
+          "type": "linkedin",
+          "pillar": "Columbus AI Event",
+          "publish_date": "2026-04-08",
+          "title": "Why does AI outperform your team? (Columbus event announcement)",
+          "subject_line": null,
+          "body": "I asked AI to build a leadership development plan for a company last month.\n\nIt took four minutes.\n\nDetailed. Tailored. The kind of deliverable a consulting team would charge five figures for and deliver in two weeks.\n\nIt was better than 95% of what I've seen actual leadership teams produce.\n\nThat should bother you. But not for the reason you think.\n\nThe gap between what AI produces and what your team produces isn't a technology gap. It's an identity gap.\n\nAI doesn't get insecure. It doesn't prove its worth by overworking. It doesn't hide from hard conversations. It doesn't control the room because it's afraid of what happens if it doesn't.\n\nYour people do. And until you address that, no tool, no training, and no offsite will close the gap.\n\nI'm teaching a live workshop on this. May 6 in Columbus. Thirty leaders. Two talks. Real conversation. Not a tech tutorial.\n\n\"Why AI Outperforms Your Team, and What That Reveals About Your Leadership.\"\n\nCo-hosting with Chris Orecchio from C12 Columbus at Summit Outdoors.\n\n30 seats. $135. Link in comments.\n\nIf you're not in Columbus but want this conversation in your city, tell me where.",
+          "cta": "Register link in comments — sightshift.com/columbus?utm_source=linkedin&utm_medium=social&utm_campaign=columbus-ai-event&utm_content=wk1-linkedin-announcement&utm_term=columbus-event",
+          "source": "Columbus AI Event planning doc + event page",
+          "status": "pending",
+          "graphic_needed": true,
+          "graphic_note": "Use Columbus AI event graphic. Eduardo has the asset.",
+          "feedback": null
         }
       ]
     }
