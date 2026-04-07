@@ -57,22 +57,6 @@
       "tag": "discussion",
       "added": "2026-03-26",
       "status": "open"
-    },
-    {
-      "id": 8,
-      "text": "Update Signs of Drift videos to point to validation check",
-      "owner": "Bret",
-      "tag": "discussion",
-      "added": "2026-04-06",
-      "status": "open"
-    },
-    {
-      "id": 9,
-      "text": "Do you prefer to pull content from this dashboard or Asana?",
-      "owner": "Bret",
-      "tag": "question",
-      "added": "2026-04-06",
-      "status": "open"
     }
   ],
   "past_meetings": [
