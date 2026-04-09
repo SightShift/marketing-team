@@ -73,6 +73,14 @@
       "tag": "discussion",
       "added": "2026-04-06",
       "status": "open"
+    },
+    {
+      "id": 10,
+      "text": "Speaking page - Keynotes - \"Explore the Podcast\" button (set to YouTube playlist)",
+      "owner": "Bret",
+      "tag": "update",
+      "added": "2026-04-08",
+      "status": "open"
     }
   ],
   "past_meetings": [
