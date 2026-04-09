@@ -38,6 +38,14 @@
       "resolved_date": "2026-04-09"
     },
     {
+      "id": 10,
+      "text": "Speaking page - Keynotes - \"Explore the Podcast\" button (set to YouTube playlist)",
+      "owner": "Bret",
+      "tag": "update",
+      "added": "2026-04-08",
+      "status": "open"
+    },
+    {
       "id": 7,
       "text": "Review Podcast process to incorporate Claude",
       "owner": "Bret",
@@ -72,14 +80,6 @@
       "added": "2026-04-06",
       "status": "open",
       "notes": "Wait on Arijana's feedback for this..."
-    },
-    {
-      "id": 10,
-      "text": "Speaking page - Keynotes - \"Explore the Podcast\" button (set to YouTube playlist)",
-      "owner": "Bret",
-      "tag": "update",
-      "added": "2026-04-08",
-      "status": "open"
     },
     {
       "id": 11,
