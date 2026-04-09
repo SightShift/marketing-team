@@ -57,14 +57,6 @@
       "resolved_date": "2026-04-09"
     },
     {
-      "id": 5,
-      "text": "YouTube Shorts AI tool https://sendshort.ai/",
-      "owner": "Bret",
-      "tag": "discussion",
-      "added": "2026-03-26",
-      "status": "open"
-    },
-    {
       "id": 8,
       "text": "Merge SightShift marketing folder from your computer to Team Drive",
       "owner": "Bret",
@@ -87,6 +79,14 @@
       "owner": "Bret",
       "tag": "update",
       "added": "2026-04-08",
+      "status": "open"
+    },
+    {
+      "id": 5,
+      "text": "YouTube Shorts AI tool https://sendshort.ai/",
+      "owner": "Bret",
+      "tag": "discussion",
+      "added": "2026-03-26",
       "status": "open"
     },
     {
