@@ -53,11 +53,11 @@
       "task": "Add new Dumb Theater character description (Alice the AI Evangelist — name TBD)",
       "priority": "High",
       "due_date": "2026-03-30",
-      "status": "open",
+      "status": "done",
       "owner": "Bret",
       "notes": "Chris's suggestion from the meeting. Need to finalize the character name and write the description.",
       "created": "2026-03-23",
-      "completed": null,
+      "completed": "2026-04-09",
       "_escalated": true
     },
     {
