@@ -81,6 +81,14 @@
       "tag": "update",
       "added": "2026-04-08",
       "status": "open"
+    },
+    {
+      "id": 11,
+      "text": "SEO Blog production + Scheduling",
+      "owner": "Bret",
+      "tag": "discussion",
+      "added": "2026-04-09",
+      "status": "open"
     }
   ],
   "past_meetings": [
