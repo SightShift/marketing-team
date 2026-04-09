@@ -37,7 +37,8 @@
           "source": "Composite coaching scenarios + product launch",
           "status": "approved",
           "graphic_needed": false,
-          "feedback": null
+          "feedback": null,
+          "publish_requested": true
         }
       ]
     },
