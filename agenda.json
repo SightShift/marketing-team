@@ -35,12 +35,13 @@
     },
     {
       "id": 7,
-      "text": "Podcast",
+      "text": "Review Podcast process to incorporate Claude",
       "owner": "Bret",
-      "tag": "question",
+      "tag": "discussion",
       "added": "2026-03-26",
       "status": "open",
-      "notes": "• Did you save new episode from Chris?\n• Which MCYE episode are we on? Check published with calendar: https://docs.google.com/spreadsheets/d/1w1Z-G2gnNMdaxw0fkaMh0PSawFhD6bOHzSdLu4PWBHw/edit?gid=1602727380#gid=1602727380\n• Canceled podbean account\n• Inserting AI episode"
+      "notes": "Podcast Process\nPodcast Episode Metadata (Title, Description, Timestamps)\nThree options:\nOption A: Add to Monday production batch. Claude already reads the podcast transcript. It adds episode title, description, and timestamps to the batch output alongside emails and LinkedIn posts. Bret approves, Eduardo publishes. Simple, but means Eduardo can't publish the episode until after Monday review.\n* Podcasts: Eduardo must upload transcript to GitHub two Mondays before publishing episode so Claude can create email from the episode\nOption B: Separate scheduled task. A \"podcast post-processing\" task (similar to the YT Live one) that fires when a transcript is uploaded, or on a set day. Produces title/description/timestamps and presents for approval.\nOption C: Eduardo's Claude. Give Eduardo a prompt template that references the knowledge base. He generates the metadata himself when the episode is edited. Fastest turnaround, but Eduardo operates independently.\n* Somehow we want to get Claude to also write the description and title for the episode. Maybe we let Eduardo use his Claude to create the full stack for the podcast episode ASK EDUARDO?\nMy recommendation: Option A with a fallback to C. The Monday batch produces the full stack (emails, LinkedIn, AND podcast metadata). This keeps everything in one review cycle. But give Eduardo the prompt template as a backup for episodes that need metadata before Monday.\n\nPodcasts: COWORK_INSTRUCTIONS Process 3 says Eduardo uploads the unlisted podcast to YouTube, then Connie does intake (title, description, timestamps, content atoms) when triggered. This is correct.",
+      "answer": null
     },
     {
       "id": 6,
