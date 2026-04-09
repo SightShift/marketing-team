@@ -97,6 +97,14 @@
       "tag": "discussion",
       "added": "2026-03-26",
       "status": "open"
+    },
+    {
+      "id": 12,
+      "text": "Update Signs of Drift videos to point to thevalidationcheck.com",
+      "owner": "Bret",
+      "tag": "update",
+      "added": "2026-04-09",
+      "status": "open"
     }
   ],
   "past_meetings": [
