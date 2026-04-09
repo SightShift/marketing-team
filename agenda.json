@@ -82,14 +82,6 @@
       "status": "open"
     },
     {
-      "id": 5,
-      "text": "YouTube Shorts AI tool https://sendshort.ai/",
-      "owner": "Bret",
-      "tag": "discussion",
-      "added": "2026-03-26",
-      "status": "open"
-    },
-    {
       "id": 11,
       "text": "SEO Blog production + Scheduling",
       "owner": "Bret",
@@ -97,6 +89,14 @@
       "added": "2026-04-09",
       "status": "open",
       "notes": "As you publish the first 3-5 manually, just note:                                                                                                                                                       \n  1. Which CMS collection you're putting blog posts in (the collection name in Webflow)\n  2. Which fields you fill in (title, slug, body, author, category/tags, featured image, SEO title, SEO description, etc.)                                                                                \n  3. Any formatting you do to the body content (do you paste as plain text and format in Webflow's rich text editor, or paste HTML?)                                                                    \n  4. Whether you set posts as \"draft\" first or publish immediately"
+    },
+    {
+      "id": 5,
+      "text": "YouTube Shorts AI tool https://sendshort.ai/",
+      "owner": "Bret",
+      "tag": "discussion",
+      "added": "2026-03-26",
+      "status": "open"
     }
   ],
   "past_meetings": [
