@@ -173,6 +173,12 @@
   .cal-entry.linkedin { background: #e0eef6; color: #0a5c8a; }
   .cal-entry.instagram { background: #fce4ec; color: #ad1457; }
   .cal-entry.river { background: #f3e5f5; color: #6a1b9a; }
+  .cal-entry.campaign-email { background: #f3e5f5; color: #6a1b9a; border: 1px dashed #6a1b9a; }
+  .cal-entry.twitter { background: #e3f2fd; color: #1565c0; }
+  .cal-entry.seo-blog { background: #f1f8e9; color: #558b2f; }
+  .cal-entry.event { background: #fff3e0; color: #e65100; font-weight: 600; }
+  .cal-entry.note { background: #fafafa; color: #757575; font-style: italic; }
+  .cal-entry.youtube-shorts { background: #fce4ec; color: #c62828; }
   .cal-entry.podcast { background: #e8f5e9; color: #2e7d32; }
   .cal-entry.cultural { background: var(--seafoam); color: var(--green); }
   .cal-entry.production { background: #fff8e1; color: #b8960a; }
@@ -1795,17 +1801,17 @@ function renderOneMonth(monthStart, byDate, overlays) {
 /* enrichCalendarDetails removed — data now in calendar.json */
 
 function getChannelClass(ch) {
-  var map = {'youtube-live':'youtube-live','youtube':'youtube','linkedin':'linkedin','instagram':'instagram','river':'river','email':'river','podcast':'podcast','cultural':'cultural','production':'production'};
+  var map = {'youtube-live':'youtube-live','youtube':'youtube','linkedin':'linkedin','instagram':'instagram','river':'river','email':'river','podcast':'podcast','cultural':'cultural','production':'production','campaign-email':'campaign-email','seo-blog':'seo-blog','twitter':'twitter','event':'event','note':'note','youtube-shorts':'youtube-shorts'};
   return map[(ch || '').toLowerCase()] || '';
 }
 
 function channelAbbrev(ch) {
-  var map = {'river':'Email','linkedin':'LI','youtube-live':'YT Live','youtube':'YT','instagram':'IG','podcast':'Pod','cultural':'Note','production':'Prod'};
+  var map = {'river':'Email','linkedin':'LI','youtube-live':'YT Live','youtube':'YT','youtube-shorts':'YT Short','instagram':'IG','podcast':'Pod','cultural':'Note','production':'Prod','campaign-email':'Campaign','seo-blog':'Blog','twitter':'X','event':'Event','note':'Note'};
   return map[(ch || '').toLowerCase()] || ch;
 }
 
 function channelLabel(ch) {
-  var map = {'river':'Email (River)','linkedin':'LinkedIn','youtube-live':'YouTube Live','youtube':'YouTube','instagram':'Instagram','podcast':'Podcast','cultural':'Cultural Moment','production':'Production'};
+  var map = {'river':'Email (River)','linkedin':'LinkedIn','youtube-live':'YouTube Live','youtube':'YouTube','youtube-shorts':'YouTube Shorts','instagram':'Instagram','podcast':'Podcast','cultural':'Cultural Moment','production':'Production','campaign-email':'Campaign Email','seo-blog':'SEO Blog','twitter':'Twitter/X','event':'Event','note':'Note'};
   return map[(ch || '').toLowerCase()] || ch;
 }
 
