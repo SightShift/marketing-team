@@ -1,350 +1,23 @@
 {
   "timely_topic": {
-    "name": "Dumb Theater: Company Retreat + Character Videos",
-    "description": "Amazon's Company Retreat show exposes surface-level leadership development. Eduardo's Dumb Theater character videos name the performative approaches SightShift replaces.",
-    "started": "2026-03-18"
+    "name": "AI Leadership: The Identity Gap",
+    "description": "Concentrated 10-week campaign positioning SightShift as the authority on AI + leadership identity. Research articles, white paper, YouTube series, podcast episodes, character videos, Twitter/X launch.",
+    "started": "2026-04-19"
   },
   "active_overlays": [],
   "entries": [
-    {
-      "date": "2026-04-01",
-      "items": [
-        {
-          "channel": "youtube-live",
-          "pillar": null,
-          "title": "Eat Your Product LIVE",
-          "detail": "Live session: Chris talks about eating your own product \u2014 practicing what you preach",
-          "cta": "Join live + IFQ link in description",
-          "graphic_needed": "Episode thumbnail",
-          "source": null
-        },
-        {
-          "channel": "instagram",
-          "pillar": null,
-          "title": "Stories \u2014 Live + IFQ tease",
-          "detail": "Stories: IFQ teaser graphic + Live countdown + 'Do you eat your own product?' poll",
-          "cta": "Take the IFQ \u2014 link in bio",
-          "graphic_needed": "IFQ teaser graphic",
-          "source": null
-        }
-      ]
-    },
-    {
-      "date": "2026-04-02",
-      "items": [
-        {
-          "channel": "river",
-          "pillar": "default",
-          "title": "Framework \u2014 proving/hiding",
-          "detail": "Teaching: The two default modes of insecure leadership \u2014 proving and hiding",
-          "cta": "Take the IFQ to see your pattern",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-03-18"
-        },
-        {
-          "channel": "linkedin",
-          "pillar": "default",
-          "title": "Framework \u2014 the mirror test",
-          "detail": "Framework graphic: The Mirror Test \u2014 can you look at your leadership without flinching?",
-          "cta": "Save this. Share with your team.",
-          "graphic_needed": "Framework graphic \u2014 Mirror Test",
-          "source": "YouTube Live 2026-03-18"
-        },
-        {
-          "channel": "podcast",
-          "pillar": null,
-          "title": "Podcast Episode (TBD)",
-          "detail": "The SightShift Podcast drops today. Episode title and description to be updated when available.",
-          "cta": "Listen on Apple, Spotify, or YouTube",
-          "graphic_needed": "Episode thumbnail + audiogram",
-          "source": null
-        }
-      ]
-    },
-    {
-      "date": "2026-04-03",
-      "items": [
-        {
-          "channel": "cultural",
-          "pillar": null,
-          "title": "Ep 6\u20138 finale drop",
-          "detail": "Final episodes of Company Retreat drop on Amazon \u2014 narrative payoff and campaign transition point",
-          "cta": null,
-          "graphic_needed": null,
-          "source": "Original (Connie)"
-        },
-        {
-          "channel": "linkedin",
-          "pillar": "default",
-          "title": "Engagement \u2014 IFQ reflection",
-          "detail": "Reflection post: What did the IFQ reveal about your leadership?",
-          "cta": "Take the IFQ if you haven't yet",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-03-18"
-        }
-      ]
-    },
-    {
-      "date": "2026-04-05",
-      "items": [
-        {
-          "channel": "river",
-          "pillar": "drift",
-          "title": "Story email \u2014 the drift you don't see",
-          "detail": "The drift doesn't announce itself. It shows up as a vague restlessness, a Sunday night dread, a meeting you used to look forward to that now feels like a performance.",
-          "cta": "Take the Validation Check to measure your drift",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-03-25"
-        }
-      ]
-    },
-    {
-      "date": "2026-04-06",
-      "items": [
-        {
-          "channel": "linkedin",
-          "pillar": "drift",
-          "title": "Story \u2014 vulnerability in leadership",
-          "detail": "Personal story: A moment of real vulnerability that changed Chris's leadership trajectory",
-          "cta": "Follow for this week's deep dives",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-03-25"
-        }
-      ]
-    },
-    {
-      "date": "2026-04-07",
-      "items": [
-        {
-          "channel": "river",
-          "pillar": "drift",
-          "title": "Story email \u2014 mirror moment",
-          "detail": "Story about facing yourself honestly as a leader \u2014 the mirror moment that starts real change",
-          "cta": "Register for the Breakthrough Workshop",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-03-25"
-        },
-        {
-          "channel": "linkedin",
-          "pillar": "default",
-          "title": "Provocation \u2014 what the IFQ reveals",
-          "detail": "The IFQ doesn't tell you what's wrong. It shows you what you've been avoiding.",
-          "cta": "Take the IFQ \u2014 link in comments",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-03-25"
-        }
-      ]
-    },
-    {
-      "date": "2026-04-08",
-      "items": [
-        {
-          "channel": "youtube-live",
-          "pillar": null,
-          "title": "The Finale Nobody's Talking About",
-          "detail": "Live: Transitioning from Company Retreat to Dumb Theater \u2014 why parody hits harder than training",
-          "cta": "Join live + share your story",
-          "graphic_needed": "Episode thumbnail",
-          "source": null
-        },
-        {
-          "channel": "instagram",
-          "pillar": null,
-          "title": "Stories + Reel",
-          "detail": "Reel: Quick-hit clip from the Live + interactive story poll",
-          "cta": "Watch the full Live on YouTube",
-          "graphic_needed": "Reel clip from Live",
-          "source": "YouTube Live 2026-03-25"
-        }
-      ]
-    },
-    {
-      "date": "2026-04-09",
-      "items": [
-        {
-          "channel": "river",
-          "pillar": "drift",
-          "title": "Validation Check Announcement",
-          "detail": "Announcement: The Validation Check is live. Nine questions, two minutes, see if your culture is drifting. Personal, direct, not a pitch.",
-          "cta": "Take the Validation Check",
-          "graphic_needed": null,
-          "source": "Original (Kim)",
-          "status": "proposed"
-        },
-        {
-          "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Framework \u2014 systems over events",
-          "detail": "Why leadership development fails \u2014 you're buying events when you need a system",
-          "cta": "DM 'BREAKTHROUGH' for details",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-03-25"
-        }
-      ]
-    },
-    {
-      "date": "2026-04-10",
-      "items": [
-        {
-          "channel": "production",
-          "pillar": null,
-          "title": "PREP: Confirm Michael #1 ready",
-          "detail": "Production milestone: Confirm Dumb Theater 'Michael' character video #1 is edited and ready",
-          "cta": null,
-          "graphic_needed": "Michael #1 video \u2014 final edit + thumbnail",
-          "source": null
-        },
-        {
-          "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Provocation \u2014 stop developing leaders",
-          "detail": "Hot take: Stop developing leaders. Start developing humans who happen to lead.",
-          "cta": "Agree or disagree? Comment below.",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-03-25"
-        }
-      ]
-    },
-    {
-      "date": "2026-04-12",
-      "items": [
-        {
-          "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Story email \u2014 the retreat that changed nothing",
-          "detail": "The retreat was beautiful. The food was great. Everyone bonded. And within six weeks, nothing had changed. Because the retreat addressed symptoms, not the root.",
-          "cta": "Apply for the Breakthrough Workshop",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-04-01"
-        }
-      ]
-    },
-    {
-      "date": "2026-04-13",
-      "items": [
-        {
-          "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Story \u2014 motivational speaker aftermath",
-          "detail": "Story: What happens 48 hours after the motivational speaker leaves \u2014 the slow fade back to normal",
-          "cta": "Follow for the antidote this week",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-04-01"
-        }
-      ]
-    },
-    {
-      "date": "2026-04-14",
-      "items": [
-        {
-          "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Story email \u2014 hype not a plan",
-          "detail": "Story: Hype is not a plan \u2014 why the energy from events fades and what sustains change",
-          "cta": "Watch Michael #1 (Dumb Theater)",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-04-01"
-        },
-        {
-          "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "VIDEO: Michael #1 premiere",
-          "detail": "Video premiere: Meet Michael \u2014 the leader who thinks inspiration is a strategy",
-          "cta": "Watch. Tag someone who manages like this.",
-          "graphic_needed": "Michael character poster \u2014 'The Motivator'",
-          "source": "Dumb Theater character video"
-        },
-        {
-          "channel": "instagram",
-          "pillar": "dumb-theater",
-          "title": "Reel: Michael #1",
-          "detail": "Reel cut of Michael #1 video \u2014 punchy 30-sec edit for IG format",
-          "cta": "Full video on LinkedIn + YouTube",
-          "graphic_needed": "Reel cut from Michael #1 video",
-          "source": "Dumb Theater character video"
-        }
-      ]
-    },
-    {
-      "date": "2026-04-15",
-      "items": [
-        {
-          "channel": "youtube-live",
-          "pillar": null,
-          "title": "Hype Is Not a Plan",
-          "detail": "Live: Breaking down Michael \u2014 why 'hype leadership' feels good but changes nothing",
-          "cta": "Join live + Breakthrough Workshop link in description",
-          "graphic_needed": "Episode thumbnail",
-          "source": null
-        },
-        {
-          "channel": "instagram",
-          "pillar": null,
-          "title": "Stories \u2014 Live reminder",
-          "detail": "Countdown + 'Do you know a Michael?' poll + Live reminder",
-          "cta": "Join the Live on YouTube",
-          "graphic_needed": null,
-          "source": null
-        }
-      ]
-    },
-    {
-      "date": "2026-04-16",
-      "items": [
-        {
-          "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Podcast email \u2014 why hype fades",
-          "detail": "(From this week's podcast episode) Teaching: The neuroscience of why hype fades \u2014 dopamine vs. identity-level rewiring",
-          "cta": "Apply for the Breakthrough Workshop",
-          "graphic_needed": null,
-          "source": "Podcast episode (releasing same day)"
-        },
-        {
-          "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Framework \u2014 hype-to-habit gap",
-          "detail": "Framework graphic: The Hype-to-Habit Gap \u2014 why 90% of leadership training doesn't stick",
-          "cta": "Save this. Send it to your L&D team.",
-          "graphic_needed": "Framework graphic \u2014 Hype-to-Habit Gap",
-          "source": "YouTube Live 2026-04-01"
-        },
-        {
-          "channel": "podcast",
-          "pillar": null,
-          "title": "Podcast Episode (TBD)",
-          "detail": "The SightShift Podcast drops today. Episode title and description to be updated when available.",
-          "cta": "Listen on Apple, Spotify, or YouTube",
-          "graphic_needed": "Episode thumbnail + audiogram",
-          "source": null
-        }
-      ]
-    },
-    {
-      "date": "2026-04-17",
-      "items": [
-        {
-          "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Engagement \u2014 how long did the hype last?",
-          "detail": "Think about the last leadership event you attended. How long did the energy last?",
-          "cta": "Comment your answer \u2014 I'll respond to every one",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-04-01"
-        }
-      ]
-    },
     {
       "date": "2026-04-19",
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Story email \u2014 the motivational speaker hangover",
-          "detail": "The energy peaked on day one. By day three, it was fading. By day fourteen, you couldn't remember the keynote speaker's name. That's what happens when hype replaces identity work.",
-          "cta": "Watch Michael #1 (Dumb Theater)",
+          "pillar": "drift",
+          "title": "Story: \"I used to think the problem was skills...\"",
+          "detail": "Chris's personal discovery of the identity gap. The moment he realized skills weren't the real issue — identity was.",
+          "cta": "AI-specific IFQ (sightshift.com/ai-leadership)",
           "graphic_needed": null,
-          "source": "Podcast + YouTube Live 2026-04-08"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -354,11 +27,22 @@
         {
           "channel": "linkedin",
           "pillar": "default",
-          "title": "Story \u2014 wellness as avoidance",
-          "detail": "Story: When 'wellness culture' in leadership becomes a way to avoid hard conversations",
-          "cta": "Follow for Nathan this week",
+          "title": "Data graphic: \"We studied 988 leaders. 69% hide under pressure.\"",
+          "detail": "Data visualization post — headline stat from research. Tease Thursday's full article.",
+          "cta": "Read Thursday's article",
+          "graphic_needed": "Data graphic — 988 leaders / 69% hide stat",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "default",
+          "title": "Data bomb: \"988 leaders. 69% hide under pressure. AI doesn't care.\"",
+          "detail": "Punchy data bomb tweet. Short, sharp, designed to stop the scroll.",
+          "cta": null,
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-08"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -367,30 +51,43 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Story email \u2014 mindfulness as hiding",
-          "detail": "Story: The leader who meditated every morning but couldn't have a hard conversation",
-          "cta": "Watch Nathan #1 (Dumb Theater)",
+          "pillar": "default",
+          "title": "Framework: The two default modes — proving and hiding",
+          "detail": "Teaching email: The two default modes every leader falls into under pressure — proving and hiding. Why AI amplifies both.",
+          "cta": "AI-specific IFQ",
           "graphic_needed": null,
-          "source": "Podcast + YouTube Live 2026-04-08"
+          "source": null,
+          "status": "proposed"
         },
         {
-          "channel": "linkedin",
+          "channel": "youtube-shorts",
           "pillar": "dumb-theater",
-          "title": "VIDEO: Nathan #1 premiere",
-          "detail": "Video premiere: Meet Nathan \u2014 the leader who weaponized wellness to avoid leadership",
-          "cta": "Watch. Do you know a Nathan?",
-          "graphic_needed": "Nathan character poster \u2014 'The Zen Master'",
-          "source": "Dumb Theater character video"
+          "title": "Michael — video #1",
+          "detail": "Dumb Theater character video: Michael. Already produced.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
         },
         {
           "channel": "instagram",
           "pillar": "dumb-theater",
-          "title": "Reel: Nathan #1",
-          "detail": "Reel cut of Nathan #1 \u2014 punchy 30-sec edit showing the 'wellness avoidance' archetype",
-          "cta": "Full video on LinkedIn + YouTube",
-          "graphic_needed": "Reel cut from Nathan #1 video",
-          "source": "Dumb Theater character video"
+          "title": "Michael — video #1",
+          "detail": "Dumb Theater character video: Michael. Reel format.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "dumb-theater",
+          "title": "Michael — video #1",
+          "detail": "Dumb Theater character video: Michael. Native upload.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -400,20 +97,12 @@
         {
           "channel": "youtube-live",
           "pillar": null,
-          "title": "Zen and the Art of Avoiding Leadership",
-          "detail": "Live: Breaking down Nathan \u2014 when mindfulness becomes a mask for avoiding real leadership",
-          "cta": "Join live + IFQ link in description",
+          "title": "Why I'm Going All-In on AI Leadership",
+          "detail": "YouTube Live (15-20 min). Chris explains why SightShift is going all-in on AI leadership — the data, the conviction, the opportunity.",
+          "cta": "IFQ",
           "graphic_needed": "Episode thumbnail",
-          "source": null
-        },
-        {
-          "channel": "instagram",
-          "pillar": null,
-          "title": "Stories \u2014 Do you have a Nathan?",
-          "detail": "Interactive stories: 'Do you have a Nathan on your team?' quiz + Live countdown",
-          "cta": "Join the Live on YouTube",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-04-08"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -423,20 +112,42 @@
         {
           "channel": "river",
           "pillar": "default",
-          "title": "Framework \u2014 hiding pattern deep dive",
-          "detail": "Deep dive into the 'hiding' pattern \u2014 how leaders use busyness, wellness, and delegation to avoid being seen",
-          "cta": "Take the IFQ to see if you're hiding",
+          "title": "Research Article 1 drops",
+          "detail": "Email driving to Research Article 1 on the Webflow blog. First major research piece of the campaign.",
+          "cta": "Read article + IFQ",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-08"
+          "source": null,
+          "status": "proposed"
         },
         {
           "channel": "linkedin",
           "pillar": "default",
-          "title": "Framework \u2014 performative stillness",
-          "detail": "Performative Stillness \u2014 when calm is just another mask for avoidance",
-          "cta": "Save this. Be honest about whether it's you.",
-          "graphic_needed": "Framework graphic \u2014 Performative Stillness",
-          "source": "YouTube Live 2026-04-08"
+          "title": "The #1 Mistake Leaders Make Under Pressure Isn't What You Think",
+          "detail": "LinkedIn article — long-form companion to Research Article 1. Data-driven, thought leadership positioning.",
+          "cta": "IFQ",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "default",
+          "title": "Thread: \"We studied 988 leaders across 35 organizations.\"",
+          "detail": "Thread drop — 8-12 tweets unpacking the research findings. Data-heavy, narrative-driven.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "note",
+          "pillar": null,
+          "title": "Research Article 1 publishes on Webflow blog",
+          "detail": "Ensure Research Article 1 is live on Webflow blog before email sends.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -446,11 +157,47 @@
         {
           "channel": "linkedin",
           "pillar": "default",
-          "title": "Engagement \u2014 meditation vs leadership",
-          "detail": "Is your mindfulness practice making you a better leader \u2014 or helping you avoid being one?",
-          "cta": "Comment honestly. No judgment.",
+          "title": "YouTube Live clips + Article 1 data visualizations",
+          "detail": "Repurpose clips from Wednesday's YouTube Live and data visualizations from Article 1.",
+          "cta": "IFQ",
+          "graphic_needed": "Data visualizations from Article 1",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "default",
+          "title": "Article 1 pull quotes + data visuals",
+          "detail": "Pull quotes and data visuals from Research Article 1.",
+          "cta": null,
+          "graphic_needed": "Data visuals",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": null,
+          "title": "Reel — YouTube Live highlight clip",
+          "detail": "Reel cut from Wednesday's YouTube Live session.",
+          "cta": null,
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-08"
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-25",
+      "items": [
+        {
+          "channel": "seo-blog",
+          "pillar": null,
+          "title": "Why 80% of AI Projects Fail (It's Not the Technology)",
+          "detail": "SEO blog post. Positions the identity gap as the hidden variable behind AI project failure.",
+          "cta": "IFQ",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -459,12 +206,13 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "default",
-          "title": "Story email \u2014 the leader who disappeared",
-          "detail": "He didn't quit. He didn't get fired. He just stopped showing up emotionally. That's what hiding looks like when it's wearing a suit and sitting at the head of the table.",
-          "cta": "Take the IFQ to see if you're hiding",
+          "pillar": "drift",
+          "title": "Story: A C-suite leader who hid for years",
+          "detail": "Drift email — narrative about a C-suite leader who hid behind composure for years. What it cost them.",
+          "cta": "AI-specific Validation Check",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-15"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -473,12 +221,23 @@
       "items": [
         {
           "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Provocation \u2014 $50K on leadership dev",
-          "detail": "Your company spent $50K on leadership development last year. Can anyone name one thing that changed?",
-          "cta": "If this hits home, DM me 'BREAKTHROUGH'",
+          "pillar": "default",
+          "title": "Teaser: \"87% of C-suite leaders hide. Zero in the 'strongly proving' range.\"",
+          "detail": "Data teaser post for Thursday's Research Article 2. C-suite specific findings.",
+          "cta": "Read Thursday",
+          "graphic_needed": "Data graphic — 87% C-suite hiding stat",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "default",
+          "title": "Data bomb: \"The higher the title, the deeper the hiding.\"",
+          "detail": "Punchy data bomb tweet on C-suite hiding pattern.",
+          "cta": null,
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-15"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -487,30 +246,43 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Story email \u2014 two weeks later",
-          "detail": "Story: What your team looks like two weeks after the big leadership offsite",
-          "cta": "Register for the Breakthrough Workshop",
+          "pillar": "default",
+          "title": "Framework: Why hiding looks like composure at the top",
+          "detail": "Teaching email: Why hiding looks like composure at the executive level — and what AI does to hidden leaders.",
+          "cta": "AI-specific IFQ",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-15"
+          "source": null,
+          "status": "proposed"
         },
         {
-          "channel": "linkedin",
+          "channel": "youtube-shorts",
           "pillar": "dumb-theater",
-          "title": "VIDEO: Michael #2 or re-release",
-          "detail": "Michael returns or re-release with fresh commentary. Reinforcing the 'hype leadership' archetype.",
-          "cta": "Watch + share with your HR team",
-          "graphic_needed": "Michael #2 video or updated caption graphic",
-          "source": "Dumb Theater character video"
+          "title": "Nathan — video #1",
+          "detail": "Dumb Theater character video: Nathan.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
         },
         {
           "channel": "instagram",
           "pillar": "dumb-theater",
-          "title": "Reel: character video",
-          "detail": "Reel cut of latest Dumb Theater character content \u2014 punchy engagement format",
-          "cta": "Full video on LinkedIn + YouTube",
-          "graphic_needed": "Reel cut from character video",
-          "source": "Dumb Theater character video"
+          "title": "Nathan — video #1",
+          "detail": "Dumb Theater character video: Nathan. Reel format.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "dumb-theater",
+          "title": "Nathan — video #1",
+          "detail": "Dumb Theater character video: Nathan. Native upload.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -520,20 +292,12 @@
         {
           "channel": "youtube-live",
           "pillar": null,
-          "title": "Two Weeks Later",
-          "detail": "Live: The 'Two Weeks Later' test \u2014 what sticks after leadership training and what doesn't",
-          "cta": "Join live + Breakthrough Workshop link",
+          "title": "What 988 Leaders Revealed: The 3 Findings That Change Everything",
+          "detail": "YouTube Live — full research deep dive into the 3 major findings from the 988-leader study.",
+          "cta": "IFQ + Columbus",
           "graphic_needed": "Episode thumbnail",
-          "source": null
-        },
-        {
-          "channel": "instagram",
-          "pillar": null,
-          "title": "Stories \u2014 Live reminder",
-          "detail": "Live countdown + 'What's the last leadership lesson that actually stuck?' question sticker",
-          "cta": "Join the Live on YouTube",
-          "graphic_needed": null,
-          "source": null
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -542,30 +306,53 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Podcast email \u2014 97/3 principle",
-          "detail": "(From this week's podcast episode) Teaching: The 97/3 Principle \u2014 97% of leadership dev addresses symptoms, only 3% reaches the root",
-          "cta": "Apply for the Breakthrough Workshop",
+          "pillar": "default",
+          "title": "Research Article 2 drops",
+          "detail": "Email driving to Research Article 2 on the Webflow blog. C-suite hiding data.",
+          "cta": "Read + IFQ + Columbus",
           "graphic_needed": null,
-          "source": "Podcast episode (releasing same day)"
+          "source": null,
+          "status": "proposed"
         },
         {
           "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Framework \u2014 root-cause vs symptom",
-          "detail": "Framework graphic: Root-Cause vs. Symptom leadership development \u2014 a visual breakdown",
-          "cta": "Save this. Show it to your executive team.",
-          "graphic_needed": "Framework graphic \u2014 Root-Cause vs Symptom",
-          "source": "YouTube Live 2026-04-15"
+          "pillar": "default",
+          "title": "Why 87% of C-Suite Leaders Hide Under Pressure",
+          "detail": "LinkedIn article — long-form companion to Research Article 2. C-suite specific data and analysis.",
+          "cta": "IFQ",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "default",
+          "title": "Thread: C-suite hiding data",
+          "detail": "Thread drop unpacking the C-suite hiding findings from Research Article 2.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         },
         {
           "channel": "podcast",
           "pillar": null,
-          "title": "Podcast Episode (TBD)",
-          "detail": "The SightShift Podcast drops today. Episode title and description to be updated when available.",
-          "cta": "Listen on Apple, Spotify, or YouTube",
-          "graphic_needed": "Episode thumbnail + audiogram",
-          "source": null
+          "title": "AI Ep 1 — \"The Conversation Nobody's Having About AI\"",
+          "detail": "Podcast episode: Mark + Chris, 30-45 min. Opening salvo — the conversation nobody in leadership development is having about AI.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "note",
+          "pillar": null,
+          "title": "Research Article 2 publishes on Webflow blog",
+          "detail": "Ensure Research Article 2 is live on Webflow blog before email sends.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -574,12 +361,48 @@
       "items": [
         {
           "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Proof post \u2014 Breakthrough Workshop mention",
-          "detail": "Social proof: Client result or testimonial tied to the Breakthrough Workshop \u2014 real outcomes, not hype",
-          "cta": "DM 'BREAKTHROUGH' or click the link in comments",
+          "pillar": "default",
+          "title": "Clips + Columbus push",
+          "detail": "YouTube Live clips and Article 2 data visuals. Hard push for Columbus registration.",
+          "cta": "Columbus registration",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-15"
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "default",
+          "title": "Columbus event push + clips",
+          "detail": "Columbus event push with YouTube Live clips and article data.",
+          "cta": "Columbus registration",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": null,
+          "title": "Reel clips",
+          "detail": "Reel clips from YouTube Live and research content.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-02",
+      "items": [
+        {
+          "channel": "seo-blog",
+          "pillar": null,
+          "title": "The AI Sycophancy Problem: How AI Makes Insecure Leaders Worse",
+          "detail": "SEO blog post. AI sycophancy and the feedback loop for insecure leaders.",
+          "cta": "IFQ",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -588,12 +411,13 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Story email \u2014 the $50K question",
-          "detail": "Your company invested $50K in leadership development last year. Can anyone on your team name one lasting change? If not, the money didn't fail. The approach did.",
-          "cta": "Apply for the Breakthrough Workshop",
+          "pillar": "drift",
+          "title": "Story: \"What AI reveals about you is more important than what it does for you.\"",
+          "detail": "Drift email — reframe: AI as a mirror, not just a tool. What it exposes matters more than what it produces.",
+          "cta": "AI-specific Validation Check",
           "graphic_needed": null,
-          "source": "Podcast + YouTube Live 2026-04-22"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -602,12 +426,23 @@
       "items": [
         {
           "channel": "linkedin",
-          "pillar": "drift",
-          "title": "Story \u2014 client transformation arc",
-          "detail": "A client's full transformation arc \u2014 from skeptic to advocate after the process",
-          "cta": "Follow for the final week",
+          "pillar": null,
+          "title": "Final Columbus push",
+          "detail": "Final push for Columbus event registration. Last call messaging.",
+          "cta": "Columbus registration",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-22"
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": null,
+          "title": "Final Columbus push",
+          "detail": "Final push for Columbus event registration on Twitter/X.",
+          "cta": "Columbus registration",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -616,21 +451,43 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Story email \u2014 before/after breakthrough",
-          "detail": "Before and after the breakthrough \u2014 what changes when a leader stops performing and starts leading from identity",
-          "cta": "Apply for the Breakthrough Workshop",
+          "pillar": "default",
+          "title": "Framework: The identity gap AI exposed",
+          "detail": "Teaching email teeing up the bridge article. The identity gap AI exposed — and why it matters for every leader.",
+          "cta": "IFQ",
           "graphic_needed": null,
-          "source": "Podcast + YouTube Live 2026-04-22"
+          "source": null,
+          "status": "proposed"
         },
         {
-          "channel": "linkedin",
+          "channel": "youtube-shorts",
           "pillar": "dumb-theater",
-          "title": "Proof post \u2014 90-day outcomes",
-          "detail": "Data-backed proof: 90-day outcomes from Breakthrough Workshop participants",
-          "cta": "See the results. Apply now.",
-          "graphic_needed": "90-day outcomes infographic",
-          "source": "YouTube Live 2026-04-22"
+          "title": "Derek — video #1",
+          "detail": "Dumb Theater character video: Derek.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": "dumb-theater",
+          "title": "Derek — video #1",
+          "detail": "Dumb Theater character video: Derek. Reel format.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "dumb-theater",
+          "title": "Derek — video #1",
+          "detail": "Dumb Theater character video: Derek. Native upload.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -638,22 +495,24 @@
       "date": "2026-05-06",
       "items": [
         {
-          "channel": "youtube-live",
+          "channel": "event",
           "pillar": null,
-          "title": "What a Real Breakthrough Looks Like",
-          "detail": "Live finale: What a real breakthrough looks like \u2014 stories, proof, and a direct invitation",
-          "cta": "Apply for the Breakthrough Workshop \u2014 link in description",
-          "graphic_needed": "Episode thumbnail",
-          "source": null
+          "title": "COLUMBUS — \"Why AI Outperforms Your Team\"",
+          "detail": "Live event: 30 seats, 2-4 PM ET, Summit Outdoors, Columbus OH. All attendees take IFQ on-site. No YouTube Live this week.",
+          "cta": "IFQ on-site",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         },
         {
-          "channel": "instagram",
+          "channel": "note",
           "pillar": null,
-          "title": "Stories \u2014 proof content",
-          "detail": "Stories: Client testimonial clips + before/after graphics + Workshop application CTA",
-          "cta": "Apply via link in bio",
-          "graphic_needed": "Client testimonial clips + before/after graphics",
-          "source": "YouTube Live 2026-04-22"
+          "title": "Capture everything at Columbus",
+          "detail": "Capture video keynote, Q&A, testimonials, photos. All attendees take IFQ.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -662,21 +521,43 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Framework \u2014 Impact Script concept",
-          "detail": "Teaching: The Impact Script \u2014 how to write the story of your leadership legacy starting today",
-          "cta": "Apply for the Breakthrough Workshop",
+          "pillar": "default",
+          "title": "Research Article 3 drops (bridge piece)",
+          "detail": "Email driving to Research Article 3 — the bridge piece connecting identity research to the 3% Shift framework.",
+          "cta": "IFQ + white paper coming next week",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-22"
+          "source": null,
+          "status": "proposed"
         },
         {
           "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Framework \u2014 identity shift",
-          "detail": "Final framework: Identity Shift \u2014 why behavior change fails but identity change lasts",
-          "cta": "This is what the Breakthrough Workshop does. Apply now.",
-          "graphic_needed": "Framework graphic \u2014 Identity Shift",
-          "source": "YouTube Live 2026-04-22"
+          "pillar": "default",
+          "title": "AI Didn't Create a Leadership Crisis. It Revealed One.",
+          "detail": "LinkedIn article — bridge piece. Connecting the research findings to the larger framework.",
+          "cta": "IFQ",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "default",
+          "title": "Thread: Bridge article data",
+          "detail": "Thread drop unpacking the bridge article findings from Research Article 3.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "note",
+          "pillar": null,
+          "title": "Research Article 3 publishes on Webflow blog",
+          "detail": "Ensure Research Article 3 is live on Webflow blog before email sends.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -686,11 +567,47 @@
         {
           "channel": "linkedin",
           "pillar": null,
-          "title": "Engagement \u2014 campaign reflection",
-          "detail": "Closing question: Over the last 8 weeks, what's the one thing that shifted for you?",
-          "cta": "Apply for the Breakthrough Workshop before doors close",
+          "title": "Columbus testimonial clips + Article 3 pull quotes",
+          "detail": "Columbus testimonial clips and pull quotes from Research Article 3.",
+          "cta": "IFQ",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-22"
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": null,
+          "title": "Columbus testimonial clips + Article 3 pull quotes",
+          "detail": "Columbus testimonial clips and pull quotes from Research Article 3.",
+          "cta": "IFQ",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": null,
+          "title": "Columbus testimonial clips + Article 3 pull quotes",
+          "detail": "Columbus testimonial clips and pull quotes from Research Article 3. Reel format.",
+          "cta": "IFQ",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-09",
+      "items": [
+        {
+          "channel": "seo-blog",
+          "pillar": null,
+          "title": "The Three Capacities AI Can't Replace",
+          "detail": "SEO blog post. The three human capacities — ginosko, phronesis, koinonia — that AI cannot replicate.",
+          "cta": "3% Shift pillar page",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -699,12 +616,13 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "drift",
-          "title": "Story email \u2014 what the data reveals",
-          "detail": "When we measured Chris's IFQ live on air, the room got quiet. Not because the results were bad. Because they were honest. And honesty is the first thing insecurity eliminates.",
-          "cta": "Take the IFQ",
+          "pillar": "default",
+          "title": "Story: The origin of the 3% Shift",
+          "detail": "Story email — how the 3% Shift framework came to be. The moment the data revealed it.",
+          "cta": "3% Shift pillar page",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-29"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -713,12 +631,23 @@
       "items": [
         {
           "channel": "linkedin",
-          "pillar": "default",
-          "title": "Story \u2014 the beliefs that keep founders stuck",
-          "detail": "Story: The three things every burned-out founder believes that keep them grinding instead of leading",
-          "cta": "Follow for the full breakdown this week",
+          "pillar": null,
+          "title": "White paper teaser",
+          "detail": "Teaser post for the white paper dropping Thursday. Build anticipation.",
+          "cta": "Download Thursday",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-29"
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": null,
+          "title": "White paper teaser",
+          "detail": "Teaser for the white paper dropping Thursday.",
+          "cta": "Download Thursday",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -728,20 +657,42 @@
         {
           "channel": "river",
           "pillar": "default",
-          "title": "Story email \u2014 work harder myth",
-          "detail": "The 'work harder' belief is proving in disguise. When effort becomes identity, you can't stop without losing yourself.",
-          "cta": "Take the IFQ to see your pattern",
+          "title": "Framework: The 97/3 principle",
+          "detail": "Teaching email: The 97/3 principle — why only 3% of leaders operate from secure identity, and what that means in the AI era.",
+          "cta": "IFQ",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-29"
+          "source": null,
+          "status": "proposed"
         },
         {
-          "channel": "linkedin",
-          "pillar": "default",
-          "title": "Framework \u2014 three burnout myths",
-          "detail": "Framework: 'Work harder,' 'hire better,' and 'just push through' are not strategies. They're fear responses wearing a productivity costume.",
-          "cta": "Save this. Send it to a founder you know.",
-          "graphic_needed": "Framework graphic \u2014 3 Burnout Myths",
-          "source": "YouTube Live 2026-04-29"
+          "channel": "youtube-shorts",
+          "pillar": "dumb-theater",
+          "title": "Alice the AI Evangelist — premiere video #1",
+          "detail": "Dumb Theater character video: Alice the AI Evangelist (if ready). Premiere.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": "dumb-theater",
+          "title": "Alice the AI Evangelist — premiere video #1",
+          "detail": "Dumb Theater character video: Alice the AI Evangelist (if ready). Reel format.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "dumb-theater",
+          "title": "Alice the AI Evangelist — premiere video #1",
+          "detail": "Dumb Theater character video: Alice the AI Evangelist (if ready). Native upload.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -751,20 +702,12 @@
         {
           "channel": "youtube-live",
           "pillar": null,
-          "title": "3 Things Every Burned-Out Founder Believes That Aren't True",
-          "detail": "Debunks the 'work harder' / 'hire better' / 'just push through' narratives. Proving myths reframed through identity.",
-          "cta": "Join live + Breakthrough Workshop link in description",
+          "title": "What Happened in Columbus + The 3% Shift",
+          "detail": "YouTube Live — event debrief from Columbus + white paper thesis preview. Bridge from event energy to framework.",
+          "cta": "White paper download",
           "graphic_needed": "Episode thumbnail",
-          "source": null
-        },
-        {
-          "channel": "instagram",
-          "pillar": null,
-          "title": "Stories \u2014 Live reminder",
-          "detail": "Countdown + 'Which burnout belief do you still hold?' poll",
-          "cta": "Join the Live on YouTube",
-          "graphic_needed": null,
-          "source": null
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -773,30 +716,53 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "drift",
-          "title": "Podcast email \u2014 when effort becomes identity",
-          "detail": "(From this week's podcast episode) Teaching: The burnout you feel isn't from working too hard. It's from proving you belong by never stopping.",
-          "cta": "Apply for the Breakthrough Workshop",
+          "pillar": "default",
+          "title": "WHITE PAPER DROPS",
+          "detail": "Major email: The 3% Shift white paper is live. Drives to pillar page for email-gated download.",
+          "cta": "Download white paper",
           "graphic_needed": null,
-          "source": "Podcast episode (releasing same day)"
+          "source": null,
+          "status": "proposed"
         },
         {
           "channel": "linkedin",
-          "pillar": "default",
-          "title": "Framework \u2014 effort as identity",
-          "detail": "Framework: The leader who works the hardest isn't the most committed. They're the most afraid to stop.",
-          "cta": "DM 'BREAKTHROUGH' for details",
+          "pillar": null,
+          "title": "White paper executive summary",
+          "detail": "LinkedIn article — executive summary of the 3% Shift white paper. Key findings and framework overview.",
+          "cta": "Download white paper",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-29"
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": null,
+          "title": "Thread: 3% Shift framework",
+          "detail": "Thread drop unpacking the 3% Shift framework from the white paper.",
+          "cta": "Download white paper",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         },
         {
           "channel": "podcast",
           "pillar": null,
-          "title": "Podcast Episode (TBD)",
-          "detail": "The SightShift Podcast drops today. Episode title and description to be updated when available.",
-          "cta": "Listen on Apple, Spotify, or YouTube",
-          "graphic_needed": "Episode thumbnail + audiogram",
-          "source": null
+          "title": "AI Ep 2 — \"Why the Highest-Paid Leaders Hide\"",
+          "detail": "Podcast episode: Mark + Chris, 30-45 min. Deep dive on C-suite hiding patterns and what the data reveals.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "note",
+          "pillar": null,
+          "title": "3% Shift pillar page goes fully live",
+          "detail": "3% Shift pillar page goes fully live. Email-gated white paper download active.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -805,12 +771,48 @@
       "items": [
         {
           "channel": "linkedin",
-          "pillar": "default",
-          "title": "Engagement \u2014 which myth did you believe longest?",
-          "detail": "'Work harder.' 'Hire better.' 'Just push through.' Which one kept you stuck the longest?",
-          "cta": "Comment below \u2014 I'll respond to every one",
+          "pillar": null,
+          "title": "White paper pull quotes + data visuals + Columbus testimonial",
+          "detail": "White paper pull quotes, data visualizations, and Columbus testimonial content.",
+          "cta": "Download",
+          "graphic_needed": "Data visuals from white paper",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": null,
+          "title": "White paper pull quotes + data visuals + Columbus testimonial",
+          "detail": "White paper pull quotes, data visuals, and Columbus testimonial clips.",
+          "cta": "Download",
+          "graphic_needed": "Data visuals from white paper",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": null,
+          "title": "White paper pull quotes + data visuals + Columbus testimonial",
+          "detail": "White paper pull quotes, data visuals, and Columbus testimonial. Reel format.",
+          "cta": "Download",
+          "graphic_needed": "Data visuals from white paper",
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-16",
+      "items": [
+        {
+          "channel": "seo-blog",
+          "pillar": null,
+          "title": "You Don't Have a Talent Shortage. You Have a Formation Shortage.",
+          "detail": "SEO blog post. Reframes the talent war as a formation problem. White paper data supports the argument.",
+          "cta": "White paper + IFQ",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-04-29"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -819,26 +821,13 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "default",
-          "title": "Story email \u2014 the myths that keep founders grinding",
-          "detail": "Three beliefs burned-out founders hold as gospel: work harder, hire better, just push through. None of them are strategies. They're fear responses wearing a productivity costume.",
-          "cta": "Take the IFQ to see your pattern",
+          "pillar": "drift",
+          "title": "Story: A leader who couldn't imagine a future",
+          "detail": "Drift email — story of a leader whose fear collapsed their vision. They couldn't imagine what didn't exist yet.",
+          "cta": "IFQ",
           "graphic_needed": null,
-          "source": "Podcast + YouTube Live 2026-05-06"
-        }
-      ]
-    },
-    {
-      "date": "2026-05-18",
-      "items": [
-        {
-          "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Story \u2014 the team that kept getting 'developed'",
-          "detail": "Story: A CEO who spent $200K on team development and couldn't name one thing that changed. Diagnosis before prescription.",
-          "cta": "Follow for the antidote this week",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-05-06"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -847,21 +836,43 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Story email \u2014 stop building, start diagnosing",
-          "detail": "You don't have a team development problem. You have an undiagnosed team. The IFQ and Culture Risk Report exist because intuition isn't data.",
-          "cta": "Take the IFQ to diagnose your team",
+          "pillar": "default",
+          "title": "Framework: Ginosko — the capacity to imagine what doesn't exist",
+          "detail": "Teaching email: Ginosko — the first of three capacities. The ability to imagine what doesn't exist yet. Why AI can't do this.",
+          "cta": "AI-specific IFQ",
           "graphic_needed": null,
-          "source": "Podcast + YouTube Live 2026-05-06"
+          "source": null,
+          "status": "proposed"
         },
         {
-          "channel": "linkedin",
+          "channel": "youtube-shorts",
           "pillar": "dumb-theater",
-          "title": "Framework \u2014 diagnostic before prescription",
-          "detail": "Framework: The case for measurement over intuition. You wouldn't treat a patient without a blood test. Why are you treating your culture without a diagnostic?",
-          "cta": "Take the IFQ \u2014 link in comments",
-          "graphic_needed": "Framework graphic \u2014 Diagnostic Before Prescription",
-          "source": "YouTube Live 2026-05-06"
+          "title": "Alice video #2 OR Columbus testimonial clip",
+          "detail": "Alice video #2 (if #1 launched Week 4) OR Columbus testimonial clip.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": "dumb-theater",
+          "title": "Alice video #2 OR Columbus testimonial clip",
+          "detail": "Alice video #2 (if #1 launched Week 4) OR Columbus testimonial clip. Reel format.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "dumb-theater",
+          "title": "Alice video #2 OR Columbus testimonial clip",
+          "detail": "Alice video #2 (if #1 launched Week 4) OR Columbus testimonial clip. Native upload.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -871,20 +882,12 @@
         {
           "channel": "youtube-live",
           "pillar": null,
-          "title": "Stop Building Your Team. Start Diagnosing It.",
-          "detail": "The diagnostic-before-prescription principle. IFQ and Culture Risk Report as the starting point. Natural bridge from 'training doesn't work' to 'here's what does.'",
-          "cta": "Join live + IFQ link in description",
+          "title": "Ginosko: The Capacity to Imagine",
+          "detail": "YouTube Live (15-20 min). Deep dive on ginosko — imagination as a leadership capacity.",
+          "cta": "IFQ",
           "graphic_needed": "Episode thumbnail",
-          "source": null
-        },
-        {
-          "channel": "instagram",
-          "pillar": null,
-          "title": "Stories \u2014 Live reminder",
-          "detail": "'Have you ever diagnosed your team?' poll + Live countdown",
-          "cta": "Join the Live on YouTube",
-          "graphic_needed": null,
-          "source": null
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -894,34 +897,27 @@
         {
           "channel": "river",
           "pillar": "default",
-          "title": "Framework \u2014 measurement over intuition",
-          "detail": "Teaching: Your gut is not a diagnostic tool. The IFQ measures what your instincts miss.",
-          "cta": "Take the IFQ \u2014 see what you've been missing",
+          "title": "Teaching: How fear of being replaceable kills imagination",
+          "detail": "Teaching email: How the fear of being replaceable kills imagination — IFQ data backs it up.",
+          "cta": "AI-specific Validation Check",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-05-06"
-        },
-        {
-          "channel": "linkedin",
-          "pillar": "default",
-          "title": "Framework \u2014 your team's blind spots",
-          "detail": "Framework: The patterns your team can't see because they're living inside them. IFQ surfaces the invisible.",
-          "cta": "Take the IFQ \u2014 link in comments",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-05-06"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
     {
-      "date": "2026-05-22",
+      "date": "2026-05-23",
       "items": [
         {
-          "channel": "linkedin",
-          "pillar": "dumb-theater",
-          "title": "Engagement \u2014 what did your last team-building actually change?",
-          "detail": "Honest question: What measurably changed after your last team development investment?",
-          "cta": "Comment honestly. No judgment.",
+          "channel": "seo-blog",
+          "pillar": null,
+          "title": "Why AI Can't Imagine: The Leadership Capacity That Matters Most",
+          "detail": "SEO blog post. Ginosko deep dive — why imagination is the leadership capacity AI cannot replicate.",
+          "cta": "IFQ",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-05-06"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -930,26 +926,13 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "dumb-theater",
-          "title": "Story email \u2014 the undiagnosed team",
-          "detail": "You wouldn't treat a patient without a blood test. But you're treating your culture without a diagnostic. The IFQ exists because intuition is not a measurement tool.",
-          "cta": "Take the IFQ to diagnose your team",
-          "graphic_needed": null,
-          "source": "YouTube Live 2026-05-13"
-        }
-      ]
-    },
-    {
-      "date": "2026-05-25",
-      "items": [
-        {
-          "channel": "linkedin",
           "pillar": "drift",
-          "title": "Story \u2014 the values on the wall vs. the values in the hall",
-          "detail": "Story: A company with beautiful core values on the lobby wall and a culture that contradicted every one of them.",
-          "cta": "Follow for the full framework this week",
+          "title": "Story: The CEO who let AI make the call",
+          "detail": "Drift email — story of a CEO who outsourced a critical decision to AI. What it cost them.",
+          "cta": "IFQ",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-05-13"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -958,21 +941,43 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "drift",
-          "title": "Story email \u2014 culture isn't built on values",
-          "detail": "Your culture isn't built on your values statement. It's built on the identity patterns of the people who lead it. Values are aspirational. Identity is operational.",
-          "cta": "Take the Validation Check to see the gap",
+          "pillar": "default",
+          "title": "Framework: Phronesis — discernment requires stakes. AI has none.",
+          "detail": "Teaching email: Phronesis — the second capacity. Discernment requires skin in the game. AI has no stakes.",
+          "cta": "Breakthrough Workshop",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-05-13"
+          "source": null,
+          "status": "proposed"
         },
         {
-          "channel": "linkedin",
-          "pillar": "drift",
-          "title": "Framework \u2014 identity drives culture, not values",
-          "detail": "Framework: Values are what you say. Culture is what you do under pressure. The gap between them is your identity pattern.",
-          "cta": "Save this. Share it with your leadership team.",
-          "graphic_needed": "Framework graphic \u2014 Values vs. Identity",
-          "source": "YouTube Live 2026-05-13"
+          "channel": "youtube-shorts",
+          "pillar": "dumb-theater",
+          "title": "Michael — AI reaction video (new sequel)",
+          "detail": "Dumb Theater character video: Michael sequel — AI reaction video.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": "dumb-theater",
+          "title": "Michael — AI reaction video (new sequel)",
+          "detail": "Dumb Theater character video: Michael sequel — AI reaction video. Reel format.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "dumb-theater",
+          "title": "Michael — AI reaction video (new sequel)",
+          "detail": "Dumb Theater character video: Michael sequel — AI reaction video. Native upload.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -982,20 +987,12 @@
         {
           "channel": "youtube-live",
           "pillar": null,
-          "title": "What Your Culture Is Actually Built On (It's Not Your Values)",
-          "detail": "Identity patterns drive behavior, not values statements. Culture Model introduction. The foundational reframe: culture is identity-driven.",
-          "cta": "Join live + Breakthrough Workshop link in description",
+          "title": "Phronesis: The Capacity to Discern",
+          "detail": "YouTube Live (15-20 min). Deep dive on phronesis — discernment as a leadership capacity.",
+          "cta": "Breakthrough Workshop",
           "graphic_needed": "Episode thumbnail",
-          "source": null
-        },
-        {
-          "channel": "instagram",
-          "pillar": null,
-          "title": "Stories \u2014 Live reminder",
-          "detail": "'What's the gap between your values and your culture?' question sticker + Live countdown",
-          "cta": "Join the Live on YouTube",
-          "graphic_needed": null,
-          "source": null
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -1004,44 +1001,38 @@
       "items": [
         {
           "channel": "river",
-          "pillar": "drift",
-          "title": "Podcast email \u2014 the Culture Model",
-          "detail": "(From this week's podcast episode) Teaching: Your culture drifts in three dimensions: relationships, engagement, and sacrifice. When identity is insecure, all three erode.",
-          "cta": "Apply for the Breakthrough Workshop",
-          "graphic_needed": null,
-          "source": "Podcast episode (releasing same day)"
-        },
-        {
-          "channel": "linkedin",
           "pillar": "default",
-          "title": "Framework \u2014 three dimensions of culture drift",
-          "detail": "Framework: Relationships go from caring to bitter. Engagement goes from calm to angry. Sacrifice goes from willing to dreading. That's drift.",
-          "cta": "Take the Validation Check \u2014 link in comments",
-          "graphic_needed": "Framework graphic \u2014 3 Dimensions of Drift",
-          "source": "YouTube Live 2026-05-13"
+          "title": "Teaching: AI sycophancy and the leader who needs to be right",
+          "detail": "Teaching email: How AI sycophancy reinforces the leader who needs to be right. Why discernment requires pushback.",
+          "cta": "Breakthrough Workshop",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         },
         {
           "channel": "podcast",
           "pillar": null,
-          "title": "Podcast Episode (TBD)",
-          "detail": "The SightShift Podcast drops today. Episode title and description to be updated when available.",
-          "cta": "Listen on Apple, Spotify, or YouTube",
-          "graphic_needed": "Episode thumbnail + audiogram",
-          "source": null
+          "title": "AI Ep 3 — \"The 3% Shift\"",
+          "detail": "Podcast episode: Mark + Chris, 30-45 min. Deep dive on the 3% Shift framework.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
     {
-      "date": "2026-05-29",
+      "date": "2026-05-30",
       "items": [
         {
-          "channel": "linkedin",
-          "pillar": "drift",
-          "title": "Engagement \u2014 name the gap",
-          "detail": "What's the biggest gap between what your company says it values and how your team actually operates?",
-          "cta": "Comment below \u2014 this is the conversation most teams avoid",
+          "channel": "seo-blog",
+          "pillar": null,
+          "title": "AI and Decision Making: Why Leaders Need Discernment, Not Data",
+          "detail": "SEO blog post. Phronesis deep dive — why more data doesn't equal better decisions.",
+          "cta": "Breakthrough Workshop",
           "graphic_needed": null,
-          "source": "YouTube Live 2026-05-13"
+          "source": null,
+          "status": "proposed"
         }
       ]
     },
@@ -1051,11 +1042,377 @@
         {
           "channel": "river",
           "pillar": "drift",
-          "title": "Story email \u2014 values on the wall vs. in the hall",
-          "detail": "Beautiful core values on the lobby wall. A culture that contradicts every one of them. The gap between what you say and what you do under pressure is your identity pattern.",
-          "cta": "Take the Validation Check to see the gap",
+          "title": "Story: The team that couldn't be replaced",
+          "detail": "Drift email — story of a team so deeply connected that no technology could replicate what they built together.",
+          "cta": "Culture Risk Report",
           "graphic_needed": null,
-          "source": "Podcast + YouTube Live 2026-05-20"
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "items": [
+        {
+          "channel": "river",
+          "pillar": "default",
+          "title": "Framework: Koinonia — relational capacity requires vulnerability",
+          "detail": "Teaching email: Koinonia — the third capacity. Relational depth requires vulnerability. AI can simulate connection but not create it.",
+          "cta": "Culture Risk Report",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "youtube-shorts",
+          "pillar": "dumb-theater",
+          "title": "Nathan — AI reaction video (new sequel)",
+          "detail": "Dumb Theater character video: Nathan sequel — AI reaction video.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": "dumb-theater",
+          "title": "Nathan — AI reaction video (new sequel)",
+          "detail": "Dumb Theater character video: Nathan sequel — AI reaction video. Reel format.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "dumb-theater",
+          "title": "Nathan — AI reaction video (new sequel)",
+          "detail": "Dumb Theater character video: Nathan sequel — AI reaction video. Native upload.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-03",
+      "items": [
+        {
+          "channel": "youtube-live",
+          "pillar": null,
+          "title": "Koinonia: The Capacity to Build",
+          "detail": "YouTube Live (15-20 min). Deep dive on koinonia — relational capacity as a leadership differentiator.",
+          "cta": "Culture Risk Report",
+          "graphic_needed": "Episode thumbnail",
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "items": [
+        {
+          "channel": "river",
+          "pillar": "default",
+          "title": "Teaching: 3 dimensions of culture drift",
+          "detail": "Teaching email: The 3 dimensions of culture drift — and why AI accelerates all three.",
+          "cta": "Culture Risk Report",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-06",
+      "items": [
+        {
+          "channel": "seo-blog",
+          "pillar": null,
+          "title": "Building Teams AI Can't Replace",
+          "detail": "SEO blog post. Koinonia deep dive — what makes teams irreplaceable in the AI era.",
+          "cta": "Breakthrough Workshop",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07",
+      "items": [
+        {
+          "channel": "river",
+          "pillar": "drift",
+          "title": "Story: What a breakthrough actually looks like",
+          "detail": "Drift email — real client story of what a breakthrough actually looks like. The before and after.",
+          "cta": "Breakthrough Workshop",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "items": [
+        {
+          "channel": "river",
+          "pillar": "default",
+          "title": "Framework: The IFQ as starting point for closing the identity gap",
+          "detail": "Teaching email: The IFQ as the diagnostic starting point for closing the identity gap. How to use it.",
+          "cta": "IFQ + Breakthrough",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "youtube-shorts",
+          "pillar": "dumb-theater",
+          "title": "Derek — AI reaction video (new sequel)",
+          "detail": "Dumb Theater character video: Derek sequel — AI reaction video.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "instagram",
+          "pillar": "dumb-theater",
+          "title": "Derek — AI reaction video (new sequel)",
+          "detail": "Dumb Theater character video: Derek sequel — AI reaction video. Reel format.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "twitter",
+          "pillar": "dumb-theater",
+          "title": "Derek — AI reaction video (new sequel)",
+          "detail": "Dumb Theater character video: Derek sequel — AI reaction video. Native upload.",
+          "cta": null,
+          "graphic_needed": "Character poster",
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10",
+      "items": [
+        {
+          "channel": "youtube-live",
+          "pillar": null,
+          "title": "How to Close Your Identity Gap",
+          "detail": "YouTube Live (15-20 min). Practical session — how to close the identity gap. Steps, tools, starting points.",
+          "cta": "Breakthrough Workshop",
+          "graphic_needed": "Episode thumbnail",
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "items": [
+        {
+          "channel": "river",
+          "pillar": "default",
+          "title": "Teaching: First 90 days of identity-level work",
+          "detail": "Teaching email: What the first 90 days of identity-level work looks like — data and stories from real clients.",
+          "cta": "FTSO",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "podcast",
+          "pillar": null,
+          "title": "AI Ep 4 — \"The Three Capacities AI Can't Replace\"",
+          "detail": "Podcast episode: Mark + Chris, 30-45 min. Deep dive on ginosko, phronesis, and koinonia.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-13",
+      "items": [
+        {
+          "channel": "seo-blog",
+          "pillar": null,
+          "title": "The Identity Fear Quotient: What 988 Leaders Revealed",
+          "detail": "SEO blog post. IFQ deep dive — the tool, the data, what 988 leaders revealed about identity under pressure.",
+          "cta": "IFQ",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-14",
+      "items": [
+        {
+          "channel": "river",
+          "pillar": "drift",
+          "title": "Story: The organization led by secure leaders in the AI era",
+          "detail": "Drift email — vision-casting. What an organization led by secure leaders looks like in the AI era.",
+          "cta": "FTSO",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "items": [
+        {
+          "channel": "river",
+          "pillar": "default",
+          "title": "Framework: Full flywheel — Sense > Surface > See > Shift > Sustain",
+          "detail": "Teaching email: The full SightShift flywheel — Sense, Surface, See, Shift, Sustain. How identity-level transformation works.",
+          "cta": "FTSO",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-17",
+      "items": [
+        {
+          "channel": "youtube-live",
+          "pillar": null,
+          "title": "The Future Belongs to the 3%",
+          "detail": "YouTube Live — campaign culmination episode. Tying together 9 weeks of content into a clear call to action.",
+          "cta": "FTSO",
+          "graphic_needed": "Episode thumbnail",
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-18",
+      "items": [
+        {
+          "channel": "river",
+          "pillar": "default",
+          "title": "\"What 988 leaders taught us\" — campaign wrap",
+          "detail": "Campaign wrap email: What 988 leaders taught us. Summary of key findings, invitation to go deeper.",
+          "cta": "Breakthrough + FTSO",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-20",
+      "items": [
+        {
+          "channel": "seo-blog",
+          "pillar": null,
+          "title": "The 3% of Leaders Ready for AI: Are You One of Them?",
+          "detail": "SEO blog post. Campaign culmination piece — are you in the 3%? Direct CTA to find out.",
+          "cta": "IFQ + FTSO",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-21",
+      "items": [
+        {
+          "channel": "river",
+          "pillar": "drift",
+          "title": "Story: Looking forward — what the next chapter looks like",
+          "detail": "Drift email — forward-looking story. What the next chapter looks like for SightShift and for the leaders in this community.",
+          "cta": "FTSO",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-23",
+      "items": [
+        {
+          "channel": "river",
+          "pillar": "default",
+          "title": "Framework: The infrastructure secure leaders build",
+          "detail": "Teaching email: The infrastructure secure leaders build — systems, rhythms, and practices that sustain identity-level change.",
+          "cta": "Breakthrough + FTSO",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-24",
+      "items": [
+        {
+          "channel": "youtube-live",
+          "pillar": null,
+          "title": "What's Next",
+          "detail": "YouTube Live — What's Next. Next city event, next steps, hard CTA to take action.",
+          "cta": "Event + FTSO",
+          "graphic_needed": "Episode thumbnail",
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "items": [
+        {
+          "channel": "river",
+          "pillar": "default",
+          "title": "Final campaign email — invitation to the next level",
+          "detail": "Final email of the 10-week campaign. Clear, direct invitation to take the next step.",
+          "cta": "FTSO",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        },
+        {
+          "channel": "podcast",
+          "pillar": null,
+          "title": "AI Ep 5 — \"What 988 Leaders Taught Us About the Future\"",
+          "detail": "Podcast episode: Mark + Chris, 30-45 min. Campaign capstone — what 988 leaders taught us about the future of leadership.",
+          "cta": null,
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-27",
+      "items": [
+        {
+          "channel": "seo-blog",
+          "pillar": null,
+          "title": "Secure vs. Insecure Leadership in the AI Era",
+          "detail": "SEO blog post. Campaign capstone — the defining leadership divide of the AI era.",
+          "cta": "IFQ + FTSO",
+          "graphic_needed": null,
+          "source": null,
+          "status": "proposed"
         }
       ]
     }
