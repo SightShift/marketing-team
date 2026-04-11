@@ -130,6 +130,14 @@
       "tag": "update",
       "added": "2026-04-10",
       "status": "open"
+    },
+    {
+      "id": 16,
+      "text": "Add Validation Check to Signs of Drift blog post",
+      "owner": "Bret",
+      "tag": "update",
+      "added": "2026-04-10",
+      "status": "open"
     }
   ],
   "past_meetings": [
